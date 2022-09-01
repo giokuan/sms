@@ -26,7 +26,7 @@
     @endphp
 
     @foreach ($links as $index => $link)
-        <x-sidebar.link title="Dummy  {{ $index + 1 }}" href="#" />
+        <x-sidebar.link title="Dummy link {{ $index + 1 }}" href="#" />
     @endforeach
        
 </x-perfect-scrollbar>
