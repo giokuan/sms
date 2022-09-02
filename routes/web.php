@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,11 @@ Route::get('/buttons/text-icon', function () {
     return view('buttons-showcase.text-icon');
 })->middleware(['auth'])->name('buttons.text-icon');
 
+
+
 require __DIR__ . '/auth.php';
+
+
+Route::get('student-all-list',[StudentController::class,'index']);
+Route::get('add-student',[StudentController::class,'addStudent']);
+Route::post('save-student',[StudentController::class,'saveStudent']);

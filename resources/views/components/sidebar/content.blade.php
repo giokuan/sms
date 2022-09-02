@@ -21,12 +21,15 @@
 
     <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-gray-500">Dummy Links</div>
 
-    @php
+    {{-- @php
         $links = array_fill(0, 20, '');
-    @endphp
+    @endphp --}}
 
-    @foreach ($links as $index => $link)
-        <x-sidebar.link title="Dummy link {{ $index + 1 }}" href="#" />
-    @endforeach
+    {{-- @foreach ($links as $index => $link) --}}
+        <x-sidebar.link title="All Sudents" href="student-all-list" />
+        <x-sidebar.link title="All Teachers" href="#" />
+        <x-sidebar.link title="Add Student" href="add-student" />
+        <x-sidebar.link title="Add Teacher" href="#" />
+    {{-- @endforeach --}}
        
 </x-perfect-scrollbar>
