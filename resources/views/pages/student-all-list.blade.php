@@ -25,76 +25,69 @@
 </head>
 <body>
     
-<div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                {{-- <th scope="col" class="p-4">
-                    <div class="flex items-center">
-                        <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                        <label for="checkbox-all-search" class="sr-only">checkbox</label>
-                    </div>
-                </th> --}}
-                <th scope="col" class="py-3 px-6">
-                    Id
-                 </th>
-                <th scope="col" class="py-3 px-6">
-                   Last Name
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    First Name
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Middle Name
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Gender
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Email
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Username
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Religion
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Date of Birth
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Fathers Name
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Mothers Name
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Fathers Ocuppation
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Mothers Occupation
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Phone Number
-                </th>
-                <th scope="col" class="py-3 px-6">
-                   Nationality
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Address
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Action
-                </th>
+    <div class="overflow-hidden overflow-x-auto border border-gray-100 rounded">
+        <table class="min-w-full text-sm divide-y  divide-gray-200">
+          <thead>
+            <tr class="bg-gray-50 uppercase">
+              
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Id</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Last Name</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">First Name</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Middle Name</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Gender</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Email</th>
+              {{-- <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Username</th> --}}
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Religion</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Date of Birth</th>
+              {{-- <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Fathers Name</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Mothers Name</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Fathers Occupation</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Mothers Occupation</th> --}}
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Phone Number</th>
+              {{-- <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap"> Nationality</th> --}}
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Address</th>
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Action</th>
             </tr>
-        </thead>
-        <tbody>
+          </thead>
+         
+     
+          <tbody class="divide-y divide-gray-100">
             @php
-                $i = 1
+                // $i = 1
             @endphp
 
             @foreach($data as $stud)
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            
+            
+                <tr class="capitalize ">
+                   
+                  <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap"> {{$stud->id}}</td>
+                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->lastname}}</td>
+                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->firstname}}</td>
+                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$stud->middlename}}</td>
+
+                  <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">{{$stud->gender}}</td>
+                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap">  {{$stud->email}}</td>
+                  {{-- <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->username}}</td> --}}
+                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$stud->religion}}</td>
+
+                  <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">{{$stud->dateofbirth}}</td>
+                  {{-- <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->fathersname}}</td>
+                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->mothersname}}</td>
+                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$stud->foccupation}}</td>
+                  <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">{{$stud->moccupation}}</td> --}}
+                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->phone}}</td>
+                  {{-- <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->nationality}}</td> --}}
+                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$stud->address}}</td>
+
+                  <td class="flex items-center py-4 px-6 space-x-3">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                </td>
+                </tr>
+
+
+            {{-- <tr class="bg-white border-b dark:bg-gray-800 uppercase dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 
                 <th scope="row" class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                    {{$i++}}
@@ -148,7 +141,7 @@
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                     <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
                 </td>
-            </tr>
+            </tr> --}}
             @endforeach
             
         </tbody>

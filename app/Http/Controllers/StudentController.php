@@ -19,6 +19,23 @@ class StudentController extends Controller
     }
 
     public function saveStudent(Request $request){
+        $request-> validate([
+            'lastname'=>'required',
+            'firstname'=>'required',
+            'username'=>'required',
+            'email'=>'required|email',
+            'gender'=>'required',
+            'religion'=>'required',
+            'gender'=>'required',
+            'dob'=>'required',
+            'fathersname'=>'required',
+            'mothersname'=>'required',
+            'foccupation'=>'required',
+            'moccupation'=>'required',
+            'phone'=>'required',
+            'nationality'=>'required',
+            'address'=>'required',
+        ]);
         // dd($request->all());
         $lastname = $request->lastname;
         $firstname = $request->firstname;
