@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <h2 class="text-xl font-semibold leading-tight">
-                {{ __('Dashboard') }}
+                {{ __('All Students') }}
             </h2>
             {{-- <x-button target="_blank" href="https://github.com/kamona-wd/kui-laravel-breeze" variant="black"
                 class="justify-center max-w-xs gap-2">
@@ -14,7 +14,7 @@
 
     <div class="p-10 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1 ">
  
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,12 +23,21 @@
     <title>All Students</title>
     @vite('resources/css/app.css')
 </head>
-<body>
+<body> --}}
+    @if(Session::has('success'))
+      
+              <div id="alert-3" class="flex p-4 mb-4 bg-green-100 rounded-lg dark:bg-green-200" role="alert">
+                <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-green-700 dark:text-green-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Info</span>
+                    {{Session::get('success')}} 
+                {{-- </div> --}}
+              </div>
+        @endif
     
     <div class="overflow-hidden overflow-x-auto border border-gray-100 rounded">
         <table class="min-w-full text-sm divide-y  divide-gray-200">
           <thead>
-            <tr class="bg-gray-50 uppercase">
+            <tr class="bg-gray-50 uppercase dark:bg-gray-600 dark:text-white">
               
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Id</th>
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Last Name</th>
@@ -51,105 +60,62 @@
           </thead>
          
      
-          <tbody class="divide-y divide-gray-100">
-            @php
-                // $i = 1
-            @endphp
+          <tbody class="divide-y divide-gray-100 ">
+           {{-- @php
+                $i = 1
+           @endphp --}}
 
             @foreach($data as $stud)
             
             
-                <tr class="capitalize ">
+                <tr class="capitalize">
                    
-                  <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap"> {{$stud->id}}</td>
-                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->lastname}}</td>
-                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->firstname}}</td>
-                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$stud->middlename}}</td>
+                  <td class="px-4 py-2 font-medium text-gray-900 dark:text-gray-400 whitespace-nowrap"> {{$stud->id}}</td>
+                  <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap"> {{$stud->lastname}}</td>
+                  <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap"> {{$stud->firstname}}</td>
+                  <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap">{{$stud->middlename}}</td>
 
-                  <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">{{$stud->gender}}</td>
-                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap">  {{$stud->email}}</td>
+                  <td class="px-4 py-2 font-medium text-gray-900 dark:text-gray-400 whitespace-nowrap">{{$stud->gender}}</td>
+                  <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap lowercase">  {{$stud->email}}</td>
                   {{-- <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->username}}</td> --}}
-                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$stud->religion}}</td>
+                  <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap">{{$stud->religion}}</td>
 
-                  <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">{{$stud->dateofbirth}}</td>
+                  <td class="px-4 py-2 font-medium text-gray-900 dark:text-gray-400 whitespace-nowrap">{{$stud->dateofbirth}}</td>
                   {{-- <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->fathersname}}</td>
                   <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->mothersname}}</td>
                   <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$stud->foccupation}}</td>
                   <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">{{$stud->moccupation}}</td> --}}
-                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->phone}}</td>
+                  <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap"> {{$stud->phone}}</td>
                   {{-- <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->nationality}}</td> --}}
-                  <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$stud->address}}</td>
+                  <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap">{{$stud->address}}</td>
 
                   <td class="flex items-center py-4 px-6 space-x-3">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                    {{-- <a href="{{url('edit-student/'.$stud->id)}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> --}}
+
+                    <a href="{{url('edit-student/'.$stud->id)}}" >  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3F83F8" class="w-6 h-6">
+                        <path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
+                        <path d="M5.25 5.25a3 3 0 00-3 3v10.5a3 3 0 003 3h10.5a3 3 0 003-3V13.5a.75.75 0 00-1.5 0v5.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V8.25a1.5 1.5 0 011.5-1.5h5.25a.75.75 0 000-1.5H5.25z" />
+                      </svg>
+                      </a>
+                   
+                    <a href="{{url('delete-student/'.$stud->id)}}" > <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#F05252" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
+                      </svg>
+                      
+                      </a>
                 </td>
                 </tr>
 
-
-            {{-- <tr class="bg-white border-b dark:bg-gray-800 uppercase dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 
-                <th scope="row" class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                   {{$i++}}
-                </th>
-                <th class="py-4 px-6">
-                    {{$stud->lastname}}
-                 </th>
-                <td class="py-4 px-6">
-                    {{$stud->firstname}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->middlename}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->gender}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->email}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->username}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->religion}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->dateofbirth}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->fathersname}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->mothersname}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->foccupation}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->moccupation}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->phone}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->nationality}}
-                </td>
-                <td class="py-4 px-6">
-                    {{$stud->address}}
-                </td>
-                <td class="flex items-center py-4 px-6 space-x-3">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
-                </td>
-            </tr> --}}
+                
             @endforeach
             
         </tbody>
     </table>
 </div>
 
-</body>
-</html>
+{{-- </body>
+</html> --}}
 
 
 </div>

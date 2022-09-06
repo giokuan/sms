@@ -15,7 +15,7 @@
 @extends('partials.__sidebar')
 @section('content')	
 
-<div class="w-full md:max-w-xs">
+{{-- <div class="w-full md:max-w-xs">
 <a class=" block p-8 border border-gray-100 shadow-xl rounded-xl" href="">
     <span class="absolute right-4 top-4 rounded-full px-3 py-1.5 bg-green-100 text-green-600 font-medium text-xs">
       4.3
@@ -45,7 +45,7 @@
     </div>
   </a>
 </div>
-  
+   --}}
 	
 
 @endsection

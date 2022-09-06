@@ -7,7 +7,7 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-    public function index(){
+    public function studentAllList(){
         $data = Student::get();
         // return $data;
         return view('pages.student-all-list', compact('data'));
@@ -22,7 +22,9 @@ class StudentController extends Controller
         $request-> validate([
             'lastname'=>'required',
             'firstname'=>'required',
+            'middlename'=>'required',
             'username'=>'required',
+            // 'photo'=>'required',
             'email'=>'required|email',
             'gender'=>'required',
             'religion'=>'required',
@@ -72,5 +74,77 @@ class StudentController extends Controller
         $stud->save();
 
         return redirect()->back()->with('success','Student Added Succesfuly');
+    }
+
+    public function editStudent($id){
+        $data = Student::where('id', '=', $id)->first();
+        return view('pages.edit-student', compact('data'));
+    }
+
+    public function updateStudent(Request $request){
+        $request-> validate([
+            'lastname'=>'required',
+            'firstname'=>'required',
+            'middlename'=>'required',
+            'username'=>'required',
+            // 'photo'=>'required',
+            'email'=>'required|email',
+            'gender'=>'required',
+            'religion'=>'required',
+            'gender'=>'required',
+            'dob'=>'required',
+            'fathersname'=>'required',
+            'mothersname'=>'required',
+            'foccupation'=>'required',
+            'moccupation'=>'required',
+            'phone'=>'required',
+            'nationality'=>'required',
+            'address'=>'required',
+        ]);
+        $id = $request->id;
+        $lastname = $request->lastname;
+        $firstname = $request->firstname;
+        $middlename = $request->middlename;
+        $username = $request->username;
+        $email = $request->email;
+        $gender = $request->gender;
+        $religion = $request->religion;
+        $dob = $request->dob;
+        $fathersname = $request->fathersname;
+        $mothersname = $request->mothersname;
+        $foccupation = $request->foccupation;
+        $moccupation = $request->moccupation;
+        $phone = $request->phone;
+        $nationality = $request->nationality;
+        $address = $request->address;
+
+        Student::where('id', '=', $id)->update([
+
+            'lastname'=>$lastname,
+            'firstname'=>$firstname,
+            'middlename'=>$middlename,
+            'username'=>$username,
+            'email'=>$email,
+            'gender'=>$gender,
+            'religion'=>$religion,
+            'dateofbirth'=>$dob,
+            'fathersname'=>$fathersname,
+            'mothersname'=>$mothersname,
+            'foccupation'=>$foccupation,
+            'moccupation'=>$moccupation,
+            'phone'=>$phone,
+            'nationality'=>$nationality,
+            'address'=>$address
+          
+
+        ]);
+        return redirect()->to('/student-all-list')->with('success','Student Updated Succesfuly');
+       
+        
+    }
+
+    public function deleteStudent($id){
+        Student::where('id', '=', $id)->delete();
+        return redirect()->to('/student-all-list')->with('success','Student deleted Succesfuly');
     }
 }
