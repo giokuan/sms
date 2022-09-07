@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +18,9 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', function () {
+    
+
+
     return view('welcome');
 });
 
@@ -47,3 +53,5 @@ Route::post('save-student',[StudentController::class,'saveStudent']);
 Route::get('edit-student/{id}',[StudentController::class,'editStudent']);
 Route::post('update-student',[StudentController::class,'updateStudent']);
 Route::get('delete-student/{id}',[StudentController::class,'deleteStudent']);
+
+

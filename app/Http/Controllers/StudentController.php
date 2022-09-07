@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Carbon\Carbon;
+
 
 class StudentController extends Controller
 {
@@ -109,7 +111,7 @@ class StudentController extends Controller
         $email = $request->email;
         $gender = $request->gender;
         $religion = $request->religion;
-        $dob = $request->dob;
+        $dob =$request->dob;
         $fathersname = $request->fathersname;
         $mothersname = $request->mothersname;
         $foccupation = $request->foccupation;
@@ -145,6 +147,6 @@ class StudentController extends Controller
 
     public function deleteStudent($id){
         Student::where('id', '=', $id)->delete();
-        return redirect()->to('/student-all-list')->with('success','Student deleted Succesfuly');
+        return redirect()->to('/student-all-list')->with('toast_warning','Student deleted Succesfuly');
     }
 }

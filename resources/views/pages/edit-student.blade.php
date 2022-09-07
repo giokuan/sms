@@ -148,7 +148,7 @@
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-1" for="dob">
                     Date of Birth
                 </label>
-                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-white shadow-lg" id="dob" name="dob" type="date" value="{{ $data->dob}}">
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-white shadow-lg" id="dob" name="dob" type="date" value="{{$data->dob}}">
                 @error('dob')
 
                 <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">

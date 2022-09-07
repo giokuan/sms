@@ -276,5 +276,7 @@
         {{-- <div class="min-h-screen bg-no-repeat" style="background-image: url({{ url('images/dashboard_imgw.webp') }})">
             Background
         </div> --}}
+        {{-- @include('sweetalert::alert') --}}
+
     </body>
 </html>

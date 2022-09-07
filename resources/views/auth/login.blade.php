@@ -1,10 +1,70 @@
+
+
 <x-guest-layout>
+
+    <nav class="bg-[#001F52] shadow py-2 fixed top-0 left-0 right-0 z-10">
+        <div x-data="{isOpen: false}" class="mx-auto px-5 md:px-12.5 lg:px-20">
+            
+            <div class="md:flex md:justify-between items-center">
+                {{-- logo --}}
+                <div class="flex items-center">
+                    <a href="#">
+                        <svg class="text-sky-50 mr-2 h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                        </svg>
+                    </a>
+                    
+                    {{-- primary --}}
+                    <h1 class="text-xl md:text-2xl font-light text-sky-50">High School Name goes here</h1>
+                    {{-- hamburger menu --}}
+                    <div class="flex md:hidden ml-auto">
+                        <button    
+                            aria-label="toggle menu"
+                            @click="isOpen = !isOpen">
+                                <svg class="text-sky-50  h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>
+                        </button>
+                    </div>
+                </div>
+
+                {{-- secondary nav --}}
+                <div :class="isOpen ? 'show' : 'hidden' " class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3">
+                    <div class="flex flex-col md:flex-row gap-3 md:gap-x-7">
+                        <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
+                        <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
+                        {{-- login logout --}}
+                        @if (Route::has('login'))
+                                @auth
+                                    <a href="{{ url('/dashboard') }}" class="md:text-lg font-light text-sky-50 dark:text-gray-500 hover:underline hover:text-sky-200">Dashboard</a>
+                                @else
+                                    <a href="{{ route('login') }}" class="md:text-lg font-light text-sky-50 dark:text-gray-500 hover:underline hover:text-sky-200">Log in</a>
+
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="md:text-lg font-light text-sky-50 dark:text-gray-500 hover:underline hover:text-sky-200">Register</a>
+                                    @endif
+                                @endauth
+                        @endif
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    
+<div 
+class="h-screen w-full bg-no-repeat bg-cover bg-center object-contain" 
+style="background-image: url({{ url('images/hallway.jpg') }})">
     <x-auth-card>
         <!-- Session Status -->
+       
+        
         <x-auth-session-status class="mb-4" :status="session('status')" />
-
+     
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+ 
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -68,5 +128,7 @@
                 @endif
             </div>
         </form>
+   
     </x-auth-card>
+</div>
 </x-guest-layout>
