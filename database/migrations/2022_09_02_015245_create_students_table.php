@@ -18,8 +18,10 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('firstname');
             $table->string('middlename');
-            $table->string('username');
+           
             $table->string('email');
+            $table->string('grade');
+            $table->string('photo');
             $table->string('gender');
             $table->string('religion');
             $table->date('dateofbirth');

@@ -14,7 +14,7 @@
 
     {{-- <div class="p-5 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1 flex items-center justify-center "> --}}
     {{-- <div class="bg-white rounded-md shadow-md dark:bg-dark-eval-1"> --}}
-        @if(Session::has('success'))
+        {{-- @if(Session::has('success'))
       
 
               <div id="alert-3" class="flex p-4 mb-4 bg-green-100 rounded-lg dark:bg-green-200" role="alert">
@@ -22,8 +22,8 @@
                 <span class="sr-only">Info</span>
                     {{Session::get('success')}} 
               </div>
-        @endif
-        <form class="w-full  md:px-40 pt-6 pb-4" method="post" action="{{url('save-student')}}">
+        @endif --}}
+        {{-- <form class="w-full  md:px-40 pt-6 pb-4" method="post" action="{{url('save-student')}}" enctype="multipart/form-data">
             @csrf
             <div class="flex flex-wrap -mx-3 mb-2">
 
@@ -101,30 +101,14 @@
                 @enderror
                 </div>
         
-                <div class="w-full md:w-1/3 px-3 mb-2">
-                <label class="block uppercase tracking-wide text-gray-700 dark:text-gray-500 text-xs font-bold mb-1" for="username">
-                    Username
-                </label>
-                <input class="appearance-none block w-full bg-gray-200 text-gray-700 dark:bg-gray-400 border border-gray-200 rounded py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-white shadow-lg focus:border-gray-500" id="username" name="username" type="text" value="{{old('username')}}" >
-                @error('username')
-
-                <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
-                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-                    <span class="sr-only">Info</span>
-                    <div>
-                        {{$message}}
-                    </div>
-                  </div>
-
-                @enderror
-            </div>
+          
         
                 <div class="w-full md:w-1/3 px-3">
                 <label class="block uppercase tracking-wide text-gray-700 dark:text-gray-500 text-xs font-bold mb-1" for="photo">
                     Photo
                 </label>
-                <input class="form-control block w-full px-0.75 py-0.75 text-lg text-gray-500 bg-gray-200 dark:bg-gray-400 bg-clip-padding border rounded transition ease-in-out m-0 mb-2  focus:text-gray-700 focus:bg-white  focus:outline-none shadow-lg" id="formFileLg" type="file" value="{{old('photo')}}">
-                {{-- @error('photo')
+                <input class="form-control block w-full px-0.75 py-0.75 text-lg text-gray-500 bg-gray-200 dark:bg-gray-400 bg-clip-padding border rounded transition ease-in-out m-0 mb-2  focus:text-gray-700 focus:bg-white  focus:outline-none shadow-lg" id="photo"  name="photo" type="file" value="{{old('photo')}}">
+                @error('photo')
 
                 <div class="flex p-1 mb-2 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
                     <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
@@ -134,7 +118,7 @@
                     </div>
                   </div>
 
-                @enderror --}}
+                @enderror
             </div>
         
             </div>
@@ -163,16 +147,14 @@
                 <label class="block uppercase tracking-wide text-gray-700 dark:text-gray-500 text-xs font-bold mb-1" for="gender">
                     Gender
                 </label>
-                {{-- <div class="relative"> --}}
+        
                     <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 dark:bg-gray-400 py-2 px-4 mb-2 pr-8 rounded leading-tight focus:outline-none focus:bg-white shadow-lg focus:border-gray-500" id="gender" name="gender">
-                        {{-- <option></option>
-                        <option>Male</option>
-                    <option>Female</option> --}}
+                 
                     <option value="">Select Gender</option>
                     <option value="M" @if (old('gender') == "M") {{ 'selected' }} @endif>Male</option>
                     <option value="F" @if (old('gender') == "F") {{ 'selected' }} @endif>Female</option>
                     </select>
-                {{-- </div> --}}
+              
                 @error('gender')
                    
                 <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -343,10 +325,341 @@
 
         <button type="submit" class="bg-sky-500 border-gray-200 rounded py-2 px-10 shadow-lg">Submit</button>
 
-        </form>
-    {{-- </div> --}}
+        </form> --}}
 
-{{-- </div> --}}
+        {{-- @if(Session::has('success'))
+      
+
+              <div id="alert-3" class="flex p-4 mb-4 bg-green-100 rounded-lg dark:bg-green-200" role="alert">
+                <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-green-700 dark:text-green-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Info</span>
+                    {{Session::get('success')}} 
+              </div>
+        @endif --}}
+        <div class="w-full relative mt-4 shadow-2xl rounded my-24 overflow-hidden">
+            <div class="top h-60 w-full bg-blue-600 overflow-hidden relative" >
+              <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="" class="bg w-full h-full object-cover object-center absolute z-0">
+              <div class="flex flex-col justify-center items-center relative h-full bg-black bg-opacity-50 text-white">
+                
+                <img src="{{'uploads/students/profile-default.jpg'}}"  alt="image" class="h-24 w-24 object-cover rounded-full">
+                <h1 class="text-2xl font-semibold"></h1>
+                <h4 class="text-sm font-semibold"></h4>
+              </div>
+            </div>
+            <div class="grid grid-cols-12 bg-white ">
+          
+              <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
+          
+                <a href="#" class="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">Basic Information</a>
+          
+                <a href="#" class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Information</a>
+          
+                <a href="#"  class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Something</a>
+        
+               
+                   
+               
+          
+              </div>
+          
+              <div class="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10">
+                <div class="px-4 pt-4">
+
+                  <form method="post" action="{{url('save-student')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
+                   
+                    @csrf
+          
+                    <div>
+                      <h3 class="text-2xl font-semibold">Basic Information</h3>
+                      <hr>
+                    </div>
+          
+                    <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Last Name</label>
+                            <input type="text" value="{{old('lastname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="lastname" name="lastname">
+                            @error('lastname')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">First Name</label>
+                            <input type="text" value="{{old('firstname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="firstname" name="firstname" >
+                            @error('firstname')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Middle Name</label>
+                            <input type="text" value="{{old('middlename')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="middlename" name="middlename" >
+                            @error('middlename')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+                    </div>
+        
+        
+                    <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">  
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Email</label>
+                            <input type="text" value="{{old('email')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="email" name="email">
+                            @error('email')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>                 
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Grade</label>
+                            <select class="w-full appearance-none text-black text-opacity-70 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " id="grade" name="grade" >
+                                <option value="">Select Grade</option>
+                                <option value="Grade 7" @if (old('grade') == "Grade 7") {{ 'selected' }} @endif>Grade 7</option>
+                                <option value="Grade 8" @if (old('grade') == "Grade 8") {{ 'selected' }} @endif>Grade 8</option>     
+                                <option value="Grade 9" @if (old('grade') == "Grade 9") {{ 'selected' }} @endif>Grade 9</option>
+                                <option value="Grade 10" @if (old('grade') == "Grade 10") {{ 'selected' }} @endif>Grade 10</option>    
+                                <option value="Grade 11" @if (old('grade') == "Grade 11") {{ 'selected' }} @endif>Grade 11</option>
+                                <option value="Grade 12" @if (old('grade') == "Grade 12") {{ 'selected' }} @endif>Grade 12</option>            
+                            </select>
+                            @error('grade')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                            {{-- <input type="text" value="{{old('grade')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="grade" name="grade"> --}}
+                        </div>
+          
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Date of Birth</label>
+                            <input type="date" value="{{old('dateofbirth')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " id="dateofbirth" name="dateofbirth">
+                            @error('dob')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    <p>Date of birth field is required</p>
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+                     
+                    </div>
+        
+        
+                    <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Phone</label>
+                            <input type="text" value="{{old('phone')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="phone" name="phone">
+                            @error('phone')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Gender</label>
+                            <select class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " id="gender" name="gender" >
+                                <option value="">Select Gender</option>
+                                <option value="Male" @if (old('gender') == "Male") {{ 'selected' }} @endif>Male</option>
+                                <option value="Female" @if (old('gender') == "Female") {{ 'selected' }} @endif>Female</option>               
+                            </select>
+                            @error('gender')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                            {{-- <input type="text" value="" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200  " disabled> --}}
+                        </div>
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Religion</label>
+                            <input type="text" value="{{old('religion')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="religion" name="religion">
+                            @error('religion')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+          
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Nationality</label>
+                            <input type="text" value="{{old('nationality')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="nationality" name="nationality">
+                            @error('nationality')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+            
+                    </div>
+        
+                    <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Fathers Name</label>
+                            <input type="text" value="{{old('fathersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 "  id="fathersname" name="fathersname" >
+                            @error('fathersname')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Fathers Occupation</label>
+                            <input type="text" value="{{old('foccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="foccupation" name="foccupation">
+                            @error('foccupation')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    <p>Fathers occupation field is required</p>
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Mothers Name</label>
+                            <input type="text" value="{{old('mothersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="mothersname" name="mothersname">
+                            @error('mothersname')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+        
+                        <div class="form-item w-full">
+                            <label class="text-lg ">Mothers Occupation</label>
+                            <input type="text" value="{{old('moccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " id="moccupation" name="moccupation">
+                            @error('moccupation')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    <p>Mothers occupation field is required</p>
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+          
+                    </div>
+        
+                    <div class="form-item w-full">
+                        <label class="text-lg ">Address</label>
+                        <textarea type="text"  class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="address" name="address">{{old('address')}}</textarea>
+                        @error('address')
+                   
+                        <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                            <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                {{$message}}
+                            </div>
+                          </div>
+                          @enderror
+                   
+                    </div>
+
+                    <label class=" flex  uppercase tracking-wide text-gray-700 text-xs h-1" for="photo">
+                        Add Photo
+                    </label>
+                    {{-- <input class="form-control w-full px-0.75 py-0.75 text-lg text-gray-500 bg-gray-200 bg-clip-padding border rounded-md transition ease-in-out m-0 mb-2  focus:text-gray-700 focus:bg-white  focus:outline-none shadow-lg" id="photo" name="photo" type="file"> --}}
+                  <!-- the first file input -->
+            <div class="border-2 rounded-md pt-2 pb-1 bg-indigo-900">
+                <label>
+                    <input type="file" class="text-sm text-slate-50  pl-2 pb-1
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-full file:border-0
+                    file:text-sm file:font-medium
+                    file:bg-blue-50 file:text-blue-700
+                    hover:file:cursor-pointer hover:file:bg-amber-50
+                    hover:file:text-amber-700 
+                  "  id="photo"  name="photo"/>
+                </label>
+            </div>
+        
+                    <button type="submit" class="bg-indigo-900 text-slate-50 border-gray-200 rounded py-2 px-10 shadow-lg">Save</button>
+                  
+
+                </div>
+                {{-- @include('sweetalert::alert') --}}
+              </div>
+            </form>
+            @include('sweetalert::alert')
+            </div>
+   
+
+
 <style>
 .table {
     border-spacing: 0 15px;

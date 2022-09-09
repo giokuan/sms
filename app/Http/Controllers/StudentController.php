@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\File;
 
 
 class StudentController extends Controller
@@ -25,13 +26,12 @@ class StudentController extends Controller
             'lastname'=>'required',
             'firstname'=>'required',
             'middlename'=>'required',
-            'username'=>'required',
-            // 'photo'=>'required',
             'email'=>'required|email',
-            'gender'=>'required',
+            'grade'=>'required',
+            'photo'=>'required',
             'religion'=>'required',
             'gender'=>'required',
-            'dob'=>'required',
+            'dateofbirth'=>'required',
             'fathersname'=>'required',
             'mothersname'=>'required',
             'foccupation'=>'required',
@@ -44,11 +44,12 @@ class StudentController extends Controller
         $lastname = $request->lastname;
         $firstname = $request->firstname;
         $middlename = $request->middlename;
-        $username = $request->username;
         $email = $request->email;
+        $grade = $request->grade;
+        $photo = $request->photo;
         $gender = $request->gender;
         $religion = $request->religion;
-        $dob = $request->dob;
+        $dateofbirth = $request->dateofbirth;
         $fathersname = $request->fathersname;
         $mothersname = $request->mothersname;
         $foccupation = $request->foccupation;
@@ -57,15 +58,25 @@ class StudentController extends Controller
         $nationality = $request->nationality;
         $address = $request->address;
 
+
         $stud = new Student();
         $stud->lastname = $lastname;
         $stud->firstname = $firstname;
         $stud->middlename = $middlename;
-        $stud->username = $username;
         $stud->email = $email;
+        $stud->grade = $grade;
+        if($request->hasfile('photo'))
+        {
+            $file = $request->file('photo');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('uploads/students/',$filename);
+            $stud->photo = $filename;
+        }
+        
         $stud->gender = $gender;
         $stud->religion = $religion;
-        $stud->dateofbirth = $dob;
+        $stud->dateofbirth = $dateofbirth;
         $stud->fathersname = $fathersname;
         $stud->mothersname = $mothersname;
         $stud->foccupation = $foccupation;
@@ -88,13 +99,13 @@ class StudentController extends Controller
             'lastname'=>'required',
             'firstname'=>'required',
             'middlename'=>'required',
-            'username'=>'required',
-            // 'photo'=>'required',
             'email'=>'required|email',
+            'grade'=>'required',
+            'photo'=>'required',
             'gender'=>'required',
             'religion'=>'required',
             'gender'=>'required',
-            'dob'=>'required',
+            'dateofbirth'=>'required',
             'fathersname'=>'required',
             'mothersname'=>'required',
             'foccupation'=>'required',
@@ -107,11 +118,26 @@ class StudentController extends Controller
         $lastname = $request->lastname;
         $firstname = $request->firstname;
         $middlename = $request->middlename;
-        $username = $request->username;
+        
+        if($request->hasfile('photo'))
+        {
+           $destination = 'uploads/students/';
+           if(File::exists($destination))
+           {
+            File::delete($destination);
+           }
+            $file = $request->file('photo');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('uploads/students/',$filename);
+            $photo = $filename;
+        }
+        
         $email = $request->email;
+        $grade= $request->grade;
         $gender = $request->gender;
         $religion = $request->religion;
-        $dob =$request->dob;
+        $dateofbirth =$request->dateofbirth;
         $fathersname = $request->fathersname;
         $mothersname = $request->mothersname;
         $foccupation = $request->foccupation;
@@ -124,12 +150,13 @@ class StudentController extends Controller
 
             'lastname'=>$lastname,
             'firstname'=>$firstname,
-            'middlename'=>$middlename,
-            'username'=>$username,
+            'middlename'=>$middlename,           
             'email'=>$email,
+            'grade'=>$grade,
+            'photo'=>$photo,
             'gender'=>$gender,
             'religion'=>$religion,
-            'dateofbirth'=>$dob,
+            'dateofbirth'=>$dateofbirth,
             'fathersname'=>$fathersname,
             'mothersname'=>$mothersname,
             'foccupation'=>$foccupation,
@@ -147,6 +174,6 @@ class StudentController extends Controller
 
     public function deleteStudent($id){
         Student::where('id', '=', $id)->delete();
-        return redirect()->to('/student-all-list')->with('toast_warning','Student deleted Succesfuly');
+        return redirect()->to('/student-all-list')->with('success','Student deleted Succesfuly');
     }
 }

@@ -27,28 +27,29 @@
 </head>
 <body> --}}
 
-    @if(Session::has('success'))
+    {{-- @if(Session::has('success'))
       
               <div id="alert-3" class="flex p-4 mb-4 bg-green-100 rounded-lg dark:bg-green-200" role="alert">
                 <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-green-700 dark:text-green-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
                 <span class="sr-only">Info</span>
                     {{Session::get('success')}} 
-                {{-- </div> --}}
+               
               </div>
-        @endif
+        @endif --}}
     
     <div class="overflow-hidden overflow-x-auto border border-gray-100 rounded">
         <table class="min-w-full text-sm divide-y  divide-gray-200">
           <thead>
             <tr class="bg-gray-50 uppercase dark:bg-gray-600 dark:text-white">
               
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">photo</th>
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Id</th>
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Last Name</th>
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">First Name</th>
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Middle Name</th>
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Gender</th>
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Email</th>
-              {{-- <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Username</th> --}}
+              <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Grade</th>
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Religion</th>
               <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Date of Birth</th>
               {{-- <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Fathers Name</th>
@@ -73,6 +74,11 @@
             
                 <tr class="capitalize">
                    
+                  <td class="px-4 py-2 font-medium text-gray-900 dark:text-gray-400 whitespace-nowrap">
+                    {{-- <div class="border-solid border-2 flex items-center justify-center rounded-md" > --}}
+                        <img src="{{asset('uploads/students/'.$stud->photo)}}" width="40" height="40" alt="image" class="rounded-md">
+                    {{-- </div> --}}
+                </td>
                   <td class="px-4 py-2 font-medium text-gray-900 dark:text-gray-400 whitespace-nowrap"> {{$stud->id}}</td>
                   <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap"> {{$stud->lastname}}</td>
                   <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap"> {{$stud->firstname}}</td>
@@ -80,7 +86,7 @@
 
                   <td class="px-4 py-2 font-medium text-gray-900 dark:text-gray-400 whitespace-nowrap">{{$stud->gender}}</td>
                   <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap lowercase">  {{$stud->email}}</td>
-                  {{-- <td class="px-4 py-2 text-gray-700 whitespace-nowrap"> {{$stud->username}}</td> --}}
+                  <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap"> {{$stud->grade}}</td>
                   <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap">{{$stud->religion}}</td>
 
                   <td class="px-4 py-2 font-medium text-gray-900 dark:text-gray-400 whitespace-nowrap">{{$stud->dateofbirth}}</td>
@@ -101,23 +107,29 @@
                       </svg>
                       </a>
                    
-                    <a  href="{{url('delete-student/'.$stud->id)}}" > <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#F05252" class="w-6 h-6 " >
+                    <a href="{{url('delete-student/'.$stud->id)}}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#F05252" class="w-6 h-6" >
                         <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
                       </svg>
                       
                       </a>
+
                 </td>
                 </tr>
 
                 
                 
             @endforeach
-            {{-- @include('sweetalert::alert') --}}
+            @include('sweetalert::alert')
+          
+           
         </tbody>
     </table>
+    
 </div>
 
-{{-- </body>
+
+{{-- 
+</body>
 </html> --}}
 
 
@@ -147,4 +159,7 @@ tr th:nth-child(1) {
 </style>
     </div>
 </x-app-layout>
+
+
+
 

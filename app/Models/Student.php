@@ -14,18 +14,26 @@ class Student extends Model
 {
     use HasFactory;
 
-    // public function setDateOfBirthAttribute($value)
-    // {
-    //     $this->attributes['dateofbirth'] = Carbon::createFromFormat('m/d/Y', $value)->format('Y-m-d');
-    // }
+    protected $table ='students';
+    protected $fillable = [
 
+        'lastname',
+        'firstname',
+        'middlename',
+        'email',
+        'grade',
+        'photo',
+        'gender',
+        'religion',
+        'dateofbirth',
+        'fathersname',
+        'mothersname',
+        'foccupation',
+        'moccupation',
+        'phone',
+        'nationality',
+        'address'
 
-//     public function getDateOfBirthAttribute($value)
-// {
-//     return Carbon::parse($value)->format('m/d/Y');
-// }
-
-
-// protected $dateFormat = 'U';
+    ];
 
 }
