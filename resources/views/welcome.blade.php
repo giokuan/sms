@@ -70,7 +70,7 @@
                 {{-- section header --}}
                 <p class="py-2 font-semibold">Lorem ipsum dolor sit amet.</p>
                 {{-- paragraph --}}
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga expedita deserunt corrupti repellendus dicta harum!</p>
+                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga expedita deserunt corrupti repellendus dicta harum!</p>
             </div>
             <div class="w-full">
                 {{-- img --}}
@@ -78,7 +78,7 @@
                 {{-- section header --}}
                 <p class="py-2 font-semibold">Lorem ipsum dolor sit amet.</p>
                 {{-- paragraph --}}
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga expedita deserunt corrupti repellendus dicta harum!</p>
+                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga expedita deserunt corrupti repellendus dicta harum!</p>
             </div>
             <div class="w-full">
                 {{-- img --}}
@@ -86,7 +86,7 @@
                 {{-- section header --}}
                 <p class="py-2 font-semibold">Lorem ipsum dolor sit amet.</p>
                 {{-- paragraph --}}
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga expedita deserunt corrupti repellendus dicta harum!</p>
+                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga expedita deserunt corrupti repellendus dicta harum!</p>
             </div>
             <div class="w-full">
                 {{-- img --}}
@@ -94,7 +94,7 @@
                 {{-- section header --}}
                 <p class="py-2 font-semibold">Lorem ipsum dolor sit amet.</p>
                 {{-- paragraph --}}
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga expedita deserunt corrupti repellendus dicta harum!</p>
+                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga expedita deserunt corrupti repellendus dicta harum!</p>
             </div>
         </section>
 
@@ -168,7 +168,7 @@
 
             {{-- Short description about it and about button --}}
             <div class="flex flex-col justify-center gap-2">
-                <p class="my-2 lg:my-10 xl:mb-7 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque impedit officiis perferendis temporibus doloremque, magni officia praesentium iure amet reprehenderit.</p>
+                <p class="my-2 lg:my-10 xl:mb-7 text-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque impedit officiis perferendis temporibus doloremque, magni officia praesentium iure amet reprehenderit.</p>
                 <div>
                     <button class="bg-[#012560] rounded-md text-sky-50 text-sm font-light border-solid px-1.5 md:px-2.3 lg:px-3 py-1 md:py-1.25 lg:py-1.5 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200">
                         Learn more.
