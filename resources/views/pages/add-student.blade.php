@@ -336,6 +336,10 @@
                     {{Session::get('success')}} 
               </div>
         @endif --}}
+
+        <form method="post" action="{{url('save-student')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
+                   
+            @csrf
         <div class="w-full relative mt-4 shadow-2xl rounded my-24 overflow-hidden">
             <div class="top h-60 w-full bg-blue-600 overflow-hidden relative" >
               <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="" class="bg w-full h-full object-cover object-center absolute z-0">
@@ -356,7 +360,25 @@
           
                 <a href="#"  class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Something</a>
         
+                    <label class=" flex  uppercase tracking-wide text-gray-700 text-xs h-1" for="photo">
+                        Add Photo
+                    </label>
                
+                    <div class="border border-2 rounded-md bg-indigo-900">
+                        <label>
+                            <input type="file" class=" w-full text-sm text-grey-500 p-2 text-indigo-900
+                            file:mr-5 pl-6 file:py-1 file:px-14
+                            file:rounded-full file:border-0
+                            file:text-sm file:font-medium
+                            file:bg-indigo-900 file:text-slate-50
+                            hover:file:cursor-pointer hover:file:bg-indigo-900
+                            hover:file:text-amber-700
+                        " id="photo" name="photo" />
+                        </label>
+                        </div>
+    
+                <button type="submit" class="bg-indigo-900 text-slate-50 border-gray-200 rounded py-2 px-10 shadow-lg">Save</button>
+              
                    
                
           
@@ -365,9 +387,9 @@
               <div class="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10">
                 <div class="px-4 pt-4">
 
-                  <form method="post" action="{{url('save-student')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
+                  {{-- <form method="post" action="{{url('save-student')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
                    
-                    @csrf
+                    @csrf --}}
           
                     <div>
                       <h3 class="text-2xl font-semibold">Basic Information</h3>
@@ -376,8 +398,8 @@
           
                     <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
                         <div class="form-item w-full">
-                            <label class="text-lg ">Last Name</label>
-                            <input type="text" value="{{old('lastname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="lastname" name="lastname">
+                            <label class="text-md ">Last Name</label>
+                            <input type="text" value="{{old('lastname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200" id="lastname" name="lastname">
                             @error('lastname')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -391,7 +413,7 @@
                         </div>
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">First Name</label>
+                            <label class="text-md ">First Name</label>
                             <input type="text" value="{{old('firstname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="firstname" name="firstname" >
                             @error('firstname')
                    
@@ -406,7 +428,7 @@
                         </div>
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Middle Name</label>
+                            <label class="text-md ">Middle Name</label>
                             <input type="text" value="{{old('middlename')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="middlename" name="middlename" >
                             @error('middlename')
                    
@@ -425,8 +447,8 @@
                     <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">  
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Email</label>
-                            <input type="text" value="{{old('email')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="email" name="email">
+                            <label class="text-md ">Email</label>
+                            <input type="text" value="{{old('email')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200" id="email" name="email">
                             @error('email')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -440,7 +462,7 @@
                         </div>                 
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Grade</label>
+                            <label class="text-md ">Grade</label>
                             <select class="w-full appearance-none text-black text-opacity-70 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " id="grade" name="grade" >
                                 <option value="">Select Grade</option>
                                 <option value="Grade 7" @if (old('grade') == "Grade 7") {{ 'selected' }} @endif>Grade 7</option>
@@ -464,7 +486,7 @@
                         </div>
           
                         <div class="form-item w-full">
-                            <label class="text-lg ">Date of Birth</label>
+                            <label class="text-md ">Date of Birth</label>
                             <input type="date" value="{{old('dateofbirth')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " id="dateofbirth" name="dateofbirth">
                             @error('dob')
                    
@@ -484,8 +506,8 @@
                     <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Phone</label>
-                            <input type="text" value="{{old('phone')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="phone" name="phone">
+                            <label class="text-md ">Phone</label>
+                            <input type="text" value="{{old('phone')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200" id="phone" name="phone">
                             @error('phone')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -499,7 +521,7 @@
                         </div>
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Gender</label>
+                            <label class="text-md ">Gender</label>
                             <select class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " id="gender" name="gender" >
                                 <option value="">Select Gender</option>
                                 <option value="Male" @if (old('gender') == "Male") {{ 'selected' }} @endif>Male</option>
@@ -519,7 +541,7 @@
                         </div>
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Religion</label>
+                            <label class="text-md ">Religion</label>
                             <input type="text" value="{{old('religion')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="religion" name="religion">
                             @error('religion')
                    
@@ -534,7 +556,7 @@
                         </div>
           
                         <div class="form-item w-full">
-                            <label class="text-lg ">Nationality</label>
+                            <label class="text-md ">Nationality</label>
                             <input type="text" value="{{old('nationality')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="nationality" name="nationality">
                             @error('nationality')
                    
@@ -553,8 +575,8 @@
                     <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Fathers Name</label>
-                            <input type="text" value="{{old('fathersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 "  id="fathersname" name="fathersname" >
+                            <label class="text-md ">Fathers Name</label>
+                            <input type="text" value="{{old('fathersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 "  id="fathersname" name="fathersname" >
                             @error('fathersname')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -568,7 +590,7 @@
                         </div>
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Fathers Occupation</label>
+                            <label class="text-md ">Fathers Occupation</label>
                             <input type="text" value="{{old('foccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="foccupation" name="foccupation">
                             @error('foccupation')
                    
@@ -583,7 +605,7 @@
                         </div>
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Mothers Name</label>
+                            <label class="text-md ">Mothers Name</label>
                             <input type="text" value="{{old('mothersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="mothersname" name="mothersname">
                             @error('mothersname')
                    
@@ -598,7 +620,7 @@
                         </div>
         
                         <div class="form-item w-full">
-                            <label class="text-lg ">Mothers Occupation</label>
+                            <label class="text-md ">Mothers Occupation</label>
                             <input type="text" value="{{old('moccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " id="moccupation" name="moccupation">
                             @error('moccupation')
                    
@@ -615,7 +637,7 @@
                     </div>
         
                     <div class="form-item w-full">
-                        <label class="text-lg ">Address</label>
+                        <label class="text-md ">Address</label>
                         <textarea type="text"  class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="address" name="address">{{old('address')}}</textarea>
                         @error('address')
                    
@@ -630,26 +652,7 @@
                    
                     </div>
 
-                    <label class=" flex  uppercase tracking-wide text-gray-700 text-xs h-1" for="photo">
-                        Add Photo
-                    </label>
-                    {{-- <input class="form-control w-full px-0.75 py-0.75 text-lg text-gray-500 bg-gray-200 bg-clip-padding border rounded-md transition ease-in-out m-0 mb-2  focus:text-gray-700 focus:bg-white  focus:outline-none shadow-lg" id="photo" name="photo" type="file"> --}}
-                  <!-- the first file input -->
-            <div class="border-2 rounded-md pt-2 pb-1 bg-indigo-900">
-                <label>
-                    <input type="file" class="text-sm text-slate-50  pl-2 pb-1
-                    file:mr-4 file:py-2 file:px-4
-                    file:rounded-full file:border-0
-                    file:text-sm file:font-medium
-                    file:bg-blue-50 file:text-blue-700
-                    hover:file:cursor-pointer hover:file:bg-amber-50
-                    hover:file:text-amber-700 
-                  "  id="photo"  name="photo"/>
-                </label>
-            </div>
-        
-                    <button type="submit" class="bg-indigo-900 text-slate-50 border-gray-200 rounded py-2 px-10 shadow-lg">Save</button>
-                  
+                   
 
                 </div>
                 {{-- @include('sweetalert::alert') --}}
