@@ -133,6 +133,7 @@ class StudentController extends Controller
             $photo = $filename;
         }
         
+        $photo = $request->photo;
         $email = $request->email;
         $grade= $request->grade;
         $gender = $request->gender;
@@ -167,6 +168,7 @@ class StudentController extends Controller
           
 
         ]);
+        
         return redirect()->to('/student-all-list')->with('success','Student Updated Succesfuly');
        
         
