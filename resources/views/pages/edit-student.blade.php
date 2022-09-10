@@ -355,11 +355,11 @@
           
               <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
           
-                <a href="#" class="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">Basic Information</a>
+                {{-- <a href="#" class="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">Basic Information</a>
           
                 <a href="#" class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Information</a>
           
-                <a href="#"  class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Something</a>
+                <a href="#"  class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Something</a> --}}
         
                     <label class=" flex  uppercase tracking-wide text-gray-700 text-xs h-1" for="photo">
                         Add Photo
@@ -367,9 +367,8 @@
                
                     <div class="border-2 rounded-md bg-indigo-900">
                         <label>
-                            <input type="file" class=" w-full text-sm text-grey-500 p-2 text-indigo-900
-                            file:mr-5 pl-6 file:py-1 file:px-14
-                            file:rounded-full file:border-0
+                            <input type="file" class=" w-full h-full text-xs text-grey-500 p-2 text-slate-100
+                            file:rounded-md file:border-0
                             file:text-sm file:font-medium
                             file:bg-indigo-900 file:text-slate-50
                             hover:file:cursor-pointer hover:file:bg-indigo-900

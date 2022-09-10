@@ -102,7 +102,7 @@ class StudentController extends Controller
             'middlename'=>'required',
             'email'=>'required|email',
             'grade'=>'required',
-            'photo'=>'required',
+            // 'photo'=>'required',
             'gender'=>'required',
             'religion'=>'required',
             'gender'=>'required',
@@ -169,92 +169,13 @@ class StudentController extends Controller
         $data->address = $request->address;
         $data->save();
 
-        // $id = $request->id;
-        // $lastname = $request->lastname;
-        // $firstname = $request->firstname;
-        // $middlename = $request->middlename;
-        
-        // if($request->hasfile('photo'))
-        // {
-        //    $destination = 'uploads/students/';
-        //    if(File::exists($destination))
-        //    {
-        //     File::delete($destination);
-        //    }
-        //     $file = $request->file('photo');
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = time().'.'.$extension;
-        //     $file->move('uploads/students/',$filename);
-        //     // $photo = $filename;
-        // }
-        
-        // $photo = $request->photo;
-        // $email = $request->email;
-        // $grade= $request->grade;
-        // $gender = $request->gender;
-        // $religion = $request->religion;
-        // $dateofbirth =$request->dateofbirth;
-        // $fathersname = $request->fathersname;
-        // $mothersname = $request->mothersname;
-        // $foccupation = $request->foccupation;
-        // $moccupation = $request->moccupation;
-        // $phone = $request->phone;
-        // $nationality = $request->nationality;
-        // $address = $request->address;
-       
-
-        // Student::where('id', '=', $id)->save([
-
-        //     'lastname'=>$lastname,
-        //     'firstname'=>$firstname,
-        //     'middlename'=>$middlename,           
-        //     'email'=>$email,
-        //     'grade'=>$grade,
-        //     'photo'=>$photo,
-           
-        //     'gender'=>$gender,
-        //     'religion'=>$religion,
-        //     'dateofbirth'=>$dateofbirth,
-        //     'fathersname'=>$fathersname,
-        //     'mothersname'=>$mothersname,
-        //     'foccupation'=>$foccupation,
-        //     'moccupation'=>$moccupation,
-        //     'phone'=>$phone,
-        //     'nationality'=>$nationality,
-        //     'address'=>$address
-          
-
-        // ]);
-        
-        return redirect()->to('/student-all-list')->with('success','Student Updated Succesfuly');
+      
+        return redirect()->back()->with('success','Student Updated Succesfuly');
        
         
     }
 
 
-//     public function updateStudent(Request $request, $id){
-
-//         $students = Student::find($id);
-   
-//         if($request->file != ''){        
-//              $path = public_path().'/uploads/students/';
-   
-//              //code for remove old file
-//              if($students->file != ''  && $students->file != null){
-//                   $file_old = $path.$students->file;
-//                   unlink($file_old);
-//              }
-   
-//              //upload new file
-//              $file = $request->file;
-//              $filename = $file->getClientOriginalName();
-//              $file->move($path, $filename);
-   
-//              //for update in table
-//              $students->update(['file' => $filename]);
-//         }
-//         return redirect()->to('/student-all-list')->with('success','Student Updated Succesfuly');
-//    }
 
     public function deleteStudent($id){
         Student::where('id', '=', $id)->delete();
