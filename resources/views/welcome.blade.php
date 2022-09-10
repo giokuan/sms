@@ -2,13 +2,13 @@
 @section('LandingContent')
         {{-- Content --}}
         <div 
-            class="h-screen w-full bg-no-repeat bg-cover bg-center object-contain" 
+            class="h-screen w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center " 
             style="background-image: url({{ url('images/hallway.jpg') }})">
 
             {{-- content goes here --}}
             <div class="flex flex-col justify-center items-center w-10/12 md:w-6/12 h-5/6 mx-auto">
 
-                <img src="/images/main-logo.png" alt="main logo" class="max-w-xs">
+                <img src="/images/main-logo.png" alt="main logo" class="max-w-xs my-4">
 
                 <h1 class="text-center text-2xl md:text-4xl font-light text-sky-50 bg-[#004AAD] bg-opacity-80 px-6 py-2 mb-5 rounded-md font-medium">
                     Philippine Integrated High School provides quality education
@@ -44,15 +44,15 @@
                                                     </svg>                                                          
                                             </button>
                                         </div>
-                                        <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
+                                        <a href="{{ url('student-login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-1 px-2 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
                                             Student
                                         </a>
-                                        <button class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
+                                        <a href="{{ url('guardian-login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-1 px-2 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
                                             Parent/Guardian
-                                        </button>
-                                        <button class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
+                                        </a>
+                                        <a href="{{ url('teacher-login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-1 px-2 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
                                             Teacher
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

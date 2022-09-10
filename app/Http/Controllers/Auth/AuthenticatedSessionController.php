@@ -20,6 +20,21 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
+    public function studentcreate()
+    {
+        return view('auth.student-login');
+    }
+
+    public function teachercreate()
+    {
+        return view('auth.teacher-login');
+    }
+
+    public function guardiancreate()
+    {
+        return view('auth.guardian-login');
+    }
+
     /**
      * Handle an incoming authentication request.
      *
