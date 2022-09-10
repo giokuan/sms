@@ -13,6 +13,7 @@ class StudentController extends Controller
     public function studentAllList(){
         $data = Student::get();
         // return $data;
+        // $data = array("students", Student::table('students')->orderBy('created_at', 'desc'));
         return view('pages.student-all-list', compact('data'));
     }
 
@@ -114,65 +115,146 @@ class StudentController extends Controller
             'nationality'=>'required',
             'address'=>'required',
         ]);
-        $id = $request->id;
-        $lastname = $request->lastname;
-        $firstname = $request->firstname;
-        $middlename = $request->middlename;
+
+        $data = Student::find($request->id);
+        $data->lastname = $request->lastname;
+        $data->firstname = $request->firstname;
+        $data->middlename = $request->middlename;
+        $data->email = $request->email;
+        $data->grade = $request->grade;
+
+
+        // if($request->hasfile('photo'))
+        // {
+        //    $destination = 'uploads/students/';
+        //    if(File::exists($destination))
+        //    {
+        //     File::delete($destination);
+        //    }
+        //     $file = $request->file('photo');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$extension;
+        //     $file->move('uploads/students/',$filename);
+        //     $data->photo = $filename;
+        // }
+
         
+
+
         if($request->hasfile('photo'))
         {
-           $destination = 'uploads/students/';
-           if(File::exists($destination))
-           {
-            File::delete($destination);
-           }
+            $destination = 'uploads/students/';
+            if(File::exists($destination))
+            {
+             File::delete($destination);
+            }
+
             $file = $request->file('photo');
             $extension = $file->getClientOriginalExtension();
             $filename = time().'.'.$extension;
             $file->move('uploads/students/',$filename);
-            $photo = $filename;
+            $data->photo = $filename;
         }
+
+
+        // $data->photo = $request->photo;
+        $data->gender = $request->gender;
+        $data->dateofbirth = $request->dateofbirth;
+        $data->fathersname = $request->fathersname;
+        $data->mothersname = $request->mothersname;
+        $data->foccupation = $request->foccupation;
+        $data->moccupation = $request->moccupation;
+        $data->phone = $request->phone;
+        $data->nationality = $request->nationality;
+        $data->address = $request->address;
+        $data->save();
+
+        // $id = $request->id;
+        // $lastname = $request->lastname;
+        // $firstname = $request->firstname;
+        // $middlename = $request->middlename;
         
-        $photo = $request->photo;
-        $email = $request->email;
-        $grade= $request->grade;
-        $gender = $request->gender;
-        $religion = $request->religion;
-        $dateofbirth =$request->dateofbirth;
-        $fathersname = $request->fathersname;
-        $mothersname = $request->mothersname;
-        $foccupation = $request->foccupation;
-        $moccupation = $request->moccupation;
-        $phone = $request->phone;
-        $nationality = $request->nationality;
-        $address = $request->address;
+        // if($request->hasfile('photo'))
+        // {
+        //    $destination = 'uploads/students/';
+        //    if(File::exists($destination))
+        //    {
+        //     File::delete($destination);
+        //    }
+        //     $file = $request->file('photo');
+        //     $extension = $file->getClientOriginalExtension();
+        //     $filename = time().'.'.$extension;
+        //     $file->move('uploads/students/',$filename);
+        //     // $photo = $filename;
+        // }
+        
+        // $photo = $request->photo;
+        // $email = $request->email;
+        // $grade= $request->grade;
+        // $gender = $request->gender;
+        // $religion = $request->religion;
+        // $dateofbirth =$request->dateofbirth;
+        // $fathersname = $request->fathersname;
+        // $mothersname = $request->mothersname;
+        // $foccupation = $request->foccupation;
+        // $moccupation = $request->moccupation;
+        // $phone = $request->phone;
+        // $nationality = $request->nationality;
+        // $address = $request->address;
+       
 
-        Student::where('id', '=', $id)->update([
+        // Student::where('id', '=', $id)->save([
 
-            'lastname'=>$lastname,
-            'firstname'=>$firstname,
-            'middlename'=>$middlename,           
-            'email'=>$email,
-            'grade'=>$grade,
-            'photo'=>$photo,
-            'gender'=>$gender,
-            'religion'=>$religion,
-            'dateofbirth'=>$dateofbirth,
-            'fathersname'=>$fathersname,
-            'mothersname'=>$mothersname,
-            'foccupation'=>$foccupation,
-            'moccupation'=>$moccupation,
-            'phone'=>$phone,
-            'nationality'=>$nationality,
-            'address'=>$address
+        //     'lastname'=>$lastname,
+        //     'firstname'=>$firstname,
+        //     'middlename'=>$middlename,           
+        //     'email'=>$email,
+        //     'grade'=>$grade,
+        //     'photo'=>$photo,
+           
+        //     'gender'=>$gender,
+        //     'religion'=>$religion,
+        //     'dateofbirth'=>$dateofbirth,
+        //     'fathersname'=>$fathersname,
+        //     'mothersname'=>$mothersname,
+        //     'foccupation'=>$foccupation,
+        //     'moccupation'=>$moccupation,
+        //     'phone'=>$phone,
+        //     'nationality'=>$nationality,
+        //     'address'=>$address
           
 
-        ]);
+        // ]);
         
         return redirect()->to('/student-all-list')->with('success','Student Updated Succesfuly');
        
         
     }
+
+
+//     public function updateStudent(Request $request, $id){
+
+//         $students = Student::find($id);
+   
+//         if($request->file != ''){        
+//              $path = public_path().'/uploads/students/';
+   
+//              //code for remove old file
+//              if($students->file != ''  && $students->file != null){
+//                   $file_old = $path.$students->file;
+//                   unlink($file_old);
+//              }
+   
+//              //upload new file
+//              $file = $request->file;
+//              $filename = $file->getClientOriginalName();
+//              $file->move($path, $filename);
+   
+//              //for update in table
+//              $students->update(['file' => $filename]);
+//         }
+//         return redirect()->to('/student-all-list')->with('success','Student Updated Succesfuly');
+//    }
 
     public function deleteStudent($id){
         Student::where('id', '=', $id)->delete();

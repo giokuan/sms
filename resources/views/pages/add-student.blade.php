@@ -364,7 +364,7 @@
                         Add Photo
                     </label>
                
-                    <div class="border border-2 rounded-md bg-indigo-900">
+                    <div class="border-2 rounded-md bg-indigo-900">
                         <label>
                             <input type="file" class=" w-full text-sm text-grey-500 p-2 text-indigo-900
                             file:mr-5 pl-6 file:py-1 file:px-14
