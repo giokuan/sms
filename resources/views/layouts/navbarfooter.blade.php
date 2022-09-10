@@ -32,8 +32,8 @@
             <div class="md:flex md:justify-between items-center">
                 {{-- logo --}}
                 <div class="flex items-center">
-                    <a href="#">
-                        <img src="/images/main-logo.png" alt="main logo" class="w-12 h-12">
+                    <a href="/">
+                        <img src="/images/main-logo.png" alt="main logo" class="w-12 h-12 mr-1 sm:mr-2 lg:mr-3">
                     </a>
                     
                     {{-- primary --}}
@@ -51,21 +51,28 @@
                 </div>
 
                 {{-- secondary nav --}}
-                <div :class="isOpen ? 'show' : 'hidden' " class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3">
+                <div :class="isOpen ? 'show' : 'hidden' " class="md:flex items-center text-center font-light text-sky-50 ml-1 pb-1 pt-3">
                     <div class="flex flex-col md:flex-row gap-3 md:gap-x-7">
-                        <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
-                        <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
-                        {{-- login logout --}}
-                        @if (Route::has('login'))
+                        @if (Route::is('student-login'))
+                            <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
+                            <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
+                            {{-- login logout --}}
+                        @elseif (Route::is('teacher-login'))
+                            <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
+                            <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
+                            {{-- login logout --}}
+                        @elseif (Route::has('student-login'))
                                 @auth
                                     <a href="{{ url('/dashboard') }}" class="md:text-lg font-light text-sky-50 dark:text-gray-500 hover:underline hover:text-sky-200">Dashboard</a>
                                 @else
+                                <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
+                                <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
                                     {{-- <a href="{{ route('login') }}" class="md:text-lg font-light text-sky-50 dark:text-gray-500 hover:underline hover:text-sky-200">Log in</a> --}}
 
                                     <div x-data="{ open: false }">
                                         <button class="md:text-lg font-light text-sky-50 dark:text-gray-500 hover:underline hover:text-sky-200"
                                         x-on:click="() => { setTimeout(() => { open = true }, 200); }">Log in</button>
-
+                                        
                                         <!-- Modal -->
                                         <div 
                                         x-show.transition.duration.100ms="open"
@@ -81,15 +88,15 @@
                                                           </svg>                                                          
                                                     </button>
                                                 </div>
-                                                <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-1 px-2 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
+                                                <a href="{{ url('student-login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-1 px-2 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
                                                     Student
                                                 </a>
-                                                <button class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-1 px-2 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
+                                                <a href="{{ url('guardian-login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-1 px-2 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
                                                     Parent/Guardian
-                                                </button>
-                                                <button class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-1 px-2 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
+                                                </a>
+                                                <a href="{{ url('teacher-login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-1 px-2 mx-10 hover:scale-110 hover:bg-opacity-75 duration-300">
                                                     Teacher
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -110,13 +117,17 @@
         @yield('LandingContent')
 
         {{-- content goes here --}}
-        @yield('LoginContent')
+        @yield('StudentLogin')
+        {{-- content goes here --}}
+        @yield('GuardianLogin')
+        {{-- content goes here --}}
+        @yield('TeacherLogin')
 
     {{-- footer goes here --}}
     <footer class="bg-[#001F52] py-3">
         <div class="flex flex-col md:flex-row justify-around items-center px-5 md:px-12.5 lg:px-20">
             {{-- logo --}}
-            <a href="#">
+            <a href="#" class="m-1 sm:m-2 lg:m-3">
                 <img src="/images/main-logo.png" alt="main logo">
             </a>
 
