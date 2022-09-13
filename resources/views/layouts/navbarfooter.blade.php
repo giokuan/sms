@@ -89,13 +89,13 @@
                                                           </svg>                                                          
                                                     </button>
                                                 </div>
-                                                <a href="{{ url('student-login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
+                                                <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
                                                     Student
                                                 </a>
-                                                <a href="{{ url('guardian-login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
+                                                <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
                                                     Parent/Guardian
                                                 </a>
-                                                <a href="{{ url('teacher-login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
+                                                <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
                                                     Teacher
                                                 </a>
                                             </div>
@@ -122,11 +122,7 @@
         @yield('LandingContent')
 
         {{-- content goes here --}}
-        @yield('StudentLogin')
-        {{-- content goes here --}}
-        @yield('GuardianLogin')
-        {{-- content goes here --}}
-        @yield('TeacherLogin')
+        @yield('login')
 
     {{-- footer goes here --}}
     <footer class="bg-[#001F52] dark:bg-[#151823] border-t-2 dark:border-gray-500 py-3">
