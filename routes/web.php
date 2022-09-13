@@ -25,6 +25,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// student-dashboard
+Route::get('/student-dashboard', function () {
+    return view('student-dashboard');
+})->middleware(['auth', 'verified'])->name('student-dashboard');
+
+Route::get('student/home', function() {
+    return view('student-pages.home');
+})->middleware(['auth', 'verified'])->name('student-home');
+
 // useless routes
 // Just to demo sidebar dropdown links active states.
 Route::get('/buttons/text', function () {

@@ -175,8 +175,6 @@ class StudentController extends Controller
         
     }
 
-
-
     public function deleteStudent($id){
         Student::where('id', '=', $id)->delete();
         return redirect()->to('/student-all-list')->with('success','Student deleted Succesfuly');

@@ -19,7 +19,7 @@
             :active="request()->routeIs('buttons.text-icon')" />
     </x-sidebar.dropdown>
 
-    <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-gray-500">Dummy Links</div>
+    <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-[#FFFFFF]">Dummy Links</div>
 
     {{-- @php
         $links = array_fill(0, 20, '');
