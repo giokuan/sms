@@ -7,15 +7,15 @@
                 @if(Route::is('dashboard'))
                     {{ __('Dashboard') }}
                 @elseif (Route::is('student-home'))
-                {{ __('Student Dashboard') }}
+                    {{ __('Student Dashboard') }}
                 @elseif (Route::is('student-profile'))
-                {{ __('Student Profile') }}
+                    {{ __('Student Profile') }}
                 @elseif (Route::is('student-grades'))
-                {{ __('Student Grades') }}
+                    {{ __('Student Grades') }}
                 @elseif (Route::is('student-schedule'))
-                {{ __('Student Schedule') }}
+                    {{ __('Student Schedule') }}
                 @elseif (Route::is('student-classmates'))
-                {{ __('Student classmates') }}
+                    {{ __('Student classmates') }}
                 @endif
             </h2>
             {{-- <x-button target="_blank" href="https://github.com/kamona-wd/kui-laravel-breeze" variant="black"
