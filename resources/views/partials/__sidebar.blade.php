@@ -12,7 +12,8 @@
         </div>
     </x-slot>
 
-    <div class="p-5 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1 ">
+    <div class="shadow-md">
+    {{-- <div class="p-5 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1 "> --}}
         
         @yield('content')
 
