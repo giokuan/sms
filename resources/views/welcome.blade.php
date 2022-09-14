@@ -18,7 +18,7 @@
                             @auth
                                 <a href="{{ url('/dashboard') }}">
                                     <button 
-                                    class="bg-[#012560] rounded-md text-sky-50 text-xl font-light border-solid px-3 md:px-4 lg:px-6  py-1 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200">
+                                    class="bg-[#012560] dark:bg-[#151823] rounded-md text-sky-50 text-xl font-light border-solid px-3 md:px-4 lg:px-6  py-1 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200">
                                         Go to Dashboard
                                     </button>
                                 </a>
