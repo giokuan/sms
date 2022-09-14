@@ -4,7 +4,7 @@
 <div class="flex flex-col items-center gap-2 bg-white dark:bg-dark-eval-1 py-4 rounded-lg">
     <img src="/images/StudentProfile.jpg" alt="studentprofile" class="w-24 h-fit rounded-full">
 
-    <p class="font-light">Keep moving forward</p>
+    <p class="font-light text-sm">Keep moving forward</p>
     <h3 class="font-medium text-lg">Student Full Name</h3>
     <p class="font-light">Student Number</p>
 

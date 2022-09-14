@@ -10,6 +10,8 @@
                 {{ __('Student Dashboard') }}
                 @elseif (Route::is('student-profile'))
                 {{ __('Student Profile') }}
+                @elseif (Route::is('student-grades'))
+                {{ __('Student Grades') }}
                 @endif
             </h2>
             {{-- <x-button target="_blank" href="https://github.com/kamona-wd/kui-laravel-breeze" variant="black"

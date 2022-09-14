@@ -38,6 +38,10 @@ Route::get('student/profile', function() {
     return view('student-pages.profile');
 })->middleware(['auth', 'verified'])->name('student-profile');
 
+Route::get('student/grades', function() {
+    return view('student-pages.grades');
+})->middleware(['auth', 'verified'])->name('student-grades');
+
 // useless routes
 // Just to demo sidebar dropdown links active states.
 Route::get('/buttons/text', function () {
