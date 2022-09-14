@@ -58,6 +58,7 @@
                             <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
                             <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
                             {{-- login logout --}}
+
                         @elseif (Route::has('login'))
                                 @auth
                                     <a href="{{ url('/dashboard') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">Dashboard</a>
