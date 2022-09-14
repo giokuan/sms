@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
-
+use App\Http\Controllers\TeachersController;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -76,4 +76,11 @@ Route::get('edit-student/{id}',[StudentController::class,'editStudent']);
 Route::post('update-student',[StudentController::class,'updateStudent']);
 Route::get('delete-student/{id}',[StudentController::class,'deleteStudent']);
 
+
+Route::get('teacher-all-list',[TeachersController::class,'teacherAllList']);
+Route::get('add-teacher',[TeachersController::class,'addTeacher']);
+Route::post('save-teacher',[TeachersController::class,'saveTeacher']);
+Route::get('edit-teacher/{id}',[TeachersController::class,'editTeacher']);
+Route::post('update-teacher',[TeachersController::class,'updateTeacher']);
+Route::get('delete-teacher/{id}',[TeachersController::class,'deleteTeacher']);
 

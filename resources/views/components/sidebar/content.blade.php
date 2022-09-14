@@ -53,10 +53,10 @@
     @endphp --}}
 
     {{-- @foreach ($links as $index => $link) --}}
-        <x-sidebar.link title="All Sudents" href="/student-all-list" />
-        <x-sidebar.link title="All Teachers" href="#" />
+        <x-sidebar.link title="All Students" href="/student-all-list" />
+        <x-sidebar.link title="All Teachers" href="/teacher-all-list" />
         <x-sidebar.link title="Add Student" href="/add-student" />
-        <x-sidebar.link title="Add Teacher" href="#" />
+        <x-sidebar.link title="Add Teacher" href="/add-teacher" />
     {{-- @endforeach --}}
        
 </x-perfect-scrollbar>

@@ -9,7 +9,7 @@
 
                     <img src="/images/main-logo.png" alt="main logo" class="max-w-xs my-4">
 
-                    <h1 class="text-center text-2xl md:text-4xl font-light text-sky-50 bg-[#004AAD] dark:bg-[#222738] bg-opacity-80 px-6 py-2 mb-5 rounded-md font-medium">
+                    <h1 class="text-center text-2xl md:text-4xl  text-sky-50 bg-[#004AAD] dark:bg-[#222738] bg-opacity-80 px-6 py-2 mb-5 rounded-md font-medium">
                         Philippine Integrated High School provides quality education
                     </h1>
 
