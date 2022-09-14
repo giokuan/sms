@@ -2,7 +2,21 @@
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <h2 class="text-xl font-semibold leading-tight">
-                {{ __('Dashboard') }}
+                
+                {{-- This are the logic for what header will show depends on route --}}
+                @if(Route::is('dashboard'))
+                    {{ __('Dashboard') }}
+                @elseif (Route::is('student-home'))
+                {{ __('Student Dashboard') }}
+                @elseif (Route::is('student-profile'))
+                {{ __('Student Profile') }}
+                @elseif (Route::is('student-grades'))
+                {{ __('Student Grades') }}
+                @elseif (Route::is('student-schedule'))
+                {{ __('Student Schedule') }}
+                @elseif (Route::is('student-classmates'))
+                {{ __('Student classmates') }}
+                @endif
             </h2>
             {{-- <x-button target="_blank" href="https://github.com/kamona-wd/kui-laravel-breeze" variant="black"
                 class="justify-center max-w-xs gap-2">
@@ -12,7 +26,8 @@
         </div>
     </x-slot>
 
-    <div class="p-10 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1 ">
+    <div class="shadow-md">
+    {{-- <div class="p-5 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1 "> --}}
         
         @yield('content')
 

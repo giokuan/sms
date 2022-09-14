@@ -54,15 +54,11 @@
                 <div :class="isOpen ? 'show' : 'hidden' " class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3">
                     <div class="flex flex-col md:flex-row gap-3 md:gap-x-7">
 
-                        @if (Route::is('student-login'))
+                        @if (Route::is('login'))
                             <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
                             <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
                             {{-- login logout --}}
-                        @elseif (Route::is('teacher-login'))
-                            <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
-                            <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
-                            {{-- login logout --}}
-                        @elseif (Route::has('student-login'))
+                        @elseif (Route::has('login'))
                                 @auth
                                     <a href="{{ url('/dashboard') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">Dashboard</a>
                                 @else
