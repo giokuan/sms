@@ -10,15 +10,15 @@
     <img src="{{asset('/images/main-logo.png')}}" alt="logo" width="250px" class="mt-12">
 
 {{-- if the route of the student is student-home --}}
-@elseif (Route::is('student-home'))
+@elseif (Route::is('student-home') || Route::is('student-profile'))
     <div class="flex flex-col">
-        <p class="text-xl font-medium leading-tight py-2">Student</p>
+        <p class="text-xl font-medium leading-tight py-1 my-2 text-center text-[#FFFFFF] border-b-2 border-[#FFFFFF] w-11/12">Student</p>
         <div class="flex flex-row gap-2 my-2">
-            <img src="{{asset('/images/main-logo.png')}}" alt="logo" class="w-24 h-fit">
+            <img src="{{asset('/images/StudentProfile.jpg')}}" alt="logo" class="w-24 h-fit rounded-full">
             <div class="flex flex-col">
-                <p class="font-light text-base mb-2">Name of the Students</p>
-                <p class="font-thin text-sm">Grade</p>
-                <p class="font-thin text-sm">Section</p>
+                <p class="font-light text-base mb-2 text-[#FFFFFF]">Name of the Students</p>
+                <p class="font-thin text-sm text-[#FFFFFF]">Grade</p>
+                <p class="font-thin text-sm text-[#FFFFFF]">Section</p>
             </div>
         </div>
     </div>
