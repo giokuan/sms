@@ -51,7 +51,7 @@
                 </div>
 
                 {{-- secondary nav --}}
-                <div :class="isOpen ? 'show' : 'hidden' " class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3">
+                <div class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3">
                     <div class="flex flex-col md:flex-row gap-3 md:gap-x-7">
 
                         @if (Route::is('login'))
@@ -68,35 +68,9 @@
                                     {{-- <a href="{{ route('login') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">Log in</a> --}}
 
                                     <div x-data="{ open: false }">
-                                        <button class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200"
-                                        x-on:click="() => { setTimeout(() => { open = true }, 200); }">Log in</button>
-                                        
-                                        <!-- Modal -->
-                                        <div 
-                                        x-show.transition.duration.100ms="open"
-                                        class="fixed inset-0 bg-gray-800 bg-opacity-80 flex items-center justify-center px-4 md:px-0"
-                                        >
-
-                                            <div class="flex flex-col max-w-lg bg-[#004AAD] dark:bg-[#151823] shadow-2xl rounded-lg border-2 border-[#FFFFFF] p-6 gap-3 text-center" @click.away="open = false">
-                                                <div class="flex justify-between mb-2">
-                                                    <h3 class="font-medium text-2xl">Log in as?</h3>
-                                                    <button @click="open = false">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-light-500 hover:text-sky-300">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                                          </svg>                                                          
-                                                    </button>
-                                                </div>
-                                                <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
-                                                    Student
-                                                </a>
-                                                <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
-                                                    Parent/Guardian
-                                                </a>
-                                                <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
-                                                    Teacher
-                                                </a>
-                                            </div>
-                                        </div>
+                                        <a href="{{ url('login') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">
+                                        Log in
+                                        </a>
                                     </div>
 
                                     @if (Route::has('register'))
