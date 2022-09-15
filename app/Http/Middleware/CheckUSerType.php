@@ -16,6 +16,10 @@ class CheckUSerType
      */
     public function handle(Request $request, Closure $next)
     {
+        // if(Auth::user()->user_type !== "Student"){
+        //     return redirect('student-home');
+        // }
+
         return $next($request);
     }
 }
