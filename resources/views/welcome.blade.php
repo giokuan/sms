@@ -3,7 +3,7 @@
         {{-- Content --}}
         <div class="h-screen w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center " 
             style="background-image: url({{ url('images/hallway.jpg') }})">
-            <div class="dark:bg-gray-900 dark:bg-opacity-75 w-full h-full ">    
+            <div class="dark:bg-gray-900 dark:bg-opacity-80 w-full h-full ">    
                 {{-- content goes here --}}
                 <div class="flex flex-col justify-center items-center w-10/12 md:w-6/12 h-5/6 mx-auto">
 
@@ -13,51 +13,6 @@
                         Philippine Integrated High School provides quality education
                     </h1>
 
-                    @if (Route::has('login'))
-                        <div>
-                            @auth
-                                <a href="{{ url('/dashboard') }}">
-                                    <button 
-                                    class="bg-[#012560] dark:bg-[#151823] rounded-md text-sky-50 text-xl font-light border-solid px-3 md:px-4 lg:px-6  py-1 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200">
-                                        Go to Dashboard
-                                    </button>
-                                </a>
-                            @else
-
-                                <div x-data="{ open: false }">
-                                    <button class="bg-[#012560] dark:bg-[#151823] rounded-md text-sky-50 text-xl font-light border-solid px-3 md:px-4 lg:px-6  py-1 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200"
-                                    x-on:click="() => { setTimeout(() => { open = true }, 200); }">Log in</button>
-
-                                    <!-- Modal -->
-                                    <div 
-                                    x-show.transition.duration.100ms="open"
-                                    class="fixed inset-0 bg-gray-800 bg-opacity-80 flex items-center justify-center px-4 md:px-0"
-                                    >
-
-                                        <div class="flex flex-col max-w-lg bg-[#004AAD] dark:bg-[#151823] shadow-2xl rounded-lg border-2 border-[#FFFFFF] p-6 gap-3 text-center" @click.away="open = false">
-                                            <div class="flex justify-between mb-2">
-                                                <h3 class="font-medium text-2xl text-[#FFFFFF]">Log in as?</h3>
-                                                <button @click="open = false">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-[#FFFFFF] hover:text-sky-300">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                                      </svg>                                                          
-                                                </button>
-                                            </div>
-                                            <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
-                                                Student
-                                            </a>
-                                            <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
-                                                Parent/Guardian
-                                            </a>
-                                            <a href="{{ url('login') }}" class="bg-[#FFFFFF] font-semibold text-[#001F52] rounded-md py-2 px-3 mx-20 my-1 hover:scale-110 hover:bg-opacity-75 duration-300">
-                                                Teacher
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endauth
-                        </div>
-                    @endif
                 </div>
             </div>    
         </div>
