@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('middlename');
 
             // $table->integer('lrn');
-            $table->integer('age');
+            // $table->integer('age');
             $table->string('gender');
             $table->date('dateofbirth');
-            $table->integer('grade');
+            $table->string('grade');
             // $table->string('section');
 
             $table->string('email');
