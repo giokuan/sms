@@ -347,22 +347,22 @@
                 
                 <img src="{{'uploads/students/profile-default.jpg'}}"  alt="image" class="h-24 w-24 object-cover rounded-full">
                 <h1 class="text-2xl font-semibold"></h1>
-                <h4 class="text-sm font-semibold"></h4>
+                <h4 class="text-md font-semibold"></h4>
               </div>
             </div>
             <div class="grid grid-cols-12 bg-white dark:bg-dark-eval-1">
           
               <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
           
-                <a href="#" class="text-sm p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">
+                <a href="#" class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">
                     Basic Information
                 </a>
           
-                <a href="#" class="text-sm p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">
+                <a href="#" class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">
                     Another Information
                 </a>
           
-                <a href="#"  class="text-sm p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">
+                <a href="#"  class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">
                     Another Something
                 </a>
         
@@ -372,10 +372,10 @@
                
                     <div class="border-2 rounded-md bg-blue-900">
                         <label>
-                            <input type="file" class=" w-full text-sm text-grey-500 p-2 text-blue-900
+                            <input type="file" class=" w-full text-md text-grey-500 p-2 text-blue-900
                             file:mr-5 pl-6 file:py-1 file:px-14
                             file:rounded-full file:border-0
-                            file:text-sm file:font-medium
+                            file:text-md file:font-medium
                             file:bg-blue-900 file:text-slate-50
                             hover:file:cursor-pointer hover:file:bg-blue-800
                             hover:file:text-white-700
@@ -383,7 +383,7 @@
                         </label>
                         </div>
     
-                <button type="submit" class="bg-blue-900 hover:bg-blue-800 text-slate-50 border-gray-200 rounded py-2 px-10 shadow-lg">
+                <button type="submit" class="bg-blue-900 hover:bg-blue-800 text-md text-slate-50 border-gray-200 rounded py-2 px-10 shadow-lg">
                     Save
                 </button>
           

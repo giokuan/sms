@@ -14,7 +14,7 @@
 
     
 
-        <form method="post" action="{{url('save-teacher')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
+        <form method="post" action="{{url('save-teacher')}}" class="flex flex-col space-y-1" enctype="multipart/form-data">
                    
             @csrf
         <div class="w-full relative mt-4 shadow-2xl rounded my-24 overflow-hidden">
@@ -24,18 +24,18 @@
                 
                 <img src="{{'uploads/students/profile-default.jpg'}}"  alt="image" class="h-24 w-24 object-cover rounded-full">
                 <h1 class="text-2xl font-semibold"></h1>
-                <h4 class="text-sm font-semibold"></h4>
+                <h4 class="text-md font-semibold"></h4>
               </div>
             </div>
             <div class="grid grid-cols-12 bg-white dark:bg-dark-eval-1">
           
               <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
           
-                <a href="#" class="text-sm p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Basic Information</a>
+                <a href="#" class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Basic Information</a>
           
-                <a href="#" class="text-sm p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Another Information</a>
+                <a href="#" class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Another Information</a>
           
-                <a href="#"  class="text-sm p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Another Something</a>
+                <a href="#"  class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Another Something</a>
         
                     <label class="flex uppercase tracking-wide text-white text-xs h-1" for="photo">
                         Add Photo
@@ -43,10 +43,10 @@
                
                     <div class="border-2 rounded-md bg-blue-900">
                         <label>
-                            <input type="file" class=" w-full text-sm text-grey-500 p-2 text-blue-900
+                            <input type="file" class=" w-full text-md text-grey-500 p-2 text-blue-900
                             file:mr-5 pl-6 file:py-1 file:px-14
                             file:rounded-full file:border-0
-                            file:text-sm file:font-medium
+                            file:text-md file:font-medium
                             file:bg-blue-900 file:text-slate-50
                             hover:file:cursor-pointer hover:bg-blue-800
                             hover:file:text-sky-200 hover:file:bg-blue-800" id="photo" name="photo" />
