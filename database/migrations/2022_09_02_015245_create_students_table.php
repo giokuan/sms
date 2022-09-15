@@ -19,12 +19,12 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('middlename');
 
-            $table->integer('lrn');
+            // $table->integer('lrn');
             $table->integer('age');
             $table->string('gender');
             $table->date('dateofbirth');
             $table->integer('grade');
-            $table->string('section');
+            // $table->string('section');
 
             $table->string('email');
             $table->string('photo');

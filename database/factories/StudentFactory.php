@@ -21,12 +21,12 @@ class StudentFactory extends Factory
             'firstname' => fake()->lastName(),
             'middlename' => fake()->lastName(),
             
-            'lrn' => fake()->numberBetween(00000000, 99999999),
+            // 'lrn' => fake()->numberBetween(00000000, 99999999),
             'age' => fake()->numberBetween(14, 16),
             'gender' => fake()->randomElement(['male', 'female']),
             'dateofbirth' => fake()->dateTimeBetween('-16 years', '-12 years'),
             'grade' => 10,
-            'section' => 'A',
+            // 'section' => 'A',
 
             'email' => fake()->unique()->freeEmail(),
             'photo' => fake()->image(),

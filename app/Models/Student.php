@@ -18,12 +18,12 @@ class Student extends Model
         'firstname',
         'middlename',
         
-        'lrn',
+        // 'lrn',
         'age',
         'gender',
         'dateofbirth',
         'grade',
-        'section',
+        // 'section',
 
         'email',
         'photo',
