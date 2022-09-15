@@ -337,10 +337,10 @@
               </div>
         @endif --}}
 
-        <form method="post" action="{{url('save-student')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
+        <form method="post" action="{{url('save-student')}}" class="flex flex-col space-y-1" enctype="multipart/form-data">
                    
             @csrf
-        <div class="w-full relative mt-4 shadow-2xl rounded my-24 overflow-hidden">
+        <div class="w-full relative shadow-2xl rounded my-24 overflow-hidden">
             <div class="top h-60 w-full bg-blue-600 overflow-hidden relative" >
               <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="" class="bg w-full h-full object-cover object-center absolute z-0">
               <div class="flex flex-col justify-center items-center relative h-full bg-black bg-opacity-50 text-white">
@@ -396,8 +396,8 @@
                    
                     @csrf --}}
           
-                    <div>
-                      <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Student's basic information</h3>
+                    <div class="py-2">
+                      <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Students basic information</h3>
                       <hr>
                     </div>
                     
