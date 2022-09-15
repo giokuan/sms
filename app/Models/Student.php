@@ -23,12 +23,13 @@ class Student extends Model
         'gender',
         'dateofbirth',
         'grade',
+        'section',
 
         'email',
         'photo',
         'religion',
         'nationality',
-        
+
         'fathersname',
         'mothersname',
         'foccupation',
