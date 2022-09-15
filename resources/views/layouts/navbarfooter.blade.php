@@ -37,7 +37,7 @@
                     </a>
                     
                     {{-- primary --}}
-                    <h1 class="text-xl md:text-2xl font-light text-sky-50">Philippine Integrated High School</h1>
+                    <h1 class="text-xl md:text-2xl font-light text-sky-50">KodeGo High School</h1>
                     {{-- hamburger menu --}}
                     <div class="flex md:hidden ml-auto">
                         <button    
@@ -51,13 +51,20 @@
                 </div>
 
                 {{-- secondary nav --}}
-                <div class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3">
+                <div :class="isOpen ? 'show' : 'hidden'" class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3">
                     <div class="flex flex-col md:flex-row gap-3 md:gap-x-7">
 
                         @if (Route::is('login'))
                             <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
                             <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
-                            {{-- login logout --}}
+                            <a href="{{ route('register') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">Register</a>
+                            
+                        @elseif (Route::is('register'))
+                        <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
+                        <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
+                        <a href="{{ url('login') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">
+                            Log in
+                        </a>
 
                         @elseif (Route::has('login'))
                                 @auth
@@ -94,6 +101,9 @@
 
         {{-- content goes here --}}
         @yield('login')
+
+        {{-- content goes here --}}
+        @yield('register')
 
     {{-- footer goes here --}}
     <footer class="bg-[#001F52] dark:bg-[#151823] border-t-2 dark:border-gray-500 py-3">
