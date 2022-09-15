@@ -12,11 +12,14 @@
 {{-- if the route of the student is student-home --}}
 @elseif (Route::is('student-home') || Route::is('student-profile') || Route::is('student-grades') || Route::is('student-schedule') || Route::is('student-classmates'))
     <div class="flex flex-col">
-        <p class="text-xl font-medium leading-tight py-1 my-2 text-center text-[#FFFFFF] border-b-[1px] border-[#FFFFFF] w-11/12">Student</p>
+        <p class="text-xl font-medium leading-tight py-1 my-2 text-center text-[#FFFFFF] border-b-[1px] border-[#FFFFFF] w-11/12">
+            {{ Auth::user()->user_type }}
+        </p>
+
         <div class="flex flex-row gap-2 my-2">
             <img src="{{asset('/images/StudentProfile.jpg')}}" alt="logo" class="w-24 h-fit rounded-full">
             <div class="flex flex-col">
-                <p class="font-light text-base mb-2 text-[#FFFFFF]">Name of the Students</p>
+                <p class="font-light text-base mb-2 text-[#FFFFFF]">{{ Auth::user()->name }}</p>
                 <p class="font-thin text-sm text-[#FFFFFF]">Grade</p>
                 <p class="font-thin text-sm text-[#FFFFFF]">Section</p>
             </div>

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeachersController;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Student;
+use App\Models\User;
 
 
 /*
@@ -34,8 +36,9 @@ Route::get('student/home', function() {
     return view('student-pages.home');
 })->middleware(['auth', 'verified'])->name('student-home');
 
+// You need to extend model if you want to read data
 Route::get('student/profile', function() {
-    return view('student-pages.profile');
+    return view('student-pages.profile')->with('students', User::all());;
 })->middleware(['auth', 'verified'])->name('student-profile');
 
 Route::get('student/grades', function() {

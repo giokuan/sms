@@ -15,7 +15,7 @@
                 @elseif (Route::is('student-schedule'))
                     {{ __('Student Schedule') }}
                 @elseif (Route::is('student-classmates'))
-                    {{ __('Student classmates') }}
+                    {{ Auth::user()->name."'s Classmate " }}
                 @endif
             </h2>
             {{-- <x-button target="_blank" href="https://github.com/kamona-wd/kui-laravel-breeze" variant="black"

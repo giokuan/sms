@@ -7,9 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
 
-
-
-
 class Student extends Model
 {
     use HasFactory;
