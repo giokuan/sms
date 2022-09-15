@@ -17,18 +17,23 @@ class Student extends Model
         'lastname',
         'firstname',
         'middlename',
-        'email',
-        'grade',
-        'photo',
+        
+        'lrn',
+        'age',
         'gender',
-        'religion',
         'dateofbirth',
+        'grade',
+
+        'email',
+        'photo',
+        'religion',
+        'nationality',
+        
         'fathersname',
         'mothersname',
         'foccupation',
         'moccupation',
         'phone',
-        'nationality',
         'address'
 
     ];
