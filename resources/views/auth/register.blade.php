@@ -5,7 +5,6 @@ style="background-image: url({{ url('images/hallway.jpg') }})">
     <div class="dark:bg-gray-900 dark:bg-opacity-75 w-full h-full flex flex-col justify-center items-center ">    
 
     <x-auth-card>
-        
 
         <form method="POST" action="{{ route('register') }}" >
             @csrf
@@ -93,6 +92,7 @@ style="background-image: url({{ url('images/hallway.jpg') }})">
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        
     </x-auth-card>
 
     </div>
