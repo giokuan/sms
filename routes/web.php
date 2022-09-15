@@ -34,9 +34,9 @@ Route::get('student/home', function() {
     return view('student-pages.home');
 })->middleware(['auth', 'verified'])->name('student-home');
 
-Route::get('student/profile', function() {
-    return view('student-pages.profile');
-})->middleware(['auth', 'verified'])->name('student-profile');
+// Route::get('student/profile/{id}', function() {
+//     return view('student-pages.profile');
+// })->middleware(['auth', 'verified'])->name('student-profile');
 
 Route::get('student/grades', function() {
     return view('student-pages.grades');
@@ -75,6 +75,9 @@ Route::post('save-student',[StudentController::class,'saveStudent']);
 Route::get('edit-student/{id}',[StudentController::class,'editStudent']);
 Route::post('update-student',[StudentController::class,'updateStudent']);
 Route::get('delete-student/{id}',[StudentController::class,'deleteStudent']);
+
+Route::get('profile',[StudentController::class,'studentProfile']);
+
 
 
 Route::get('teacher-all-list',[TeachersController::class,'teacherAllList']);

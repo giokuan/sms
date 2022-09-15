@@ -20,6 +20,9 @@
         <h1 class="text-xl font-normal text-white">Information</h1>
 
         <ul class="font-light text-base text-white ml-5">
+
+            {{-- <a href={{ route('profile') }}><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Profile</li></a> --}}
+            
             <a href={{ route('student-grades') }}><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Grades</li></a>
 
             <a href={{ route('student-schedule') }}><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Class Schedule</li></a>

@@ -32,8 +32,14 @@ class Student extends Model
         'moccupation',
         'phone',
         'nationality',
-        'address'
+        'address',
+        'user_id'
 
     ];
+
+// relationship to user
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
 }
