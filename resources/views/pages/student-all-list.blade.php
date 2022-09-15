@@ -78,7 +78,7 @@
                     {{-- <div class="border-solid border-2 flex items-center justify-center rounded-md" > --}}
                         <a href="{{url('edit-student/'.$stud->id)}}"><img src="{{asset('uploads/students/'.$stud->photo)}}" width="40" height="40" alt="image" class="rounded-md"></a>
                     {{-- </div> --}}
-                </td>
+                	</td>
                   <td class="px-4 py-2 font-medium text-gray-900 dark:text-gray-400 whitespace-nowrap"> {{$stud->id}}</td>
                   <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap"> {{$stud->lastname}}</td>
                   <td class="px-4 py-2 text-gray-700 dark:text-gray-400 whitespace-nowrap"> {{$stud->firstname}}</td>

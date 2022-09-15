@@ -7,9 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
 
-
-
-
 class Student extends Model
 {
     use HasFactory;
@@ -20,18 +17,24 @@ class Student extends Model
         'lastname',
         'firstname',
         'middlename',
-        'email',
-        'grade',
-        'photo',
+        
+        // 'lrn',
+        'age',
         'gender',
-        'religion',
         'dateofbirth',
+        'grade',
+        // 'section',
+
+        'email',
+        'photo',
+        'religion',
+        'nationality',
+
         'fathersname',
         'mothersname',
         'foccupation',
         'moccupation',
         'phone',
-        'nationality',
         'address'
 
     ];
