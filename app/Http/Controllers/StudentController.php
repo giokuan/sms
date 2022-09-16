@@ -88,7 +88,8 @@ class StudentController extends Controller
         $stud->address = $address;
         $stud->save();
 
-        return redirect()->back()->with('success','Student Added Succesfuly');
+        return redirect()->to('student/home')->with('success','Student Added Succesfuly');
+        // return redirect()->back()->with('success','Student Added Succesfuly');
     }
 
     public function editStudent($id){

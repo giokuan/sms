@@ -20,20 +20,26 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('firstname');
             $table->string('middlename');
-           
-            $table->string('email');
-            $table->string('grade');
-            $table->string('photo');
+
+            // $table->integer('lrn');
+            // $table->integer('age');
             $table->string('gender');
-            $table->string('religion');
             $table->date('dateofbirth');
+            $table->string('grade');
+            // $table->string('section');
+
+            $table->string('email');
+            $table->string('photo');
+            $table->string('religion');
+            $table->string('nationality');
+            
             $table->string('fathersname');
             $table->string('mothersname');
             $table->string('foccupation');
             $table->string('moccupation');
             $table->string('phone');
-            $table->string('nationality');
             $table->text('address');
+
             $table->timestamps();
         });
     }
