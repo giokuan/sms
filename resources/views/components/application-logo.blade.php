@@ -15,7 +15,7 @@
 
         <div class="flex flex-row gap-2 my-2 items-center">
             <img src="{{asset('/images/StudentProfile.jpg')}}" alt="logo" class="w-24 h-fit rounded-full">
-            <div class="flex flex-col">
+            <div class="flex flex-col">s
                 <p class="font-light text-base mb-2 text-[#FFFFFF]">{{ Auth::user()->name }}</p>
                 <p class="font-thin text-sm text-[#FFFFFF]">Grade</p>
                 <p class="font-thin text-sm text-[#FFFFFF]">Section</p>

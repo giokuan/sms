@@ -2,7 +2,7 @@
 @section('LandingContent')
         {{-- Content --}}
         <div class="h-screen w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center " 
-            style="background-image: url({{ url('images/hallway.jpg') }})">
+            style="background-image: url({{ url('images/hallway.webp') }})">
             <div class="dark:bg-gray-900 dark:bg-opacity-80 w-full h-full ">    
                 {{-- content goes here --}}
                 <div class="flex flex-col justify-center items-center w-10/12 md:w-6/12 h-5/6 mx-auto">
