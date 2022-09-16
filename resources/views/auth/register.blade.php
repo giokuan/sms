@@ -57,21 +57,6 @@ style="background-image: url({{ url('images/hallway.jpg') }})">
                             name="password_confirmation" required placeholder="{{ __('Confirm Password') }}" />
                     </x-input-with-icon-wrapper>
                 </div>
-<<<<<<< HEAD
-
-              
-                <div class="space-y-2 ">
-                <x-label for="role" :value="__('User Type')" />
-                <select x-model="color" id="role" name="role" class=" w-full py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
-                focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
-                dark:text-gray-300 dark:focus:ring-offset-dark-eval-1">
-                  
-                    <option value="">User Type</option>
-                    <option value="Student" @if (old('role') == "Student") {{ 'selected' }} @endif>Student</option>
-                    <option value="Teacher" @if (old('role') == "Teacher") {{ 'selected' }} @endif>Teacher</option>
-                    {{-- <option value="Admin" @if (old('user_type') == "Admin") {{ 'selected' }} @endif>Admin</option> --}}
-                </select>
-=======
                 
                 {{-- User type --}}
                 <div class="col-span-6 sm:col-start-2 sm:col-span-4 ">
@@ -85,7 +70,6 @@ style="background-image: url({{ url('images/hallway.jpg') }})">
                         <option value="Teacher" @if (old('user_type') == "Teacher") {{ 'selected' }} @endif>Teacher</option>
                         {{-- <option value="Admin" @if (old('user_type') == "Admin") {{ 'selected' }} @endif>Admin</option> --}}
                     </select>
->>>>>>> bfe38ce2724e0139e8a9d1dcfd0adb1e30cf7b50
                 </div>
 
                 {{-- Register Button --}}
