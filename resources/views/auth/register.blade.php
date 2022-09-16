@@ -1,7 +1,7 @@
 @extends('layouts.navbarfooter')
 @section('register')
 <div class="h-screen w-full bg-no-repeat bg-cover bg-center object-contain" 
-style="background-image: url({{ url('images/hallway.jpg') }})">
+style="background-image: url({{ url('images/hallway.webp') }})">
     <div class="dark:bg-gray-900 dark:bg-opacity-75 w-full h-full flex flex-col justify-center items-center ">    
 
     <x-auth-card>
