@@ -54,7 +54,7 @@ class RegisteredUserController extends Controller
 
         // This will check on what user type is the user and redirect them to page they belong
         if(Auth::user()->user_type === 'Student'){
-            return redirect(RouteServiceProvider::StudentHOME);
+            return redirect(RouteServiceProvider::StudentRECORD);
         }
         else{
             return redirect(RouteServiceProvider::HOME);
