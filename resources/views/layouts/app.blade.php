@@ -22,6 +22,7 @@
     
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+   
 </head>
 
 <body class="font-sans antialiased">
@@ -53,11 +54,13 @@
                     {{ $slot }}
                 </main>
 
+           
                 <!-- Page Footer -->
                 <x-footer />
             </div>
         </div>
     </div>
+  
 </body>
 
 </html>

@@ -42,20 +42,41 @@ class AuthenticatedSessionController extends Controller
             // return redirect()->intended(RouteServiceProvider::HOME);
         }
 
-        //     protected function authenticated(LoginRequest $request, $user)
+ 
+        // public function login(Request $request)
         // {
-        //     if ($user->student()) {
-        //         // an admin
-        //         $redirect = '/dashboard';
-        //     } elseif ($user->teacher()) {
-        //         // it's a manager
-        //         $redirect = '/teacher-dashboard';
-        //     } else {
-        //         // it's a user
-        //         $redirect = '/dashboard';
+        //     $input = $request->all();
+        //     $this->validate($request,[
+        //         'email'=>'required|email',
+        //         'password'=> 'required'
+        //     ]);
+
+        //     if(auth()->attempt(['email'=>$input["email"], 'password'=>$input["password"]]));
+        //     {
+        //             if(auth()->user()->user_type == 'admin')
+        //             {
+        //                 return redirect()->route('home.admin');
+        //             }
+
+        //             else if(auth()->user()->user_type == 'student')
+        //             {
+        //                 return redirect()->route('home.student');
+        //             }
+                    
+        //             else 
+        //             {
+        //                 return redirect()->route('home');
+        //             }
+
+              
         //     }
-        //     return redirect($redirect);
+           
+            
+        //         return redirect()->route("login")->with("error", 'Incorrect email');
+            
         // }
+
+
 
     /**
      * Destroy an authenticated session.

@@ -27,7 +27,7 @@ class StudentController extends Controller
             'lastname'=>'required',
             'firstname'=>'required',
             'middlename'=>'required',
-            'email'=>'required|email',
+            // 'email'=>'required|email',
             'grade'=>'required',
             'photo'=>'required',
             'religion'=>'required',
@@ -45,7 +45,7 @@ class StudentController extends Controller
         $lastname = $request->lastname;
         $firstname = $request->firstname;
         $middlename = $request->middlename;
-        $email = $request->email;
+        // $email = $request->email;
         $grade = $request->grade;
         $photo = $request->photo;
         $gender = $request->gender;
@@ -61,10 +61,11 @@ class StudentController extends Controller
 
 
         $stud = new Student();
+        $stud->user_id = auth()->user()->id;
         $stud->lastname = $lastname;
         $stud->firstname = $firstname;
         $stud->middlename = $middlename;
-        $stud->email = $email;
+        $stud->email = auth()->user()->email;
         $stud->grade = $grade;
         if($request->hasfile('photo'))
         {
@@ -105,7 +106,7 @@ class StudentController extends Controller
             'lastname'=>'required',
             'firstname'=>'required',
             'middlename'=>'required',
-            'email'=>'required|email',
+            // 'email'=>'required|email',
             'grade'=>'required',
             // 'photo'=>'required',
             'gender'=>'required',
@@ -125,7 +126,7 @@ class StudentController extends Controller
         $data->lastname = $request->lastname;
         $data->firstname = $request->firstname;
         $data->middlename = $request->middlename;
-        $data->email = $request->email;
+        $data->email = auth()->user()->email;
         $data->grade = $request->grade;
 
 
@@ -184,4 +185,16 @@ class StudentController extends Controller
         Student::where('id', '=', $id)->delete();
         return redirect()->to('/student-all-list')->with('success','Student deleted Succesfuly');
     }
+
+    public function studentProfile($id){
+        $data = Student::where('id', '=', $id)->first();
+        return view('student-pages.profile', compact('data'));
+    }
+
+
+    public function addGrade(){
+      
+        return view('pages.add-grade');
+    }
+
 }

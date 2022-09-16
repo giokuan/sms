@@ -139,4 +139,9 @@ class teachersController extends Controller
         return redirect()->to('/teacher-all-list')->with('success','Teacher deleted Succesfuly');
     }
 
+
+    public function teachersDashboard(){
+        return view('/teachers-dashboard');
+    }
+
 }

@@ -35,8 +35,29 @@ class Student extends Model
         'foccupation',
         'moccupation',
         'phone',
+<<<<<<< HEAD
+        'nationality',
+        'address',
+        'user_id'
+=======
         'address'
+>>>>>>> bfe38ce2724e0139e8a9d1dcfd0adb1e30cf7b50
 
     ];
+
+// relationship to user
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public static function search($search)
+    {
+        return empty($search) ? static::query()
+            : static::query()->where('id', 'like', '%'.$search.'%')
+                ->orWhere('lastname', 'like', '%'.$search.'%')
+                ->orWhere('firstname', 'like', '%'.$search.'%')
+                ->orWhere('email', 'like', '%'.$search.'%');
+    }
 
 }

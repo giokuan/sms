@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Auth;
 
 class Authenticate extends Middleware
 {
@@ -16,6 +17,16 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
             return route('login');
+        }
+
+        else if(auth()->user()->usertype == 'admin')
+        {
+            return view('dashboard');
+        }
+
+        else 
+        {
+            return view('teachers-dashboard');
         }
     }
 }
