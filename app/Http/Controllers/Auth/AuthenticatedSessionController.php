@@ -33,12 +33,13 @@ class AuthenticatedSessionController extends Controller
             $request->session()->regenerate();
 
             // This will check on what user type is the user and redirect them to page they belong
-            if(Auth::user()->user_type === 'Student'){
-                return redirect(RouteServiceProvider::StudentHOME);
-            }
-            else{
-                return redirect()->intended(RouteServiceProvider::HOME);
-            }
+            // if(Auth::user()->user_type === 'Student'){
+            //     return redirect(RouteServiceProvider::StudentRECORD);
+            // }
+            // else{
+            //     return redirect()->intended(RouteServiceProvider::HOME);
+            // }
+            return redirect(RouteServiceProvider::StudentRECORD);
             // return redirect()->intended(RouteServiceProvider::HOME);
         }
 

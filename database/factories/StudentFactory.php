@@ -16,7 +16,16 @@ class StudentFactory extends Factory
      */
     public function definition()
     {
+
+        // foreach (range(1,50) as $index) {
+        //     DB::table('course_student')->insert([
+        //     'course_id' => $faker->randomElement($coursesIDs)
+        //     'student_id' => $faker->randomElement($studentsIDs)
+        //     ]);
+        // }
+
         return [
+            'user_id' => $faker->unique()->randomElements(User->{'id'}),
             'lastname' => fake()->firstName(),
             'firstname' => fake()->lastName(),
             'middlename' => fake()->lastName(),

@@ -3,14 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeachersController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\HomeController;
 
-=======
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Student;
 use App\Models\User;
->>>>>>> bfe38ce2724e0139e8a9d1dcfd0adb1e30cf7b50
 
 
 /*
@@ -33,10 +31,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
-
-
-
 // student-dashboard
 Route::get('/student-dashboard', function () {
     return view('student-dashboard');
@@ -51,16 +45,16 @@ Route::get('student/home', function() {
     return view('student-pages.home');
 })->middleware(['auth', 'verified'])->name('student-home');
 
-<<<<<<< HEAD
+
 // Route::get('student/profile/{id}', function() {
 //     return view('student-pages.profile');
 // })->middleware(['auth', 'verified'])->name('student-profile');
-=======
+
 // You need to extend model if you want to read data
 Route::get('student/profile', function() {
     return view('student-pages.profile')->with('students', User::all());;
-})->middleware(['auth', 'verified'])->name('student-profile');
->>>>>>> bfe38ce2724e0139e8a9d1dcfd0adb1e30cf7b50
+})->middleware(['auth', 'verified','CheckUserType'])->name('student-profile');
+
 
 Route::get('student/grades', function() {
     return view('student-pages.grades');

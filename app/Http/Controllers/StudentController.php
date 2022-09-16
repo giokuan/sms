@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
+use Auth;
 
 
 class StudentController extends Controller
@@ -27,7 +28,7 @@ class StudentController extends Controller
             'lastname'=>'required',
             'firstname'=>'required',
             'middlename'=>'required',
-            // 'email'=>'required|email',
+            'email'=>'required|email',
             'grade'=>'required',
             'photo'=>'required',
             'religion'=>'required',
@@ -45,7 +46,7 @@ class StudentController extends Controller
         $lastname = $request->lastname;
         $firstname = $request->firstname;
         $middlename = $request->middlename;
-        // $email = $request->email;
+        $email = $request->email;
         $grade = $request->grade;
         $photo = $request->photo;
         $gender = $request->gender;
@@ -59,13 +60,12 @@ class StudentController extends Controller
         $nationality = $request->nationality;
         $address = $request->address;
 
-
         $stud = new Student();
         $stud->user_id = auth()->user()->id;
         $stud->lastname = $lastname;
         $stud->firstname = $firstname;
         $stud->middlename = $middlename;
-        $stud->email = auth()->user()->email;
+        $stud->email = $email;
         $stud->grade = $grade;
         if($request->hasfile('photo'))
         {
@@ -88,8 +88,12 @@ class StudentController extends Controller
         $stud->address = $address;
         $stud->save();
 
-        return redirect()->to('student/home')->with('success','Student Added Succesfuly');
-        // return redirect()->back()->with('success','Student Added Succesfuly');
+        if(Auth::user()->user_type === 'Student'){
+            return redirect()->to('student/home')->with('success','Student Added Succesfuly');
+        }
+        else{
+            return redirect()->back()->with('success','Student Added Succesfuly');
+        }
     }
 
     public function editStudent($id){
@@ -102,7 +106,7 @@ class StudentController extends Controller
             'lastname'=>'required',
             'firstname'=>'required',
             'middlename'=>'required',
-            // 'email'=>'required|email',
+            'email'=>'required|email',
             'grade'=>'required',
             // 'photo'=>'required',
             'gender'=>'required',
@@ -122,7 +126,7 @@ class StudentController extends Controller
         $data->lastname = $request->lastname;
         $data->firstname = $request->firstname;
         $data->middlename = $request->middlename;
-        $data->email = auth()->user()->email;
+        $data->email = $request->email;
         $data->grade = $request->grade;
 
 
@@ -181,16 +185,4 @@ class StudentController extends Controller
         Student::where('id', '=', $id)->delete();
         return redirect()->to('/student-all-list')->with('success','Student deleted Succesfuly');
     }
-
-    public function studentProfile($id){
-        $data = Student::where('id', '=', $id)->first();
-        return view('student-pages.profile', compact('data'));
-    }
-
-
-    public function addGrade(){
-      
-        return view('pages.add-grade');
-    }
-
 }
