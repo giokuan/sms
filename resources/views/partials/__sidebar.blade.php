@@ -16,6 +16,8 @@
                     {{Auth::user()->name."'s  Schedule"}}
                 @elseif (Route::is('student-classmates'))
                     {{ Auth::user()->name."'s Classmate " }}
+                @elseif (Route::is('student-record-dashboard'))
+                    {{ __('Complete your information') }} 
                 @endif
             </h2>
             {{-- <x-button target="_blank" href="https://github.com/kamona-wd/kui-laravel-breeze" variant="black"

@@ -7,6 +7,12 @@
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
+    @elseif((Route::is('student-record-dashboard')))
+        <x-sidebar.link title="Dashboard" href="{{ route('student-record-dashboard') }}" :isActive="request()->routeIs('dashboard')">
+            <x-slot name="icon">
+                <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
     @else
         <x-sidebar.link title="Dashboard" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
             <x-slot name="icon">
@@ -56,6 +62,8 @@
         $links = array_fill(0, 20, '');
     @endphp --}}
     @if((Route::is('student-home') || Route::is('student-profile') || Route::is('student-grades') || Route::is('student-schedule') || Route::is('student-classmates')))
+    
+    @elseif((Route::is('student-record-dashboard')))
 
     @else
     <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-[#FFFFFF]">Dummy Links</div>

@@ -32,6 +32,11 @@ Route::get('/student-dashboard', function () {
     return view('student-dashboard');
 })->middleware(['auth', 'verified'])->name('student-dashboard');
 
+// for completing information of the student
+Route::get('/student/record/dashboard', function () {
+    return view('student-pages.student-dashboard');
+})->middleware(['auth', 'verified'])->name('student-record-dashboard');
+
 Route::get('student/home', function() {
     return view('student-pages.home');
 })->middleware(['auth', 'verified'])->name('student-home');
