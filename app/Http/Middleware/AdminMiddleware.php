@@ -21,9 +21,20 @@ class AdminMiddleware
        {
         return $next($request);
        }
+
+       else if(auth()->user()->user_type == 'Teacher')
+       {
+        return $next($request);
+       }
+
+       else if(auth()->user()->user_type == 'Student')
+       {
+        return $next($request);
+       }
        else
        {
-        return redirect('/teachers-dashboard');
+        // return redirect('/teachers-dashboard');
+        return response()->json(['You do not have permission to access for this page.']);
        }
        
     }

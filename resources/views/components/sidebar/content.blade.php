@@ -40,7 +40,7 @@
 
             </ul>
         </div>
-    @else
+    {{-- @else --}}
 
     @endif
     
@@ -66,7 +66,7 @@
     @elseif((Route::is('student-record-dashboard')))
 
     @else
-    <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-[#FFFFFF]">Dummy Links</div>
+    {{-- <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-[#FFFFFF]">Dummy Links</div> --}}
     
     {{-- @foreach ($links as $index => $link) --}}
         <x-sidebar.link title="All Students" href="/student-all-list" />
@@ -74,7 +74,7 @@
         <x-sidebar.link title="Add Student" href="/add-student" />
         <x-sidebar.link title="Add Teacher" href="/add-teacher" />
 
-        <x-sidebar.link title="Add Grade" href="/add-grade" />
+        {{-- <x-sidebar.link title="Add Grade" href="/add-grade" /> --}}
     {{-- @endforeach --}}
 
     @endif

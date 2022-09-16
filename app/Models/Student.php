@@ -35,13 +35,9 @@ class Student extends Model
         'foccupation',
         'moccupation',
         'phone',
-<<<<<<< HEAD
         'nationality',
         'address',
         'user_id'
-=======
-        'address'
->>>>>>> bfe38ce2724e0139e8a9d1dcfd0adb1e30cf7b50
 
     ];
 

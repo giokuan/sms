@@ -29,19 +29,19 @@
             </div>
             <div class="grid grid-cols-12 bg-white dark:bg-dark-eval-1">
           
-              <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
+              <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 dark:border-none md:flex-col md:col-span-2 md:justify-start ">
           
-                <a href="#" class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Basic Information</a>
+                {{-- <a href="#" class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Basic Information</a>
           
                 <a href="#" class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Another Information</a>
           
-                <a href="#"  class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Another Something</a>
+                <a href="#"  class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">Another Something</a> --}}
         
-                    <label class="flex uppercase tracking-wide text-white text-xs h-1" for="photo">
+                    <label class="flex uppercase tracking-wide text-black dark:text-white text-xs h-1" for="photo">
                         Add Photo
                     </label>
                
-                    <div class="border-2 rounded-md bg-blue-900">
+                    <div class=" rounded-md bg-blue-900 ">
                         <label>
                             <input type="file" class=" w-full text-md text-grey-500 p-2 text-blue-900
                             file:mr-5 pl-6 file:py-1 file:px-14
@@ -66,16 +66,16 @@
                    
                     @csrf --}}
           
-                    <div>
+                    <div class="py-2">
                       <h3 class="text-2xl font-semibold">Basic Information</h3>
-                      <hr>
+                      <hr class="mb-2">
                     </div>
           
                     <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
                         
                         {{-- Last name --}}
                         <div class="form-item w-full">
-                            <label class="text-md ">Last Name</label>
+                            <label class="text-md mt-3">Last Name</label>
                             <input type="text" value="{{old('lastname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" placeholder="Dela Cruz" id="lastname" name="lastname">
                             @error('lastname')
                    

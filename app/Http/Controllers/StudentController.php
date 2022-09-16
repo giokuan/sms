@@ -189,7 +189,7 @@ class StudentController extends Controller
 
 
     public function addGrade(){
-      
+     
         return view('pages.add-grade');
     }
 
