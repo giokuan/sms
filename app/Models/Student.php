@@ -19,7 +19,7 @@ class Student extends Model
         'middlename',
         
         // 'lrn',
-        'age',
+        // 'age',
         'gender',
         'dateofbirth',
         'grade',

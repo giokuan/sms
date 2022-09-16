@@ -33,12 +33,16 @@
             <x-footer />
         </div>
 
+        @if(Route::is('verification.notice') || Route::is('password.request'))
+
+        @else
         <div class="fixed top-2 right-5 z-10">
             <x-button type="button" iconOnly variant="secondary" bg:black srText="Toggle dark mode" @click="toggleTheme">
                 <x-heroicon-o-moon x-show="!isDarkMode" aria-hidden="true" class="w-6 h-6 " />
                 <x-heroicon-o-sun x-show="isDarkMode" aria-hidden="true" class="w-6 h-6" />
             </x-button>
         </div>
+        @endif
 
     </div>
 </body>

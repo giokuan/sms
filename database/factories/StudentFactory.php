@@ -22,7 +22,7 @@ class StudentFactory extends Factory
             'middlename' => fake()->lastName(),
             
             // 'lrn' => fake()->numberBetween(00000000, 99999999),
-            'age' => fake()->numberBetween(14, 16),
+            // 'age' => fake()->numberBetween(14, 16),
             'gender' => fake()->randomElement(['male', 'female']),
             'dateofbirth' => fake()->dateTimeBetween('-16 years', '-12 years'),
             'grade' => 10,
