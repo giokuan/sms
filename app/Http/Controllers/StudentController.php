@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
+use Auth;
 
 
 class StudentController extends Controller
@@ -42,7 +43,6 @@ class StudentController extends Controller
             'address'=>'required',
         ]);
         // dd($request->all());
-        // $user_id = Auth::user()->id;
         $lastname = $request->lastname;
         $firstname = $request->firstname;
         $middlename = $request->middlename;
@@ -61,7 +61,7 @@ class StudentController extends Controller
         $address = $request->address;
 
         $stud = new Student();
-        $stud->user_id = Auth::user()->id;
+        $stud->user_id = auth()->user()->id;
         $stud->lastname = $lastname;
         $stud->firstname = $firstname;
         $stud->middlename = $middlename;
