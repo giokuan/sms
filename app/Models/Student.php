@@ -38,8 +38,18 @@ class Student extends Model
     ];
 
 // relationship to user
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public static function search($search)
+    {
+        return empty($search) ? static::query()
+            : static::query()->where('id', 'like', '%'.$search.'%')
+                ->orWhere('lastname', 'like', '%'.$search.'%')
+                ->orWhere('firstname', 'like', '%'.$search.'%')
+                ->orWhere('email', 'like', '%'.$search.'%');
     }
 
 }

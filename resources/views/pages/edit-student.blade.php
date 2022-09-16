@@ -37,24 +37,29 @@
                 <a href="#" class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Information</a>
           
                 <a href="#"  class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Something</a> --}}
+
+                <a href="/add-grade"  class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Add Grade</a>
         
-                    <label class=" flex  uppercase tracking-wide text-gray-700 text-xs h-1" for="photo">
-                        Add Photo
+                <label class=" flex  uppercase tracking-wide text-gray-700 text-xs h-1" for="photo">
+                    Add Photo
+                </label>
+           
+                <div class="border-2 rounded-md bg-indigo-900">
+                    <label>
+                        <input type="file" class=" w-full text-sm text-grey-500 p-2 text-indigo-900
+                        file:mr-5 pl-6 file:py-1 file:px-14
+                        file:rounded-full file:border-0
+                        file:text-sm file:font-medium
+                        file:bg-indigo-900 file:text-slate-50
+                        hover:file:cursor-pointer hover:file:bg-indigo-900
+                        hover:file:text-amber-700
+                    " id="photo" name="photo" />
                     </label>
-               
-                    <div class="border-2 rounded-md bg-indigo-900">
-                        <label>
-                            <input type="file" class=" w-full h-full text-xs text-grey-500 p-2 text-slate-100
-                            file:rounded-md file:border-0
-                            file:text-sm file:font-medium
-                            file:bg-indigo-900 file:text-slate-50
-                            hover:file:cursor-pointer hover:file:bg-indigo-900
-                            hover:file:text-amber-700
-                        " id="photo" name="photo" />
-                        </label>
-                        </div>
+                    </div>
     
                 <button type="submit" class="bg-indigo-900 text-slate-50 border-gray-200 rounded py-2 px-10 shadow-lg">Update</button>
+
+
               
                    
                
@@ -334,6 +339,7 @@
               </div>
             </form>
             @include('sweetalert::alert')
+            
             </div>
    
 

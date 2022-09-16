@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeachersController;
-use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\HomeController;
+
 
 
 /*
@@ -24,6 +25,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+
+
 
 // student-dashboard
 Route::get('/student-dashboard', function () {
@@ -78,6 +84,7 @@ Route::get('delete-student/{id}',[StudentController::class,'deleteStudent']);
 
 Route::get('profile',[StudentController::class,'studentProfile']);
 
+Route::get('add-grade',[StudentController::class,'addGrade']);
 
 
 Route::get('teacher-all-list',[TeachersController::class,'teacherAllList']);
@@ -87,3 +94,6 @@ Route::get('edit-teacher/{id}',[TeachersController::class,'editTeacher']);
 Route::post('update-teacher',[TeachersController::class,'updateTeacher']);
 Route::get('delete-teacher/{id}',[TeachersController::class,'deleteTeacher']);
 
+
+
+Route::get('teachers-dashboard',[TeachersController::class,'teachersDashboard'])->name('teacher');
