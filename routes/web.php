@@ -50,7 +50,6 @@ Route::middleware(['auth', 'admin-middleware:teacher'])->group(function(){
 });
 
 
-
 // student-dashboard
 Route::get('home', function () {
     return view('home');

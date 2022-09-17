@@ -67,6 +67,7 @@ class StudentController extends Controller
         $stud->middlename = $middlename;
         $stud->email = $email;
         $stud->grade = $grade;
+
         if($request->hasfile('photo'))
         {
             $file = $request->file('photo');
