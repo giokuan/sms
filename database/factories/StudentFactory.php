@@ -25,7 +25,7 @@ class StudentFactory extends Factory
         // }
 
         return [
-            'user_id' => $faker->unique()->randomElements(User->{'id'}),
+            // 'user_id' => $faker->unique()->randomElements(User->{'id'}),
             'lastname' => fake()->firstName(),
             'firstname' => fake()->lastName(),
             'middlename' => fake()->lastName(),

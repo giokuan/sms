@@ -19,14 +19,13 @@
     <p class="font-light">birthday</p>
 </div>
 
-@foreach($students as $student)
+{{-- @foreach($students as $student) --}}
 
-    <p class="font-light">{{ $student->name }}</p>
-    <p class="font-light">{{ $student->firstname }}</p>
-    <p class="font-light">{{ $student->lastname }}</p>
-    <p class="font-light">{{ $student->email }}</p>
-    <p class="font-light">{{ $student->dateofbirth }}</p>
+    <p class="font-light">{{ $students->firstname }}</p>
+    <p class="font-light">{{ $students->lastname }}</p>
+    <p class="font-light">{{ $students->email }}</p>
+    <p class="font-light">{{ $students->address }}</p>
     {{-- <img src="{{ $student->dateofbirth }}" alt="studentprofile" class="w-24 h-fit rounded-full"> --}}
-@endforeach
+{{-- @endforeach --}}
 
 @endsection

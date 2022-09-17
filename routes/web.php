@@ -65,9 +65,9 @@ Route::get('student/home', function() {
     return view('student-pages.home');
 })->middleware(['auth', 'verified'])->name('student-home');
 
-// You need to extend model if you want to read data
 Route::get('student/profile', function() {
-    return view('student-pages.profile')->with('students', Student::all());
+    return view('student-pages.profile')->with('students', Student::find(1)->where('user_id', Auth::id())
+    ->first());
 })->middleware(['auth', 'verified'])->name('student-profile');
 
 Route::get('student/grades', function() {
