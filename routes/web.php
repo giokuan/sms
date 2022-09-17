@@ -52,34 +52,38 @@ Route::middleware(['auth', 'admin-middleware:teacher'])->group(function(){
 
 
 // student-dashboard
-Route::get('/student-dashboard', function () {
-    return view('student-dashboard');
-})->middleware(['auth', 'verified'])->name('student-dashboard');
+Route::get('home', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('home');
 
 // for completing information of the student
-Route::get('/student/record/dashboard', function () {
-    return view('student-pages.student-dashboard');
-})->middleware(['auth', 'verified'])->name('student-record-dashboard');
+Route::get('home', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('home');
 
 Route::get('student/home', function() {
-    return view('student-pages.home');
+    return view('student-pages.home')->with('students', Student::find(1)->where('user_id', Auth::id())
+    ->first());
 })->middleware(['auth', 'verified'])->name('student-home');
 
-// You need to extend model if you want to read data
 Route::get('student/profile', function() {
-    return view('student-pages.profile')->with('students', User::all());;
+    return view('student-pages.profile')->with('students', Student::find(1)->where('user_id', Auth::id())
+    ->first());
 })->middleware(['auth', 'verified'])->name('student-profile');
 
 Route::get('student/grades', function() {
-    return view('student-pages.grades');
+    return view('student-pages.grades')->with('students', Student::find(1)->where('user_id', Auth::id())
+    ->first());
 })->middleware(['auth', 'verified'])->name('student-grades');
 
 Route::get('student/schedule', function() {
-    return view('student-pages.schedule');
+    return view('student-pages.schedule')->with('students', Student::find(1)->where('user_id', Auth::id())
+    ->first());
 })->middleware(['auth', 'verified'])->name('student-schedule');
 
 Route::get('student/classmates', function() {
-    return view('student-pages.classmates');
+    return view('student-pages.classmates')->with('students', Student::find(1)->where('user_id', Auth::id())
+    ->first());
 })->middleware(['auth', 'verified'])->name('student-classmates');
 
 // useless routes

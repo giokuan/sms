@@ -7,7 +7,7 @@
                 @if(Route::is('dashboard'))
                     {{ __('Dashboard') }}
                 @elseif (Route::is('student-home'))
-                    {{ __('Student Dashboard') }}
+                    {{ Auth::user()->name." 's Dashboard" }}
                 @elseif (Route::is('student-profile'))
                     {{Auth::user()->name."'s  Profile"}}
                 @elseif (Route::is('student-grades'))
@@ -16,10 +16,11 @@
                     {{Auth::user()->name."'s  Schedule"}}
                 @elseif (Route::is('student-classmates'))
                     {{ Auth::user()->name."'s Classmate " }}
-                @elseif (Route::is('student-record-dashboard'))
+                @elseif (Route::is('home'))
                     {{ __('Complete your information') }} 
                 @endif
             </h2>
+
             {{-- <x-button target="_blank" href="https://github.com/kamona-wd/kui-laravel-breeze" variant="black"
                 class="justify-center max-w-xs gap-2">
                 <x-icons.github class="w-6 h-6" aria-hidden="true" />

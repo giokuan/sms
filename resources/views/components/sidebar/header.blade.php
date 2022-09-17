@@ -6,9 +6,11 @@
             <x-application-logo aria-hidden="true" class="w-10 h-auto" />
             <span class="sr-only">K UI Logo</span>
         </a>
-    @elseif((Route::is('student-record-dashboard')))
+    @elseif((Route::is('home')))
+        <a href="{{ route('home') }}" class="inline-flex items-center gap-2">
             <x-application-logo aria-hidden="true" class="w-10 h-auto" />
             <span class="sr-only">K UI Logo</span>
+        </a>
     @else
         <!-- Profile -->
         <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-2">

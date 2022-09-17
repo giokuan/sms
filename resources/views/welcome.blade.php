@@ -1,12 +1,13 @@
 @extends('layouts.navbarfooter')
 @section('LandingContent')
         {{-- Content --}}
-        <div class="h-screen w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center " 
+        <div class="h-full w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center " 
+        {{-- <div class="h-5/6 w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center "  --}}
             style="background-image: url({{ url('images/hallway.webp') }})">
             <div class="dark:bg-gray-900 dark:bg-opacity-80 w-full h-full ">    
                 {{-- content goes here --}}
                 <div class="flex flex-col justify-center items-center w-10/12 md:w-6/12 h-5/6 mx-auto">
-
+                {{-- <div class="flex flex-col justify-center items-center w-10/12 md:w-6/12 h-full mx-auto"> --}}
                     <img src="/images/main-logo.png" alt="main logo" class="max-w-xs my-4">
 
                     <h1 class="text-center text-2xl md:text-4xl  text-sky-50 bg-[#004AAD] dark:bg-[#222738] bg-opacity-80 px-6 py-2 mb-5 rounded-md font-medium">

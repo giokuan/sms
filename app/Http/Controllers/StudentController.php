@@ -67,6 +67,7 @@ class StudentController extends Controller
         $stud->middlename = $middlename;
         $stud->email = $email;
         $stud->grade = $grade;
+
         if($request->hasfile('photo'))
         {
             $file = $request->file('photo');
@@ -190,7 +191,6 @@ class StudentController extends Controller
         $data = Student::where('id', '=', $id)->first();
         return view('student-pages.profile', compact('data'));
     }
-
 
     public function addGrade(){
      
