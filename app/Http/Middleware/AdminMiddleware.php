@@ -17,17 +17,17 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-       if(auth()->user()->user_type == 'admin')
+       if(auth()->user()->user_type === 'admin')
        {
         return $next($request);
        }
 
-       else if(auth()->user()->user_type == 'Teacher')
+       else if(auth()->user()->user_type === 'Teacher')
        {
         return $next($request);
        }
 
-       else if(auth()->user()->user_type == 'Student')
+       else if(auth()->user()->user_type === 'Student')
        {
         return $next($request);
        }
