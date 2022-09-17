@@ -10,25 +10,23 @@
 
 {{-- @if (Route::is('student-home') || Route::is('student-profile') || Route::is('student-grades') || Route::is('student-schedule') || Route::is('student-classmates')) --}}
 
-@if (Auth::user()->user_type === 'Student')
+{{-- @if (Auth::user()->user_type === 'Student')
     <div class="flex flex-col shrink ">
         <p class="text-xl font-medium leading-tight py-1 my-2 text-center text-[#FFFFFF] border-b-[1px] border-[#FFFFFF] w-11/12">
             {{ Auth::user()->user_type }}
         </p>
 
         <div class="flex flex-row gap-2 my-2 items-center">
-            {{-- <img src="{{ url('uploads/students/'.$students->photo) }}" alt="logo" class="w-24 h-fit rounded-full"> --}}
             <img src="{{asset('/images/StudentProfile.jpg')}}" alt="logo" class="w-24 h-fit rounded-full">
             <div class="flex flex-col">
                 <p class="font-light text-base mb-2 text-[#FFFFFF]">{{ Auth::user()->name }}</p>
-                {{-- <p class="font-thin text-sm text-[#FFFFFF]">{{ $students->grade }}</p> --}}
                 <p class="font-thin text-sm text-[#FFFFFF]">Grade</p>
                 <p class="font-thin text-sm text-[#FFFFFF]">Section</p>
             </div>
         </div>
     </div>
 
-@else
+@else --}}
     <img src="{{asset('/images/main-logo.png')}}" alt="logo" width="250px" class="mt-12">
-
-@endif
+{{-- 
+@endif --}}
