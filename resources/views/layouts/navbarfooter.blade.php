@@ -55,33 +55,31 @@
                     <div class="flex flex-col md:flex-row gap-3 md:gap-x-7">
 
                         @if (Route::is('login'))
-                            <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
-                            <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
-                            <a href="{{ route('register') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">Register</a>
+                            <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
+                            <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
+                            <a href="{{ route('register') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Register</a>
                             
                         @elseif (Route::is('register'))
-                        <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
-                        <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
-                        <a href="{{ url('login') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">
+                        <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
+                        <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
+                        <a href="{{ url('login') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">
                             Log in
                         </a>
 
                         @elseif (Route::has('login'))
                                 @auth
-                                    <a href="{{ url('/dashboard') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">Dashboard</a>
+                                    <a href="{{ url('/dashboard') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Dashboard</a>
                                 @else
-                                <a href="#" class="md:text-lg hover:underline hover:text-sky-200">Contacts</a>
-                                <a href="#" class="md:text-lg hover:underline hover:text-sky-200">About</a>
+                                <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
+                                <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
                                     {{-- <a href="{{ route('login') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">Log in</a> --}}
 
-                                    <div x-data="{ open: false }">
-                                        <a href="{{ url('login') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">
+                                        <a href="{{ url('login') }}" x-data="{ open: false }" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">
                                         Log in
                                         </a>
-                                    </div>
 
                                     @if (Route::has('register'))
-                                        <a href="{{ route('register') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">Register</a>
+                                        <a href="{{ route('register') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Register</a>
                                     @endif
                                 @endauth
                         @endif
