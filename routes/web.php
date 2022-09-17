@@ -52,14 +52,14 @@ Route::middleware(['auth', 'admin-middleware:teacher'])->group(function(){
 
 
 // student-dashboard
-// Route::get('/student-dashboard', function () {
-//     return view('student-dashboard');
-// })->middleware(['auth', 'verified'])->name('student-dashboard');
+Route::get('home', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('home');
 
 // for completing information of the student
-// Route::get('/student/record/dashboard', function () {
-//     return view('student-pages.student-dashboard');
-// })->middleware(['auth', 'verified'])->name('student-record-dashboard');
+Route::get('home', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('home');
 
 Route::get('student/home', function() {
     return view('student-pages.home');

@@ -16,7 +16,7 @@
                     {{Auth::user()->name."'s  Schedule"}}
                 @elseif (Route::is('student-classmates'))
                     {{ Auth::user()->name."'s Classmate " }}
-                @elseif (Route::is('student-record-dashboard'))
+                @elseif (Route::is('home'))
                     {{ __('Complete your information') }} 
                 @endif
             </h2>
