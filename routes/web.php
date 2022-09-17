@@ -59,7 +59,7 @@ Route::get('home', function () {
 // for completing information of the student
 Route::get('home', function () {
     return view('home');
-})->middleware(['auth', 'verified'])->name('home');
+})->middleware(['auth', 'verified','admin-middleware'])->name('home');
 
 Route::get('student/home', function() {
     return view('student-pages.home')->with('students', Student::find(1)->where('user_id', Auth::id())
