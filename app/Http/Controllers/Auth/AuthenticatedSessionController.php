@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Student;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -39,14 +40,16 @@ class AuthenticatedSessionController extends Controller
             }else if (auth()->user()->user_type == 'Teacher') {
                 return redirect()->route('teacher.home');
 
-            }else{
-                return redirect()->route('home');
+            }else if (auth()->user()->user_type == 'Student') {
+                // if (auth()->user()->id === Students()->user_id) {
+                //     return redirect()->route('admin.home');
+                // }else{
+                //     return redirect()->route('home');   
+                // }
+                return redirect()->route('home');   
             }
       
         }
-
- 
-        
 
 
     /**

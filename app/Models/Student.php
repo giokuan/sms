@@ -62,4 +62,7 @@ class Student extends Model
                 ->orWhere('email', 'like', '%'.$search.'%');
     }
 
+    // public function showData(){
+    //     return $this->belongsTo(User::class);
+    // }
 }
