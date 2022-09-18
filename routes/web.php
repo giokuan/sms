@@ -118,14 +118,12 @@ Route::get('delete-student/{id}',[StudentController::class,'deleteStudent'])
 Route::get('profile',[StudentController::class,'studentProfile'])
         ->middleware(['auth', 'verified','teacher-middleware']);;
 
-<<<<<<< HEAD
-Route::get('add-grade/{id}',[StudentController::class,'addGrade']);
+
 Route::post('save-grade',[StudentController::class,'saveGrade']);
 Route::get('add-grade/{id}',[StudentController::class,'showGrade']);
-=======
+
 Route::get('add-grade',[StudentController::class,'addGrade'])
         ->middleware(['auth', 'verified','teacher-middleware']);;
->>>>>>> 466f0cbd77aff6577269b8ddf37e409ceb90d8bd
 
 Route::get('teacher-all-list',[TeachersController::class,'teacherAllList'])
         ->middleware(['auth', 'verified','teacher-middleware']);;
@@ -138,12 +136,5 @@ Route::post('update-teacher',[TeachersController::class,'updateTeacher']);
 Route::get('delete-teacher/{id}',[TeachersController::class,'deleteTeacher'])
         ->middleware(['auth', 'verified','teacher-middleware']);;
 
-<<<<<<< HEAD
-Route::get('teachers-dashboard',[TeachersController::class,'teachersDashboard'])->name('teacher');
-
-
-
-=======
 Route::get('teachers-dashboard',[TeachersController::class,'teachersDashboard'])->name('teacher')
         ->middleware(['auth', 'verified','teacher-middleware']);;
->>>>>>> 466f0cbd77aff6577269b8ddf37e409ceb90d8bd
