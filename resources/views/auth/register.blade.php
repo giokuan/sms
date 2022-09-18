@@ -61,8 +61,8 @@ style="background-image: url({{ url('images/hallway.webp') }})">
                 {{-- User type --}}
                 <div class="col-span-6 sm:col-start-2 sm:col-span-4 ">
                     <x-label for="user_type" :value="__('User Type')" class="text-center py-2"/>
-                    <select x-model="color" id="user_type" name="user_type" class=" w-full py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
-                    focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
+                    <select x-model="color" id="user_type" name="user_type" class=" w-full py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring-1
+                    focus:ring-blue-800 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
                     dark:text-gray-300 dark:focus:ring-offset-dark-eval-1">
                         
                         <option value="">User Type</option>
@@ -74,7 +74,7 @@ style="background-image: url({{ url('images/hallway.webp') }})">
 
                 {{-- Register Button --}}
                 <div class="col-span-6 sm:col-start-2 sm:col-span-4 ">
-                    <x-button class="justify-center w-full gap-2">
+                    <x-button class="bg-blue-800 hover:bg-blue-700 justify-center w-full gap-2">
                         <x-heroicon-o-user-add class="w-6 h-6" aria-hidden="true" />
                         <span>{{ __('Register') }}</span>
                     </x-button>
