@@ -13,6 +13,8 @@
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
+    @elseif((Auth::user_type() === "Teacher"))
+        Hotdog
     @else
         <x-sidebar.link title="Dashboard" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
             <x-slot name="icon">

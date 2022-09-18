@@ -4,9 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeachersController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StudentGradeController;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Student;
 use App\Models\User;
+use App\Models\StudentGrade;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -120,6 +122,10 @@ Route::get('delete-student/{id}',[StudentController::class,'deleteStudent'])
 
 Route::get('profile',[StudentController::class,'studentProfile'])
         ->middleware(['auth', 'verified','teacher-middleware']);
+
+
+Route::post('save-grade',[StudentController::class,'saveGrade']);
+Route::get('add-grade/{id}',[StudentController::class,'showGrade']);
 
 Route::get('add-grade',[StudentController::class,'addGrade'])
         ->middleware(['auth', 'verified','teacher-middleware']);

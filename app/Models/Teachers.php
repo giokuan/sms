@@ -26,4 +26,14 @@ class Teachers extends Model
 
     ];
 
+    public static function search($search)
+    {
+        return empty($search) ? static::query()
+            : static::query()->where('id', 'like', '%'.$search.'%')
+                ->orWhere('lastname', 'like', '%'.$search.'%')
+                ->orWhere('firstname', 'like', '%'.$search.'%')
+                ->orWhere('email', 'like', '%'.$search.'%');
+    }
+
+
 }

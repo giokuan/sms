@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('gender');
             $table->date('dateofbirth');
             $table->string('grade');
-            // $table->string('section');
+            $table->string('section');
 
             $table->string('email');
             $table->string('photo');

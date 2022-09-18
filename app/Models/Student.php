@@ -23,7 +23,7 @@ class Student extends Model
         'gender',
         'dateofbirth',
         'grade',
-        // 'section',
+        'section',
 
         'email',
         'photo',
@@ -46,6 +46,12 @@ class Student extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    
+    // relationship to student grade
+    // public function studentgrade(){
+    //     return $this->hasMany(StudentGrade::class, 'student_id');
+    // }
 
     public static function search($search)
     {

@@ -47,9 +47,9 @@
                     <th class="px-4 py-2">Gender</th>
                     <th class="px-4 py-2">Email</th>
                     <th class="px-4 py-2">Grade</th>
-                    {{-- <th class="px-4 py-2">Religion</th> --}}
+                    <th class="px-4 py-2">Section</th>
                     <th class="px-4 py-2">Date of Birth</th>
-                    <th class="px-4 py-2">Phone</th>
+                    {{-- <th class="px-4 py-2">Phone</th> --}}
                     {{-- <th class="px-4 py-2">Address</th> --}}
                     <th class="px-4 py-2">Action</th>
                 </tr>
@@ -68,9 +68,9 @@
                         <td class="border px-4 py-2">{{ $student->gender }}</td>
                         <td class="border px-4 py-2">{{ $student->email }}</td>
                         <td class="border px-4 py-2">{{ $student->grade }}</td>
-                        {{-- <td class="border px-4 py-2">{{ $student->religion}}</td> --}}
+                        <td class="border px-4 py-2">{{ $student->section}}</td>
                         <td class="border px-4 py-2">{{ $student->dateofbirth}}</td>
-                        <td class="border px-4 py-2">{{ $student->phone}}</td>
+                        {{-- <td class="border px-4 py-2">{{ $student->phone}}</td> --}}
                         {{-- <td class="border px-4 py-2">{{ $student->address }}</td> --}}
                         <td class="flex items-center border px-4 py-2">
                         
@@ -88,11 +88,12 @@
 
                         </td>
 
-                        {{-- <td class="border px-4 py-2">{{ $stud->created_at->diffForHumans() }}</td> --}}
+                 
                     </tr>
                 @endforeach
             </tbody>
         </table>
         {!! $students->links() !!}
+        @include('sweetalert::alert')
     </div>
 

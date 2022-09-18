@@ -22,10 +22,14 @@
         <x-dropdown align="right" width="48">
             <x-slot name="trigger">
                 <button
-                    class="flex items-center p-2 text-sm font-medium text-[#FFFFFF] rounded-md transition duration-150 ease-in-out hover:text-sky-200 focus:outline-none focus:ring focus:ring-sky-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
-                    <div>{{ Auth::user()->name }}</div>
-                    <div>{{ Auth::user()->user_type }}</div>
 
+                    class="flex items-center p-2 text-sm font-medium text-[#FFFFFF] rounded-md transition duration-150 ease-in-out hover:text-sky-200 focus:outline-none focus:ring focus:ring-sky-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
+              
+                    <div class="flex-col">
+                    <div class="mt-4">{{ Auth::user()->name }}</div>
+                  
+                    <div class="text-xs">{{ Auth::user()->user_type }}</div>
+                    </div>
                     <div class="ml-1">
                         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -33,7 +37,9 @@
                                 clip-rule="evenodd" />
                         </svg>
                     </div>
+                    
                 </button>
+                
             </x-slot>
 
             <x-slot name="content">

@@ -26,9 +26,14 @@ class AdminMiddleware
        }
        else
        {
+<<<<<<< HEAD
+     
+        return response()->json(['You do not have permission to access for this page.']);
+=======
         return $next($request);
         // return redirect('/teachers-dashboard');
         // return response()->json(['You do not have permission to access for this page.']);
+>>>>>>> 466f0cbd77aff6577269b8ddf37e409ceb90d8bd
        }
        
     }
