@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->string('gradingperiod');
+            $table->string('lastname');
+            $table->string('firstname');
             $table->integer('english');
             $table->integer('filipino');
             $table->integer('mathematics');

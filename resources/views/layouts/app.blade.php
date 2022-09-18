@@ -22,6 +22,8 @@
     
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
+    @powerGridStyles
    
 </head>
 
@@ -60,7 +62,8 @@
             </div>
         </div>
     </div>
-  
+    @livewireScripts
+    @powerGridScripts
 </body>
 
 </html>

@@ -51,7 +51,7 @@ class StudentController extends Controller
         $middlename = $request->middlename;
         $grade = $request->grade;
         $section = $request->section;
-        $photo = $request->photo;
+        // $photo = $request->photo;
         $gender = $request->gender;
         $religion = $request->religion;
         $dateofbirth = $request->dateofbirth;
@@ -190,8 +190,15 @@ class StudentController extends Controller
 
     public function saveGrade(Request $request){
 
+        $request-> validate([
+            'gradingperiod'=>'required',
+        
+        ]);
+
         // $student_id = $request->id;
         $gradingperiod = $request->gradingperiod;
+        $lastname = $request->lastname;
+        $firstname = $request->firstname;
         $english = $request->english;
         $filipino = $request->filipino;
         $mathematics = $request->mathematics;
@@ -212,6 +219,8 @@ class StudentController extends Controller
         $stud->student_id = auth()->user()->id;
         
         $stud->gradingperiod = $gradingperiod;
+        $stud->lastname=$lastname;
+        $stud->firstname=$firstname;
         $stud->english = $english;
         $stud->filipino = $filipino;
         $stud->mathematics = $mathematics;
@@ -230,18 +239,13 @@ class StudentController extends Controller
 
     }
 
-    public function showGrade($id, $gradingperiod){
-        $data = StudentGrade::where('id', '=', $id)->first();
-          
-        $data = DB::table('grades')->where('gradingperiod', $gradingperiod)->first();
+    public function showGrade(){
+        // $data = StudentGrade::where('student_id', $id)->first();
+        $data = StudentGrade::get();
+        // $data = DB::table('grades')->get();
       
         return view('pages.add-grade', compact('data'));
     }
    
-    public function editGrade($gradingperiod){
-        // $data = StudentGrade::where('gradingperiod', '=', $gradingperiod)->first();
-      
-        $data = DB::table('grades')->where('gradingperiod', $gradingperiod)->first();
-        return view('pages.add-grade', compact('data'));
-    }
+  
 }

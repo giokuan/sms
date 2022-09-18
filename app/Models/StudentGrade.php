@@ -13,6 +13,8 @@ class StudentGrade extends Model
     protected $fillable = [
 
         'grading_period',
+        'lastname',
+        'firstname',
         'english',
         'filipino',
         'mathematics',

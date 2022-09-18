@@ -14,7 +14,7 @@
 
 
 
-        <form method="post" action="{{url('save-grade')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
+        <form method="post" action="{{url('update-student')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
                    
             @csrf
             <input type="hidden" value="{{ $data->id }}" name="id" />

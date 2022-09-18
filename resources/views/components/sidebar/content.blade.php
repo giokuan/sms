@@ -73,6 +73,7 @@
         <x-sidebar.link title="All Teachers" href="/teacher-all-list" />
         <x-sidebar.link title="Add Student" href="/add-student" />
         <x-sidebar.link title="Add Teacher" href="/add-teacher" />
+        <x-sidebar.link title="Calendar" href="/homecalendar" />
 
         {{-- <x-sidebar.link title="Add Grade" href="/add-grade" /> --}}
     {{-- @endforeach --}}

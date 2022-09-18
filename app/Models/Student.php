@@ -59,7 +59,8 @@ class Student extends Model
             : static::query()->where('id', 'like', '%'.$search.'%')
                 ->orWhere('lastname', 'like', '%'.$search.'%')
                 ->orWhere('firstname', 'like', '%'.$search.'%')
-                ->orWhere('email', 'like', '%'.$search.'%');
+                ->orWhere('email', 'like', '%'.$search.'%')
+                ->orWhere('section', 'like', $search);
     }
 
     // public function showData(){
