@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Auth;
 
-class AdminMiddleware
+class StudentMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,18 +17,18 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->user_type === 'Student')
+        if(auth()->user()->user_type === 'Teacher')
        {
-        return redirect()->to('/student/home');
-       }
-       else if (auth()->user()->user_type === 'Teacher'){
         return redirect()->to('/teacher/home');
+       }
+       else if (auth()->user()->user_type === 'admin'){
+        return redirect()->to('dashboard');
        }
        else
        {
         return $next($request);
-        // return redirect('/teachers-dashboard');
-        // return response()->json(['You do not have permission to access for this page.']);
+        // return redirect('student-dashboard');
+        // return response()->json(['student']);
        }
        
     }
