@@ -1,7 +1,7 @@
 <div class="flex items-center justify-between flex-shrink-0 px-3">
     
     {{-- This is the logic on what destination it going based on route --}}
-    @if (Route::is('student-home') || Route::is('student-profile') || Route::is('student-grades') || Route::is('student-schedule') || Route::is('student-classmates'))
+    {{-- @if (Route::is('student-home') || Route::is('student-profile') || Route::is('student-grades') || Route::is('student-schedule') || Route::is('student-classmates'))
         <a href="{{ route('student-profile') }}" class="inline-flex items-center gap-2">
             <x-application-logo aria-hidden="true" class="w-10 h-auto" />
             <span class="sr-only">K UI Logo</span>
@@ -11,13 +11,19 @@
             <x-application-logo aria-hidden="true" class="w-10 h-auto" />
             <span class="sr-only">K UI Logo</span>
         </a>
-    @else
+    @elseif((Route::is('add-student')))
+    omsim
+    <a href="{{ route('add-teacher') }}" class="inline-flex items-center gap-2">
+        <x-application-logo aria-hidden="true" class="w-10 h-auto" />
+        <span class="sr-only">K UI Logo</span>
+    </a>
+    @else --}}
         <!-- Profile -->
-        <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-2">
+        <a href="/" class="inline-flex items-center gap-2">
             <x-application-logo aria-hidden="true" class="w-10 h-auto" />
             <span class="sr-only">K UI Logo</span>
         </a>
-    @endif
+    {{-- @endif --}}
     
 
     <!-- Toggle button -->

@@ -103,32 +103,42 @@ require __DIR__ . '/auth.php';
 
 
 Route::get('student-all-list',[StudentController::class,'studentAllList'])
-        ->middleware(['auth', 'verified','teacher-middleware']);
+        ->middleware(['auth', 'verified','teacher-middleware'])->name('student-all-list');
+
 Route::get('add-student',[StudentController::class,'addStudent'])
-        ->middleware(['auth', 'verified','teacher-middleware']);
+        ->middleware(['auth', 'verified','teacher-middleware'])->name('add-student');
+
 Route::post('save-student',[StudentController::class,'saveStudent']);
+
 Route::get('edit-student/{id}',[StudentController::class,'editStudent'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
+
 Route::post('update-student',[StudentController::class,'updateStudent']);
+
 Route::get('delete-student/{id}',[StudentController::class,'deleteStudent'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 
 Route::get('profile',[StudentController::class,'studentProfile'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 
 Route::get('add-grade',[StudentController::class,'addGrade'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 
 Route::get('teacher-all-list',[TeachersController::class,'teacherAllList'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware'])->name('teacher-all-list');
+
 Route::get('add-teacher',[TeachersController::class,'addTeacher'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware'])->name('add-teacher');
+
 Route::post('save-teacher',[TeachersController::class,'saveTeacher']);
+
 Route::get('edit-teacher/{id}',[TeachersController::class,'editTeacher'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;  
+        ->middleware(['auth', 'verified','teacher-middleware']);
+
 Route::post('update-teacher',[TeachersController::class,'updateTeacher']);
+
 Route::get('delete-teacher/{id}',[TeachersController::class,'deleteTeacher'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 
 Route::get('teachers-dashboard',[TeachersController::class,'teachersDashboard'])->name('teacher')
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);

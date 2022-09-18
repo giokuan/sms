@@ -7,8 +7,8 @@
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-    @elseif((Route::is('home')))
-        <x-sidebar.link title="Dashboard" href="{{ route('home') }}" :isActive="request()->routeIs('home')">
+    @elseif((Route::is('teacher.home') || Route::is('student-all-list') || Route::is('teacher-all-list') || Route::is('add-student') || Route::is('add-teacher') ))
+        <x-sidebar.link title="Dashboard" href="{{ route('teacher.home') }}" :isActive="request()->routeIs('home')">
             <x-slot name="icon">
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
