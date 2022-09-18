@@ -348,11 +348,7 @@
                     {{-- Address --}}
                     <div class="form-item w-full">
                         <label class="text-md ">Address</label>
-<<<<<<< HEAD
-                        <textarea type="text"  class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="address" name="address">{{old('address')}}</textarea>
-=======
                         <textarea type="text"  class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="address" name="address">{{old('address')}}</textarea>
->>>>>>> master
                         @error('address')
                    
                         <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
