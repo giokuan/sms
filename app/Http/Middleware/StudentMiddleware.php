@@ -17,14 +17,18 @@ class StudentMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->user_type === 'Student')
+        if(auth()->user()->user_type === 'Teacher')
        {
-        return redirect()->to('/student/home');
+        return redirect()->to('/teacher/home');
+       }
+       else if (auth()->user()->user_type === 'admin'){
+        return redirect()->to('dashboard');
        }
        else
        {
+        return $next($request);
         // return redirect('student-dashboard');
-        return response()->json(['student']);
+        // return response()->json(['student']);
        }
        
     }

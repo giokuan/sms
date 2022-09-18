@@ -17,14 +17,18 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->user_type === 'admin')
+        if(auth()->user()->user_type === 'Student')
        {
-        return redirect()->to('/admin/home');
+        return redirect()->to('/student/home');
+       }
+       else if (auth()->user()->user_type === 'Teacher'){
+        return redirect()->to('/teacher/home');
        }
        else
        {
+        return $next($request);
         // return redirect('/teachers-dashboard');
-        return response()->json(['You do not have permission to access for this page.']);
+        // return response()->json(['You do not have permission to access for this page.']);
        }
        
     }
