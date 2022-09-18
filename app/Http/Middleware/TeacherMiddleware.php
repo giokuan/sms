@@ -17,9 +17,9 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->user_type === 'admin')
+        if(auth()->user()->user_type === 'Teacher')
        {
-        return redirect()->to('/admin/home');
+        return redirect()->to('/teacher/home');
        }
        else
        {

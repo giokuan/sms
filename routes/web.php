@@ -32,24 +32,22 @@ Route::get('/dashboard', function () {
 Auth::routes();
 
 
-Route::middleware(['auth', 'admin-middleware:student'])->group(function(){
+Route::middleware(['auth',])->group(function(){
 
     Route::get('/home',[HomeController::class, 'index'])->name('home');
 });
 
 
-Route::middleware(['auth', 'admin-middleware:admin'])->group(function(){
+Route::middleware(['auth','teacher-middleware'])->group(function(){
 
     Route::get('/admin/home',[HomeController::class, 'adminHome'])->name('admin.home');
 });
 
 
-Route::middleware(['auth', 'admin-middleware:teacher'])->group(function(){
+Route::middleware(['auth'])->group(function(){
 
     Route::get('/teacher/home',[HomeController::class, 'teacherHome'])->name('teacher.home');
 });
-
-
 
 // student-dashboard
 Route::get('home', function () {
@@ -59,11 +57,10 @@ Route::get('home', function () {
 // for completing information of the student
 Route::get('home', function () {
     return view('home');
-})->middleware(['admin-middleware'])->name('home');
+})->middleware(['auth',])->name('home');
 
 Route::get('student/home', function() {
-    return view('student-pages.home')->with('students', Student::find(1)->where('user_id', Auth::id())
-    ->first());
+    return view('student-pages.home');
 })->middleware(['auth', 'verified'])->name('student-home');
 
 Route::get('student/profile', function() {
@@ -88,17 +85,17 @@ Route::get('student/classmates', function() {
 
 // useless routes
 // Just to demo sidebar dropdown links active states.
-Route::get('/buttons/text', function () {
-    return view('buttons-showcase.text');
-})->middleware(['auth'])->name('buttons.text');
+// Route::get('/buttons/text', function () {
+//     return view('buttons-showcase.text');
+// })->middleware(['auth'])->name('buttons.text');
 
-Route::get('/buttons/icon', function () {
-    return view('buttons-showcase.icon');
-})->middleware(['auth'])->name('buttons.icon');
+// Route::get('/buttons/icon', function () {
+//     return view('buttons-showcase.icon');
+// })->middleware(['auth'])->name('buttons.icon');
 
-Route::get('/buttons/text-icon', function () {
-    return view('buttons-showcase.text-icon');
-})->middleware(['auth'])->name('buttons.text-icon');
+// Route::get('/buttons/text-icon', function () {
+//     return view('buttons-showcase.text-icon');
+// })->middleware(['auth'])->name('buttons.text-icon');
 
 
 
@@ -115,7 +112,6 @@ Route::get('delete-student/{id}',[StudentController::class,'deleteStudent']);
 Route::get('profile',[StudentController::class,'studentProfile']);
 
 Route::get('add-grade',[StudentController::class,'addGrade']);
-
 
 Route::get('teacher-all-list',[TeachersController::class,'teacherAllList']);
 Route::get('add-teacher',[TeachersController::class,'addTeacher']);
