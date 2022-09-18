@@ -33,7 +33,7 @@ class AdminMiddleware
        }
        else
        {
-        // return redirect('/teachers-dashboard');
+     
         return response()->json(['You do not have permission to access for this page.']);
        }
        

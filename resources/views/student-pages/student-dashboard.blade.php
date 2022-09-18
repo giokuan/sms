@@ -122,7 +122,7 @@
         
                         <div class="form-item w-full">
                             <label class="text-md dark:text-gray-500">Email</label>
-                            <input type="text" value="{{old('email')}}" class="w-full appearance-none text-black dark:bg-gray-400 text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200" id="email" name="email">
+                            <input type="text" value="{{Auth::user()->email}}" class="w-full appearance-none text-black dark:bg-gray-400 text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200" id="email" name="email" disabled>
                             @error('email')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -157,6 +157,21 @@
                               </div>
                               @enderror
                             {{-- <input type="text" value="{{old('grade')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="grade" name="grade"> --}}
+                        </div>
+
+                        <div class="form-item w-full">
+                            <label class="text-md dark:text-gray-500">Section</label>
+                            <input type="text" value="{{old('phone')}}" class="w-full appearance-none text-black dark:bg-gray-400 text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200" id="section" name="section">
+                            @error('section')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}}
+                                </div>
+                              </div>
+                              @enderror
                         </div>
           
                         <div class="form-item w-full">

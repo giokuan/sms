@@ -3,61 +3,296 @@
 
 
 @extends('partials.__sidebar')
+
 @section('content')	
-<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-8">
-        <div>
-            <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
-            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                Sign in to your account
-            </h2>
-            <p class="mt-2 text-center text-sm text-gray-600">
-                Or
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
-                    start your 14-day free trial
-                </a>
-            </p>
+<h1 class=" text-xl decoration-8 pb-6 pl-4">{{$data->firstname}} {{$data->lastname}}</h1>
+<div class="overflow-x-auto">
+    
+    <table class="min-w-full text-sm divide-y-2 divide-gray-200">
+      <thead>
+        <tr>
+          <th
+            class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap"
+          >
+            Subject
+          </th>
+          <th
+            class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap"
+          >
+            1st
+          </th>
+          <th
+            class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap"
+          >
+            2nd
+          </th>
+          <th
+            class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap"
+          >
+            3rd
+          </th>
+
+          <th
+          class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap"
+        >
+          4th
+        </th>
+        </tr>
+      </thead>
+  
+      <tbody class="divide-y divide-gray-200">
+        {{-- @foreach($stu as $studentgrade) --}}
+        <tr>
+          <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap">
+            English
+          </td>
+          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->english}}</td>
+          <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+        </tr>
+  
+        <tr>
+          <td class="px-4 py-2 font-medium whitespace-nowrap">Filipino</td>
+          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->filipino}}</td>
+          <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+        </tr>
+  
+        <tr>
+          <td class="px-4 py-2 font-medium whitespace-nowrap">Mathematics</td>
+          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->mathematics}}</td>
+          <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+        </tr>
+
+        <tr>
+            <td class="px-4 py-2 font-medium whitespace-nowrap">Social Studies</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->social_studies}}</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          </tr>
+    
+          <tr>
+            <td class="px-4 py-2 font-medium whitespace-nowrap">Science and Technology</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->science}}</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          </tr>
+
+          {{-- <tr>
+            <td class="px-4 py-2 font-medium whitespace-nowrap">Filipino</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          </tr> --}}
+    
+          <tr>
+            <td class="px-4 py-2 font-medium whitespace-nowrap">Home Economics</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->home_economics}}</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          </tr>
+
+          <tr>
+            <td class="px-4 py-2 font-medium whitespace-nowrap">Values Education</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->values_education}}</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          </tr>
+
+          <td class="px-4 py-2 font-medium whitespace-nowrap"><strong>MAPEH</strong></td>
+          <tr>
+            <td class="px-4 py-2 pl-8 font-medium whitespace-nowrap">Music</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->music}}</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          </tr>
+
+          <tr>
+            <td class="px-4 py-2 pl-8 font-medium whitespace-nowrap">Arts</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->arts}}</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          </tr>
+
+          <tr>
+            <td class="px-4 py-2 pl-8 font-medium whitespace-nowrap">Physical Education</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->physical_education}}</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          </tr>
+
+          <tr>
+            <td class="px-4 py-2 pl-8 font-medium whitespace-nowrap">Health</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->health}}</td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+            <td class="px-4 py-2 text-gray-700 whitespace-nowrap"></td>
+          </tr>
+
+          <tr>
+            <td class="px-4 py-2  font-medium whitespace-nowrap"><strong>General Average</strong></td>
+          
+          </tr>
+
+          
+          {{-- @endforeach --}}
+          
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  
+<!-- component -->
+<!-- component -->
+<form method="post" action="{{url('save-grade')}}" class="flex flex-col space-y-8" enctype="multipart/form-data"> 
+    @csrf
+    <input type="hidden" value="{{ $data->id }}" name="id" />
+<div class="p-5">
+    <div class="mt-2">
+
+      <div class=" w-44 flex flex-col md:flex-row   pb-4 ">
+      <div class="w-full flex-1 mx-2">      
+        <label class="text-sm ">Grading Period</label>
+     
+                {{-- <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="gradingperiod">  --}}
+                <select class="w-full appearance-none text-black text-opacity-90 rounded shadow-xl py-1 px-2 mr-2 focus:outline-none focus:shadow-outline border-none focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="gradingperiod" name="gradingperiod" >
+                  <option value="{{$data->gradingperiod}}"></option>
+                  <option value="1" @if (old('gradingperiod') == "1") {{ 'selected' }} @endif>1</option>
+                  <option value="2" @if (old('gradingperiod') == "2") {{ 'selected' }} @endif>2</option>    
+                  <option value="3" @if (old('gradingperiod') == "2") {{ 'selected' }} @endif>3</option>
+                  <option value="4" @if (old('gradingperiod') == "4") {{ 'selected' }} @endif>4</option>                
+              </select>
+          
+      </div>
+      </div>
+
+        <div class="flex flex-col md:flex-row   pb-4 ">
+            <div class=" font-bold h-8 mx-2 md:w-64 text-gray-800 ">
+             
+                  <img src="{{asset('uploads/students/'.$data->photo)}}"  alt="image" class=" hidden  w-44 h-52 ml-8 ">
+            </div>
+
+            
+          
+            <div class="flex-1 flex flex-col md:flex-row">
+              
+                <div class="w-full flex-1 mx-2">
+
+                    
+                    <label class="text-sm ">English</label>
+                    {{-- <div class="w-full flex-1 mx-2"> --}}
+                        {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                            <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="english" value="{{$data->english}}"> 
+                        {{-- </div> --}}
+                    {{-- </div> --}}
+                </div>
+                
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Filipino</label>
+                        <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="filipino" value="{{$data->filipino}}"> 
+                    {{-- </div> --}}
+                </div>
+
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Mathematics</label>
+                        <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="mathematics" value="{{$data->mathematics}}"> 
+                    {{-- </div> --}}
+                </div>
+                
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Social Studies</label>
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="social_studies" value="{{$data->social_studies}}">
+                     {{-- </div> --}}
+                </div>
+            </div>
+
         </div>
-        <form class="mt-8 space-y-6" action="#" method="POST">
-            <input type="hidden" name="remember" value="True">
-            <div class="rounded-md shadow-sm -space-y-px">
-                <div>
-                    <label for="email-address" class="sr-only">Email address</label>
-                    <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
-                </div>
-                <div>
-                    <label for="password" class="sr-only">Password</label>
-                    <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
-                </div>
-            </div>
 
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <input id="remember_me" name="remember_me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                    <label for="remember_me" class="ml-2 block text-sm text-gray-900">
-                        Remember me
-                    </label>
+        
+        <div class="flex flex-col md:flex-row pb-2 ">
+            <div class="w-64 font-bold h-6 mx-2 mt-3 text-gray-800"></div>
+
+            <div class="flex-1 flex flex-col md:flex-row">
+
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Science and Technology</label>
+                        <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="science" value="{{$data->science}}"> 
+                    {{-- </div> --}}
+                </div>
+                
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Home Econnomics</label>
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="home_economics" value="{{$data->home_economics}}"> 
+                    {{-- </div> --}}
                 </div>
 
-                <div class="text-sm">
-                    <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
-                        Forgot your password?
-                    </a>
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Values Education</label>
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="values_education" value="{{$data->values_education}}"> 
+                    {{-- </div> --}}
                 </div>
+                
+              
             </div>
+        
+        </div>
 
-            <div>
-                <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-                        <!-- Heroicon name: solid/lock-closed -->
-                        <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="True">
-                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                        </svg>
-                    </span>
-                    Sign in
-                </button>
+        <div class="flex flex-col md:flex-row pb-4 mb-1">
+            <div class="w-64 font-bold h-6 mx-2 mt-3 text-gray-800"></div>
+
+            <div class="flex-1 flex flex-col md:flex-row">
+
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Music</label>
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="music" value="{{$data->music}}">
+                     {{-- </div> --}}
+                </div>
+                
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Arts</label>
+                        <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="arts" value="{{$data->arts}}"> 
+                    {{-- </div> --}}
+                </div>
+
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Physical Education</label>
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="physical_education" value="{{$data->physical_education}}"> 
+                    {{-- </div> --}}
+                </div>
+
+                <div class="w-full flex-1 mx-2">
+                    {{-- <div class="my-2 p-1 bg-white flex border border-gray-200 rounded"> --}}
+                        <label class="text-sm ">Health</label>
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="health" value="{{$data->health}}"> 
+                    {{-- </div> --}}
+                </div>
+                
+              
             </div>
-        </form>
+        
+        </div>
+        <div class="flex flex-col md:flex-row">
+            <div class="w-64 mx-2 font-bold h-6 mt-3 text-gray-800"></div>
+            <div class="flex-1 flex flex-col md:flex-row">
+                <button class="text-sm  mx-2 w-32  focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer 
+        hover:bg-indigo-700 hover:text-teal-100 
+        bg-indigo-900 
+        text-slate-100 
+        border duration-200 ease-in-out 
+        border-teal-600 transition" type="submit">Add Grade</button>
+            </div>
+        </div>
     </div>
 </div>
+@include('sweetalert::alert')
+</form>
 @endsection            

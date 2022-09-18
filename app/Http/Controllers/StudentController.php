@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-use Carbon\Carbon;
+use App\Models\StudentGrade;
+
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Auth;
 
@@ -28,8 +30,9 @@ class StudentController extends Controller
             'lastname'=>'required',
             'firstname'=>'required',
             'middlename'=>'required',
-            'email'=>'required|email',
+            // 'email'=>'required|email',
             'grade'=>'required',
+            'section'=>'required',
             'photo'=>'required',
             'religion'=>'required',
             'gender'=>'required',
@@ -46,8 +49,8 @@ class StudentController extends Controller
         $lastname = $request->lastname;
         $firstname = $request->firstname;
         $middlename = $request->middlename;
-        $email = $request->email;
         $grade = $request->grade;
+        $section = $request->section;
         $photo = $request->photo;
         $gender = $request->gender;
         $religion = $request->religion;
@@ -65,8 +68,10 @@ class StudentController extends Controller
         $stud->lastname = $lastname;
         $stud->firstname = $firstname;
         $stud->middlename = $middlename;
-        $stud->email = $email;
+        $stud->email = auth()->user()->email;
         $stud->grade = $grade;
+        $stud->section = $section;
+
         if($request->hasfile('photo'))
         {
             $file = $request->file('photo');
@@ -88,12 +93,12 @@ class StudentController extends Controller
         $stud->address = $address;
         $stud->save();
 
-        if(Auth::user()->user_type === 'Student'){
-            return redirect()->to('student/home')->with('success','Student Added Succesfuly');
-        }
-        else{
+        // if(auth()->user()->user_type === 'Student'){
+        //     return redirect()->to('student/home')->with('success','Student Added Succesfuly');
+        // }
+        // else{
             return redirect()->back()->with('success','Student Added Succesfuly');
-        }
+        // }
     }
 
     public function editStudent($id){
@@ -106,8 +111,9 @@ class StudentController extends Controller
             'lastname'=>'required',
             'firstname'=>'required',
             'middlename'=>'required',
-            'email'=>'required|email',
+            // 'email'=>'required|email',
             'grade'=>'required',
+            'section'=>'required',
             // 'photo'=>'required',
             'gender'=>'required',
             'religion'=>'required',
@@ -128,24 +134,7 @@ class StudentController extends Controller
         $data->middlename = $request->middlename;
         $data->email = $request->email;
         $data->grade = $request->grade;
-
-
-        // if($request->hasfile('photo'))
-        // {
-        //    $destination = 'uploads/students/';
-        //    if(File::exists($destination))
-        //    {
-        //     File::delete($destination);
-        //    }
-        //     $file = $request->file('photo');
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = time().'.'.$extension;
-        //     $file->move('uploads/students/',$filename);
-        //     $data->photo = $filename;
-        // }
-
-        
-
+        $data->section = $request->section;
 
         if($request->hasfile('photo'))
         {
@@ -192,9 +181,67 @@ class StudentController extends Controller
     }
 
 
-    public function addGrade(){
-     
-        return view('pages.add-grade');
+    public function addGrade($id){
+        $data = Student::where('id', '=', $id)->first();
+      
+        return view('pages.add-grade', compact('data'));
+    }
+    
+
+    public function saveGrade(Request $request){
+
+        // $student_id = $request->id;
+        $gradingperiod = $request->gradingperiod;
+        $english = $request->english;
+        $filipino = $request->filipino;
+        $mathematics = $request->mathematics;
+        $social_studies= $request->social_studies;
+        $science = $request->science;
+        $homeeconomics = $request->home_economics;
+        $values_education = $request->values_education;
+        $music = $request->music;
+        $arts = $request->arts;
+        $physical_education = $request->physical_education;
+        $health = $request->health;
+        $average = $request->average;
+
+
+        $stud = new StudentGrade();
+   
+        // $stud = StudentGrade::find($request->id);
+        $stud->student_id = auth()->user()->id;
+        
+        $stud->gradingperiod = $gradingperiod;
+        $stud->english = $english;
+        $stud->filipino = $filipino;
+        $stud->mathematics = $mathematics;
+        $stud->social_studies = $social_studies;
+        $stud->science = $science;
+        $stud->home_economics = $homeeconomics;
+        $stud->values_education = $values_education;
+        $stud->music = $music;
+        $stud->arts= $arts;
+        $stud->physical_education = $physical_education;
+        $stud->health = $health;
+        $stud->average = $average;
+        $stud->save();
+
+        return redirect()->back()->with('success','Grade added Succesfuly');
+
     }
 
+    public function showGrade($id, $gradingperiod){
+        $data = StudentGrade::where('id', '=', $id)->first();
+          
+        $data = DB::table('grades')->where('gradingperiod', $gradingperiod)->first();
+      
+        return view('pages.add-grade', compact('data'));
+    }
+   
+    public function editGrade($gradingperiod){
+        // $data = StudentGrade::where('gradingperiod', '=', $gradingperiod)->first();
+      
+        $data = DB::table('grades')->where('gradingperiod', $gradingperiod)->first();
+        return view('pages.add-grade', compact('data'));
+    }
 }

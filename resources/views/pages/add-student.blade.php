@@ -29,9 +29,9 @@
             </div>
             <div class="grid grid-cols-12 bg-white dark:bg-dark-eval-1">
           
-              <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
+              <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 dark:border-none md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
           
-                <a href="#" class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">
+                {{-- <a href="#" class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">
                     Basic Information
                 </a>
           
@@ -41,13 +41,13 @@
           
                 <a href="#"  class="text-md p-2 bg-blue-900 text-white text-center rounded font-medium hover:bg-blue-800">
                     Another Something
-                </a>
+                </a> --}}
         
                     <label class=" flex uppercase tracking-wide text-white text-xs h-1" for="photo">
                         Add Photo
                     </label>
                
-                    <div class="border-2 rounded-md bg-blue-900">
+                    <div class=" rounded-md bg-blue-900">
                         <label>
                             <input type="file" class=" w-full text-md text-grey-500 p-2 text-blue-900
                             file:mr-5 pl-6 file:py-1 file:px-14
@@ -66,7 +66,7 @@
           
               </div>
           
-              <div class="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10">
+              <div class="col-span-12 md:border-solid md:border-l  md:border-black md:border-opacity-25  h-full pb-12 md:col-span-10">
                 <div class="px-4 pt-4">
 
                   {{-- <form method="post" action="{{url('save-student')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
@@ -167,6 +167,23 @@
                             @enderror
                             {{-- <input type="text" value="{{old('grade')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" id="grade" name="grade"> --}}
                         </div>
+
+
+                        <div class="form-item w-full">
+                            <label class="text-md ">Section</label>
+                            <input type="text" value="{{old('section')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" placeholder="" id="section" name="section">
+                            @error('section')
+                   
+                            <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
+                                <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                                <span class="sr-only">Info</span>
+                                <div>
+                                    {{$message}}
+                                </div>
+                              </div>
+                              @enderror
+                        </div>
+                        
                         
                         {{-- Date of birth --}}
                         <div class="form-item w-full">
