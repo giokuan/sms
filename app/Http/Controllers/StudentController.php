@@ -284,7 +284,7 @@ class StudentController extends Controller
 
         // dd($student->user_id);
 
-        $datas = Student::all()->where('section', '=', $student->section);
+        $datas = Student::all()->where('section', '=', $student->section)->where('grade', '=', $student->grade);
         
         // ->where('section', '=', $student->section)
 
