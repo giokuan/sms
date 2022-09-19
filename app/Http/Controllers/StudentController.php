@@ -246,6 +246,26 @@ class StudentController extends Controller
       
         return view('pages.add-grade', compact('data'));
     }
+    
    
-  
+    public function showStudentData(){
+
+        // $datas = Student::all();
+        // $datas = Student::find(1)->where('user_id', Auth::id())->first();
+        $datas = Student::where('user_id', '=', Auth::id())->first();
+        
+        return view('student-pages.profile', compact('datas'));
+    }
+    public function showStudentGrade(){
+
+        return view('student-pages.grades');
+    }
+    public function showStudentSchedule(){
+
+        return view('student-pages.schedule');
+    }
+    public function showStudentClassmates(){
+
+        return view('student-pages.classmates');
+    }
 }
