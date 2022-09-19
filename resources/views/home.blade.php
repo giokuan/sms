@@ -53,9 +53,6 @@
     
                 <button type="submit" class="bg-indigo-900 hover:bg-indigo-700 hover:text-slate-500 text-slate-50 dark:bg-gray-700 dark:text-slate-400 border-gray-200 rounded py-2 px-10 shadow-lg">Save</button>
               
-                   
-               
-          
               </div>
           
               <div class="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10">

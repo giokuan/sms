@@ -84,8 +84,7 @@ Route::get('student/grades', function() {
 })->middleware(['auth', 'verified','student-middleware'])->name('student-grades');
 
 Route::get('student/schedule', function() {
-    return view('student-pages.schedule')->with('students', Student::find(1)->where('user_id', Auth::id())
-    ->first());
+    return view('student-pages.schedule');
 })->middleware(['auth', 'verified','student-middleware'])->name('student-schedule');
 
 Route::get('student/classmates', function() {

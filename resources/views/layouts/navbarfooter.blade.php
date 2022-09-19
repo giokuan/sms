@@ -84,7 +84,7 @@
                                 @endauth
                         @endif
                     </div>
-                    <x-button class="ml-0 mt-3 md:mt-0 md:ml-6" type="button" iconOnly variant="secondary" bg:black srText="Toggle dark mode" @click="toggleTheme">
+                    <x-button class="ml-0 mt-3 md:mt-0 md:ml-6" type="button" iconOnly variant="secondary" srText="Toggle dark mode" @click="toggleTheme">
                         <x-heroicon-o-moon x-show="!isDarkMode" aria-hidden="true" class="w-5 h-5" />
                         <x-heroicon-o-sun x-show="isDarkMode" aria-hidden="true" class="w-5 h-5" />
                     </x-button>

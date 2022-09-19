@@ -1,7 +1,3 @@
-
-
-
-
 @extends('partials.__sidebar')
 
 @section('content')	
