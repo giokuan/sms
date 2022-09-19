@@ -21,7 +21,7 @@
                         <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">Our Team</h2>
                         <p class="mt-6 mb-2 text-base font-medium tracking-tight text-blue-900 uppercase" data-primary="indigo-500">We will modernize education in emerging markets</p>
                         {{-- <p class="my-6 text-lg text-gray-600">Don't just take our word for it, read from our extensive list of case studies and customer testimonials.</p> --}}
-                        <a href="#" class="flex items-center justify-center px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-blue-900 border border-transparent rounded-md shadow hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-indigo md:py-4 md:text-lg md:px-10" style="cursor: pointer" data-primary="indigo-600" data-rounded="rounded-md">Contact Us</a>
+                        {{-- <a href="#" class="flex items-center justify-center px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-blue-900 border border-transparent rounded-md shadow hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-indigo md:py-4 md:text-lg md:px-10" style="cursor: pointer" data-primary="indigo-600" data-rounded="rounded-md">Contact Us</a> --}}
                     </div>
                     <div class="w-full lg:w-1/2">
                       
