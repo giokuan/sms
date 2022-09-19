@@ -250,8 +250,6 @@ class StudentController extends Controller
    
     public function showStudentData(){
 
-        // $datas = Student::all();
-        // $datas = Student::find(1)->where('user_id', Auth::id())->first();
         $datas = Student::where('user_id', '=', Auth::id())->first();
         
         return view('student-pages.profile', compact('datas'));
@@ -266,6 +264,17 @@ class StudentController extends Controller
     }
     public function showStudentClassmates(){
 
-        return view('student-pages.classmates');
+        // $countryID = 1;
+        // $countryData = Country::find($countryID);
+
+        $student = Student::where('user_id', '=', Auth::id())->first();
+
+        // dd($student->user_id);
+
+        $datas = Student::all()->where('section', '=', $student->section);
+        
+        // ->where('section', '=', $student->section)
+
+        return view('student-pages.classmates', compact('datas'));
     }
 }
