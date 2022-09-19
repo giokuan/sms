@@ -116,5 +116,5 @@
 
                
     {{-- @endsection --}}
-{{-- @livewireScripts --}}
+@livewireScripts
 

@@ -28,6 +28,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 
 Route::get('homecalendar', function () {
     return view('homecalendar');
@@ -127,10 +131,14 @@ Route::get('delete-student/{id}',[StudentController::class,'deleteStudent'])
 Route::get('profile',[StudentController::class,'studentProfile'])
         ->middleware(['auth', 'verified','teacher-middleware']);
 
+
+
 Route::get('add-grade/{id}',[StudentController::class,'addGrade']);
 Route::post('save-grade',[StudentController::class,'saveGrade']);
-// Route::get('add-grade/{id}',[StudentController::class,'showGrade']);
 Route::get('add-grade',[StudentController::class,'showGrade']);
+Route::get('edit-grade/{id}',[StudentController::class,'editGrade']);
+
+
 
 Route::get('teacher-all-list',[TeachersController::class,'teacherAllList'])
         ->middleware(['auth', 'verified','teacher-middleware']);

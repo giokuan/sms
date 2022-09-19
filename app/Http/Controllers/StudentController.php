@@ -195,6 +195,8 @@ class StudentController extends Controller
         
         ]);
 
+        // if()
+
         // $student_id = $request->id;
         $gradingperiod = $request->gradingperiod;
         $lastname = $request->lastname;
@@ -217,6 +219,8 @@ class StudentController extends Controller
    
         // $stud = StudentGrade::find($request->id);
         $stud->student_id = auth()->user()->id;
+
+        // if(auth()->user()->id count )
         
         $stud->gradingperiod = $gradingperiod;
         $stud->lastname=$lastname;
@@ -250,7 +254,7 @@ class StudentController extends Controller
    
     public function showStudentData(){
 
-        $datas = Student::where('user_id', '=', Auth::id())->first();
+        $datas = Student::where('user_id', '=', auth()->id())->first();
         
         return view('student-pages.profile', compact('datas'));
     }
@@ -267,7 +271,7 @@ class StudentController extends Controller
         // $countryID = 1;
         // $countryData = Country::find($countryID);
 
-        $student = Student::where('user_id', '=', Auth::id())->first();
+        $student = Student::where('user_id', '=', auth()->id())->first();
 
         // dd($student->user_id);
 
