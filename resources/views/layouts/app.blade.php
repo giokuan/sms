@@ -22,9 +22,9 @@
     
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @livewireStyles
+    {{-- @livewireStyles
     @powerGridStyles
-   
+    --}}
 </head>
 
 <body class="font-sans antialiased" >
@@ -62,8 +62,8 @@
             </div>
         </div>
     </div>
-    @livewireScripts
-    @powerGridScripts
+    {{-- @livewireScripts
+    @powerGridScripts --}}
 </body>
 
 </html>
