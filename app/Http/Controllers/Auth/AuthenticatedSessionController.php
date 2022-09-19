@@ -46,7 +46,13 @@ class AuthenticatedSessionController extends Controller
                 // }else{
                 //     return redirect()->route('home');   
                 // }
-                return redirect()->route('home');   
+                if(auth()->user()->id === 4){
+                    return redirect()->route('student-home'); 
+                }
+                else{
+                    return redirect()->route('home'); 
+                }
+                // return redirect()->route('home');   
             }
       
         }

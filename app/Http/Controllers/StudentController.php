@@ -93,12 +93,12 @@ class StudentController extends Controller
         $stud->address = $address;
         $stud->save();
 
-        // if(auth()->user()->user_type === 'Student'){
-        //     return redirect()->to('student/home')->with('success','Student Added Succesfuly');
-        // }
-        // else{
+        if(auth()->user()->user_type === 'Student'){
+            return redirect()->to('student/home');
+        }
+        else{
             return redirect()->back()->with('success','Student Added Succesfuly');
-        // }
+        }
     }
 
     public function editStudent($id){

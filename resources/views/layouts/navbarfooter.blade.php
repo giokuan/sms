@@ -68,7 +68,13 @@
 
                         @elseif (Route::has('login'))
                                 @auth
+                                
+                                @if(Auth::user()->user_type === "Student")
+                                    <a href="{{ url('student/home') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Dashboard</a>
+                                @else
                                     <a href="{{ url('/dashboard') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Dashboard</a>
+                                @endif
+                                    
                                 @else
                                 <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
                                 <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
