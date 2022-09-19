@@ -93,12 +93,12 @@ class StudentController extends Controller
         $stud->address = $address;
         $stud->save();
 
-        // if(auth()->user()->user_type === 'Student'){
-        //     return redirect()->to('student/home')->with('success','Student Added Succesfuly');
-        // }
-        // else{
+        if(auth()->user()->user_type === 'Student'){
+            return redirect()->to('student/home');
+        }
+        else{
             return redirect()->back()->with('success','Student Added Succesfuly');
-        // }
+        }
     }
 
     public function editStudent($id){
@@ -246,6 +246,35 @@ class StudentController extends Controller
       
         return view('pages.add-grade', compact('data'));
     }
+    
    
-  
+    public function showStudentData(){
+
+        $datas = Student::where('user_id', '=', Auth::id())->first();
+        
+        return view('student-pages.profile', compact('datas'));
+    }
+    public function showStudentGrade(){
+
+        return view('student-pages.grades');
+    }
+    public function showStudentSchedule(){
+
+        return view('student-pages.schedule');
+    }
+    public function showStudentClassmates(){
+
+        // $countryID = 1;
+        // $countryData = Country::find($countryID);
+
+        $student = Student::where('user_id', '=', Auth::id())->first();
+
+        // dd($student->user_id);
+
+        $datas = Student::all()->where('section', '=', $student->section);
+        
+        // ->where('section', '=', $student->section)
+
+        return view('student-pages.classmates', compact('datas'));
+    }
 }
