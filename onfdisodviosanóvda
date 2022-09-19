@@ -1,0 +1,105 @@
+[33me9a75b9[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m added powergrid table, fixed the calendar view, revised the grades view
+[33m0fe05ec[m added grades student model
+[33mbe9b07b[m added grades model
+[33m466f0cb[m Merge pull request #22 from giokuan/MP-ReadStudentData
+[33m9a04c44[m middleware created
+[33mc3c6e8f[m modified
+[33mc8a5dac[m Return the user type on logout area
+[33me547804[m Merge branch 'master' into MP-ReadStudentData
+[33m068692c[m modified
+[33m5fb1c6f[m removed sidebar profile
+[33mdbe0d52[m Merge pull request #20 from giokuan/MP-ReadStudentData
+[33m2561e39[m modified
+[33me19476e[m show students image on profile
+[33m030e84c[m Accessed Student data based on foreign key
+[33m2251ee4[m routing on student created
+[33mda630ff[m moved student dashboard to home
+[33ma777459[m removed student type on log out
+[33mf1ca8ce[m Merge pull request #19 from giokuan/MP-StudentFaker
+[33m26d3e9a[m redirect user after register to login page
+[33me98acdb[m conflict resolved
+[33m184351b[m Merge branch 'master' of https://github.com/giokuan/sms
+[33m58d94b8[m middleware problem fixed
+[33me390432[m Merge pull request #18 from giokuan/MP-to-webp
+[33m033e38f[m hallway to webp and removed custom login pages
+[33m8337775[m modified
+[33mbe1f650[m register redirect based on user type
+[33mbe5bc56[m register redirect based on user type
+[33m70dbb8b[m resolve errors
+[33mc0247e9[m Merge branch 'master' of https://github.com/giokuan/sms
+[33me3157e5[m modified create student method
+[33mee14b98[m added data table
+[33mc1911ff[m added data tables
+[33mbfe38ce[m Merge pull request #16 from giokuan/MP-PopulateTheStudentPages
+[33m61e0579[m modified
+[33m4f9a98d[m Redirect student after completing the form
+[33m12e99d2[m Merge pull request #15 from giokuan/MP-PopulateTheStudentPages
+[33m3c908b1[m Redirect based on user type
+[33mc68fbc1[m redirect user to its desired route after register
+[33mf84e733[m Fixed register error
+[33mb5b4b12[m modified
+[33m9435a14[m Designed Add student and teacher
+[33md1a2b38[m  styled addstudent/register forms
+[33me58771f[m removed darkmode button on verifivation
+[33meae839e[m Register position fixed
+[33m2640117[m Merge pull request #14 from giokuan/MP-PopulateTheStudentPages
+[33md2dcd89[m removed lrn and section
+[33mdc1062b[m created relationship betwen user and student
+[33m2a40d93[m Created seeders for grade 10A student
+[33m7543813[m added lrn and age on migration
+[33m4d8b41b[m Read User Info
+[33mc551982[m Merge pull request #13 from giokuan/MP-RemoveAndDarker
+[33m7b244d2[m Darker Landing page and removed the login modal
+[33me50a70a[m added teacher model
+[33m25fc95d[m Merge pull request #12 from giokuan/michael-branch
+[33mbc604ed[m Merge branch 'master' into michael-branch
+[33mb05d6e1[m navbar footer route modified
+[33m00e154b[m Merge pull request #11 from giokuan/MP-StudentPages
+[33m4fdb3df[m modified line on header sidebar
+[33mf490ca4[m Used seeder
+[33m7529613[m Merge pull request #10 from giokuan/MP-StudentPages
+[33mc3714a9[m sidebar colors created
+[33ma5dc61a[m Changed Dashboard Logo
+[33mdd9bb30[m classmates pages created
+[33mf727a67[m Schedule Page Created
+[33m1380f20[m Created Grades Page
+[33m9bb6ec6[m StudentProfile Page created
+[33m4712aa2[m student sidebar created
+[33m113e4c4[m student home page done
+[33mdefdd92[m section1 student home created
+[33m6e19307[m fixed nav bar and register
+[33m0e1bbb7[m Merge pull request #8 from giokuan/MP-StudentDashboard
+[33me5e33c0[m Change Aside & Nav-bar Color
+[33mf4d3d85[m Merge pull request #7 from giokuan/MP-remove_login_pages
+[33md0ad7d3[m removed login pages
+[33m39c70dc[m register function fixed
+[33mf3209e7[m created relationship from usesr table to student table
+[33m8fc999c[m Merge pull request #6 from giokuan/MP-NavigationDarkMode
+[33m3973d7c[m DarkMode created and Fixed some sizing
+[33m813941b[m Merge pull request #5 from giokuan/MP-LoginPages
+[33m221680f[m login pages created
+[33mea9123a[m Merge branch 'master' of https://github.com/giokuan/sms
+[33m1bb6e32[m fixed bugs in edit blade
+[33m116641f[m fixed the update error
+[33me279e5c[m Merge branch 'master' of https://github.com/giokuan/sms
+[33m2966130[m change the size of main logo
+[33m1f6058e[m modified image
+[33m7334f6e[m Merge pull request #4 from giokuan/michael-branch
+[33ma589aeb[m Merge pull request #3 from giokuan/MP-LandingPage
+[33m872d5f7[m modified
+[33m082ae2e[m Landing Page Done
+[33mb4cd660[m Landing Page Done
+[33m2998098[m Landing Page Done
+[33meebec9f[m modified
+[33m57b12d3[m date error fixed and added uploads/students folder @ public
+[33m12b4db8[m added sweet alert
+[33m06a4656[m gender field problem from database fixed
+[33m62ab73e[m Merge pull request #2 from giokuan/michael-branch
+[33madcb968[m Merge pull request #1 from giokuan/MP-LandingPage
+[33m54cbb16[m landing page done *animation to be followed
+[33me26503b[m fixed the layout of form in add-student.blade
+[33m94c7028[m revise the table appearance
+[33me04e5bc[m fix bug when adding student
+[33m95ded5d[m creates model and partials folder
+[33m798683e[m added table
+[33m5a3e43f[m first commit

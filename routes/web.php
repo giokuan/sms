@@ -60,38 +60,39 @@ Route::middleware(['auth','teacher-middleware'])->group(function(){
 });
 
 // student-dashboard
-Route::get('home', function () {
-    return view('home');
-})->middleware(['auth', 'verified','student-middleware'])->name('home');
+// Route::get('home', function () {
+//     return view('home');
+// })->middleware(['auth', 'verified','student-middleware'])->name('home');
 
 // for completing information of the student
 Route::get('home', function () {
     return view('home');
-})->middleware(['auth','student-middleware'])->name('home');
+})->middleware(['auth'])->name('home');
 
 Route::get('student/home', function() {
     return view('student-pages.home');
 })->middleware(['auth', 'verified','student-middleware'])->name('student-home');
 
-Route::get('student/profile', function() {
-    return view('student-pages.profile')->with('students', Student::find(1)->where('user_id', Auth::id())
-    ->first());
-})->middleware(['auth', 'verified','student-middleware'])->name('student-profile');
+// Route::get('student/profile', function() {
+//     return view('student-pages.profile')->with('students', Student::find(1)->where('user_id', Auth::id())
+//     ->first());
+// })->middleware(['auth', 'verified','student-middleware'])->name('student-profile');
 
-Route::get('student/grades', function() {
-    return view('student-pages.grades')->with('students', Student::find(1)->where('user_id', Auth::id())
-    ->first());
-})->middleware(['auth', 'verified','student-middleware'])->name('student-grades');
+// Route::get('student/profile', function() {
+//     return view('student-pages.profile');
+// })->middleware(['auth', 'verified','student-middleware'])->name('student-profile');
 
-Route::get('student/schedule', function() {
-    return view('student-pages.schedule')->with('students', Student::find(1)->where('user_id', Auth::id())
-    ->first());
-})->middleware(['auth', 'verified','student-middleware'])->name('student-schedule');
+// Route::get('student/grades', function() {
+//     return view('student-pages.grades');
+// })->middleware(['auth', 'verified','student-middleware'])->name('student-grades');
 
-Route::get('student/classmates', function() {
-    return view('student-pages.classmates')->with('students', Student::find(1)->where('user_id', Auth::id())
-    ->first());
-})->middleware(['auth', 'verified','student-middleware'])->name('student-classmates');
+// Route::get('student/schedule', function() {
+//     return view('student-pages.schedule');
+// })->middleware(['auth', 'verified','student-middleware'])->name('student-schedule');
+
+// Route::get('student/classmates', function() {
+//     return view('student-pages.classmates');
+// })->middleware(['auth', 'verified','student-middleware'])->name('student-classmates');
 
 // useless routes
 // Just to demo sidebar dropdown links active states.
@@ -118,13 +119,13 @@ Route::get('add-student',[StudentController::class,'addStudent'])
         ->middleware(['auth', 'verified','teacher-middleware']);
 Route::post('save-student',[StudentController::class,'saveStudent']);
 Route::get('edit-student/{id}',[StudentController::class,'editStudent'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 Route::post('update-student',[StudentController::class,'updateStudent']);
 Route::get('delete-student/{id}',[StudentController::class,'deleteStudent'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 
 Route::get('profile',[StudentController::class,'studentProfile'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 
 
 
@@ -136,18 +137,29 @@ Route::get('edit-grade/{id}',[StudentController::class,'editGrade']);
 
 
 Route::get('teacher-all-list',[TeachersController::class,'teacherAllList'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 Route::get('add-teacher',[TeachersController::class,'addTeacher'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 Route::post('save-teacher',[TeachersController::class,'saveTeacher']);
 Route::get('edit-teacher/{id}',[TeachersController::class,'editTeacher'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;  
+        ->middleware(['auth', 'verified','teacher-middleware']);  
 Route::post('update-teacher',[TeachersController::class,'updateTeacher']);
 Route::get('delete-teacher/{id}',[TeachersController::class,'deleteTeacher'])
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 
 Route::get('teachers-dashboard',[TeachersController::class,'teachersDashboard'])->name('teacher')
-        ->middleware(['auth', 'verified','teacher-middleware']);;
+        ->middleware(['auth', 'verified','teacher-middleware']);
 
 
   
+Route::get('student/profile', [StudentController::class,'showStudentData'])
+    ->middleware(['auth', 'verified','student-middleware'])->name('student-profile');
+
+Route::get('student/grades', [StudentController::class,'showStudentGrade'])
+    ->middleware(['auth', 'verified','student-middleware'])->name('student-grades');
+
+Route::get('student/schedule', [StudentController::class,'showStudentSchedule'])
+    ->middleware(['auth', 'verified','student-middleware'])->name('student-schedule');
+
+Route::get('student/classmates', [StudentController::class,'showStudentClassmates']
+    )->middleware(['auth', 'verified','student-middleware'])->name('student-classmates');
