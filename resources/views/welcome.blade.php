@@ -1,8 +1,8 @@
 @extends('layouts.navbarfooter')
 @section('LandingContent')
         {{-- Content --}}
-        {{-- <div class="h-full w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center "  --}}
-        <div class="h-5/6 w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center " 
+        <div class="h-full w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center " 
+        {{-- <div class="h-5/6 w-full bg-no-repeat bg-cover bg-center object-contain flex flex-col justify-center items-center "  --}}
             style="background-image: url({{ url('images/hallway.webp') }})">
             <div class="dark:bg-gray-900 dark:bg-opacity-80 w-full h-full ">    
                 {{-- content goes here --}}
@@ -23,7 +23,7 @@
         <section class="flex flex-col md:flex-row py-5 gap-10 px-10  dark:bg-[#222738] text-center">   
             <div class="w-full">
                 {{-- img --}}
-                <img src='/images/SchoolFeatures3.jpg' class="p-2 relative block object-cover h-48 mx-auto" alt="features-img">
+                <img src='/images/SchoolFeatures3.jpg' class="rounded relative block object-cover h-48 mx-auto" alt="features-img">
                 {{-- section header --}}
                 <p class="py-2 font-semibold dark:text-[#FFFFFF]">Quality Education.</p>
                 {{-- paragraph --}}
@@ -31,7 +31,7 @@
             </div>
             <div class="w-full">
                 {{-- img --}}
-                <img src='/images/SchoolFeatures1.jpg' class="p-2 relative block object-cover h-48 mx-auto" alt="features-img">
+                <img src='/images/SchoolFeatures1.jpg' class="rounded relative block object-cover h-48 mx-auto" alt="features-img">
                 {{-- section header --}}
                 <p class="py-2 font-semibold dark:text-[#FFFFFF]">Interactive Discussion.</p>
                 {{-- paragraph --}}
@@ -39,7 +39,7 @@
             </div>
             <div class="w-full">
                 {{-- img --}}
-                <img src='/images/SchoolFeatures2.jpg' class="p-2 relative block object-cover h-48 mx-auto" alt="features-img">
+                <img src='/images/SchoolFeatures2.jpg' class="rounded relative block object-cover h-48 mx-auto" alt="features-img">
                 {{-- section header --}}
                 <p class="py-2 font-semibold dark:text-[#FFFFFF]">Flexible learning.</p>
                 {{-- paragraph --}}
