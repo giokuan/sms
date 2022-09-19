@@ -8,7 +8,7 @@ use App\Models\StudentGrade;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use Auth;
+
 
 
 class StudentController extends Controller
@@ -218,28 +218,37 @@ class StudentController extends Controller
         $stud = new StudentGrade();
    
         // $stud = StudentGrade::find($request->id);
-        $stud->student_id = auth()->user()->id;
+      
+        // if (StudentGrade::where('gradingperiod', $request->gradingperiod)->count(4)) 
+   
+        // {
+        //     return redirect()->back()->with('error', 'you already graded that student for First Grading');
+        // }
+    
+        // else{
 
-        // if(auth()->user()->id count )
+       
+            $stud->student_id = auth()->user()->id;
+            $stud->gradingperiod = $gradingperiod;
+            $stud->lastname=$lastname;
+            $stud->firstname=$firstname;
+            $stud->english = $english;
+            $stud->filipino = $filipino;
+            $stud->mathematics = $mathematics;
+            $stud->social_studies = $social_studies;
+            $stud->science = $science;
+            $stud->home_economics = $homeeconomics;
+            $stud->values_education = $values_education;
+            $stud->music = $music;
+            $stud->arts= $arts;
+            $stud->physical_education = $physical_education;
+            $stud->health = $health;
+            $stud->average = $average;
+            $stud->save();
+
+            return redirect()->back()->with('success','Grade added Succesfuly');
+        // }
         
-        $stud->gradingperiod = $gradingperiod;
-        $stud->lastname=$lastname;
-        $stud->firstname=$firstname;
-        $stud->english = $english;
-        $stud->filipino = $filipino;
-        $stud->mathematics = $mathematics;
-        $stud->social_studies = $social_studies;
-        $stud->science = $science;
-        $stud->home_economics = $homeeconomics;
-        $stud->values_education = $values_education;
-        $stud->music = $music;
-        $stud->arts= $arts;
-        $stud->physical_education = $physical_education;
-        $stud->health = $health;
-        $stud->average = $average;
-        $stud->save();
-
-        return redirect()->back()->with('success','Grade added Succesfuly');
 
     }
 
@@ -282,3 +291,4 @@ class StudentController extends Controller
         return view('student-pages.classmates', compact('datas'));
     }
 }
+
