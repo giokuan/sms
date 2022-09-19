@@ -32,8 +32,7 @@ class AuthenticatedSessionController extends Controller
             $request->authenticate();
 
             $request->session()->regenerate();
-
-            // return redirect()->intended(RouteServiceProvider::HOME);
+            
             if (auth()->user()->user_type == 'admin') {
                 return redirect()->route('admin.home');
 
@@ -41,18 +40,13 @@ class AuthenticatedSessionController extends Controller
                 return redirect()->route('teacher.home');
 
             }else if (auth()->user()->user_type == 'Student') {
-                // if (auth()->user()->id === Students()->user_id) {
-                //     return redirect()->route('admin.home');
-                // }else{
-                //     return redirect()->route('home');   
-                // }
-                if(auth()->user()->id === 4){
+
+                if( Student::where('user_id', '=', Auth::id())->first()){
                     return redirect()->route('student-home'); 
                 }
                 else{
                     return redirect()->route('home'); 
                 }
-                // return redirect()->route('home');   
             }
       
         }
