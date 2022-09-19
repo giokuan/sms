@@ -109,47 +109,24 @@
         {{-- content goes here --}}
         @yield('register')
 
-    {{-- footer goes here --}}
-    <footer class="bg-[#001F52] dark:bg-[#151823] border-t-2 dark:border-gray-500 py-3">
-        <div class="flex flex-col md:flex-row justify-around items-center px-5 md:px-12.5 lg:px-20">
-            {{-- logo --}}
-            <a href="#" class="m-1 sm:m-2 lg:m-3">
-                <img src="/images/main-logo.png" alt="main logo">
+    <footer class="bg-[#001F52] dark:bg-[#151823] py-5">
+
+        <div class="flex flex-col justify-center items-center">
+            <a href="#">
+                <img src="/images/main-logo.png" alt="main logo" class="max-h-32">
             </a>
-
-            <div class="flex flex-col md:flex-row justify-around w-full text-sky-50 gap-y-2  gap-x-4">
-                {{-- primary footer --}}
-                <div  class="text-center bg-[#012560] dark:bg-[#222738] px-full py-2 w-full rounded-md border border-sky-300 dark:border-gray-300 text-tiny">
-                    Source Footer
-                    <ul class="text-center py-3 md:py-0">
-                        <li><a href="#">Dummy</a></li>
-                        <li><a href="#">Dummy</a></li>
-                        <li><a href="#">Dummy</a></li>
-                    </ul>
-                </div>
-                
-                {{-- secondary footer --}}
-                <div  class="text-center bg-[#012560] dark:bg-[#222738] px-full py-2 w-full rounded-md border border-sky-300 dark:border-gray-300 text-tiny">
-                    Developers Footer
-                    <ul class="text-center py-3 md:py-0">
-                        <li><a href="#">Gio</a></li>
-                        <li><a href="#">Bryant</a></li>
-                        <li><a href="#">Michael</a></li>
-                    </ul>
-                </div>
-
-                {{-- contacts --}}
-                <div  class="text-center bg-[#012560] dark:bg-[#222738] px-full py-2 w-full rounded-md border border-sky-300 dark:border-gray-300 text-tiny">
-                    Contacts Footer
-                    <ul class="text-center py-3 md:py-0">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
-                </div>
+            <p class="text-white font-light py-3">For any concern. reach us in any of our social contact links below.</p>
+            <div class="flex flex-row justify-end gap-2 py-2">
+                <a href="#"><img src="/images/gmail-logo.png" alt="Gmail" class="max-h-8"></a>
+                <a href="#"><img src="/images/facebook-logo.png" alt="Facebook" class="max-h-8"></a>
+                <a href="#"><img src="/images/instagram-logo.png" alt="Instagram" class="max-h-8"></a>
+                <a href="#"><img src="/images/twitter-logo.png" alt="Twitter" class="max-h-8"></a>
+                <a href="#"><img src="/images/tik-tok-logo.png" alt="Tik-Tok" class="max-h-8"></a>
             </div>
         </div>
+
     </footer>
+
 </body>
 
 </html>
