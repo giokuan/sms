@@ -32,9 +32,19 @@ class StudentGrade extends Model
 
     
 // relationship to students
-public function user()
-{
-    return $this->belongsTo(User::class, 'student_id');
-}
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'student_id');
+    }
+
+    public static function search($search)
+    {
+        return empty($search) ? static::query()
+            : static::query()->where('id', 'like', '%'.$search.'%')
+                ->orWhere('lastname', 'like', '%'.$search.'%')
+                ->orWhere('firstname', 'like', '%'.$search.'%')
+                ->orWhere('email', 'like', '%'.$search.'%')
+                ->orWhere('section', 'like', $search);
+    }
 
 }

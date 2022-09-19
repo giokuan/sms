@@ -195,6 +195,8 @@ class StudentController extends Controller
         
         ]);
 
+        // if()
+
         // $student_id = $request->id;
         $gradingperiod = $request->gradingperiod;
         $lastname = $request->lastname;
@@ -217,6 +219,8 @@ class StudentController extends Controller
    
         // $stud = StudentGrade::find($request->id);
         $stud->student_id = auth()->user()->id;
+
+        // if(auth()->user()->id count )
         
         $stud->gradingperiod = $gradingperiod;
         $stud->lastname=$lastname;
@@ -246,6 +250,7 @@ class StudentController extends Controller
       
         return view('pages.add-grade', compact('data'));
     }
-   
+
+
   
 }
