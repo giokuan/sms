@@ -1,25 +1,25 @@
 <x-perfect-scrollbar as="nav" aria-label="main" class="flex flex-col flex-1 gap-4 px-3">
     
     {{-- This is the logic on what dashboard route it is going based on routes --}}
-    {{-- @if((Route::is('student-home') || Route::is('student-profile') || Route::is('student-grades') || Route::is('student-schedule') || Route::is('student-classmates')))
+    @if((Auth::user()->user_type === 'Student'))
         <x-sidebar.link title="Dashboard" href="{{ route('student-home') }}" :isActive="request()->routeIs('dashboard')">
             <x-slot name="icon">
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-    @elseif((Route::is('home')))
-        <x-sidebar.link title="Dashboard" href="{{ route('home') }}" :isActive="request()->routeIs('home')">
+    @elseif((Auth::user()->user_type === 'Teacher'))
+        <x-sidebar.link title="Dashboard" href="{{ route('teacher.home') }}" :isActive="request()->routeIs('home')">
             <x-slot name="icon">
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-    @else
-        <x-sidebar.link title="Dashboard" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
+    @elseif((Auth::user()->user_type === 'admin'))
+        <x-sidebar.link title="Dashboard" href="{{ route('admin.home') }}" :isActive="request()->routeIs('dashboard')">
             <x-slot name="icon">
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-    @endif --}}
+    @endif
     
 
     {{-- This is the logic on what dashboard route it is going based on routes --}}
