@@ -175,11 +175,13 @@
             {{-- <div class="w-64 mx-2 font-bold h-6 mt-3 text-gray-800"></div> --}}
             <div class="flex-1 justify-center flex flex-col md:flex-row mt-4">
                 <button class="text-sm  mx-2   focus:outline-none   px-4 py-2 rounded font-bold cursor-pointer 
-        hover:bg-indigo-700 hover:text-teal-100 
-        bg-indigo-900 
-        text-slate-100 
-        border duration-200 ease-in-out 
-        border-teal-600 transition" type="submit">Add Grade</button>
+                hover:bg-indigo-700 hover:text-teal-100 
+                bg-indigo-900 
+                text-slate-100 
+                border duration-200 ease-in-out 
+                border-teal-600 transition" type="submit">
+                    Add Grade
+                </button>
             </div>
         </div>
     </div>

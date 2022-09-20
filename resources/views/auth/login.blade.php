@@ -39,7 +39,7 @@ style="background-image: url({{ url('images/hallway.webp') }})">
                     <div class="flex items-center justify-between">
                         <label for="remember_me" class="inline-flex items-center">
                             <input id="remember_me" type="checkbox"
-                                class="text-gray-700 border-gray-300 rounded focus:border-gray-500 focus:ring focus:ring-gray-700 dark:border-gray-600 dark:bg-dark-eval-1 dark:focus:ring-offset-dark-eval-1"
+                                class="text-blue-700 border-blue-300 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-700 dark:border-blue-600 dark:bg-dark-eval-1 dark:focus:ring-offset-dark-eval-1"
                                 name="remember">
                             <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
                         </label>
@@ -52,7 +52,7 @@ style="background-image: url({{ url('images/hallway.webp') }})">
                     </div>
 
                     <div>
-                        <x-button class="bg-blue-700 hover:bg-blue-600 justify-center w-full gap-2">
+                        <x-button class="justify-center w-full gap-2" variant="danger">
                             <x-heroicon-o-login class="w-6 h-6" aria-hidden="true" />
                             <span>{{ __('Log in') }}</span>
                         </x-button>

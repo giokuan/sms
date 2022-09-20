@@ -19,15 +19,14 @@ class AdminMiddleware
     {
         if(auth()->user()->user_type === 'Student')
        {
-        return redirect()->to('/student/home');
+        return redirect()->to('student/profile');
        }
        else if (auth()->user()->user_type === 'Teacher'){
-        return redirect()->to('/teacher/home');
+        return redirect()->to('student-all-list');
        }
        else
        {
-     
-        return response()->json(['You do not have permission to access for this page.']);
+        return $next($request);
        }
        
     }

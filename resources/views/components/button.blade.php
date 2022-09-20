@@ -2,7 +2,7 @@
 
 @php
 
-    $baseClasses = 'inline-flex items-center transition-colors font-medium select-none disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1';
+    $baseClasses = 'inline-flex items-center transition-colors font-medium select-none disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1';
 
     switch ($variant) {
         case 'primary':
@@ -15,7 +15,7 @@
             $variantClasses = 'bg-green-500 text-white hover:bg-green-600 focus:ring-green-500';
         break;
         case 'danger':
-            $variantClasses = 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500';
+            $variantClasses = 'bg-blue-900 text-white hover:bg-blue-800 focus:ring-blue-500';
         break;
         case 'warning':
             $variantClasses = 'bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-500';

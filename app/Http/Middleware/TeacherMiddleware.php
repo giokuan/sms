@@ -21,10 +21,10 @@ class TeacherMiddleware
        {
         // return $back($request);
         // return redirect()->to('/teacher/home');
-        return redirect()->to('student/home');
+        return redirect()->to('student/profile');
        }
        else if (auth()->user()->user_type === 'admin'){
-        return redirect()->to('dashboard');
+        return $next($request);
        }
        else
        {

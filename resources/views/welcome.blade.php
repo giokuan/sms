@@ -120,7 +120,7 @@
         </section>
 
         {{-- One of the main features --}}
-        <section class="dark:bg-[#222738] flex flex-col md:flex-row justify-between align-center px-10 md:px-15 lg:px-20 pt-1 pb-4 md:gap-10">
+        <section class="dark:bg-[#222738] flex flex-col md:flex-row justify-between items-center px-10 md:px-15 lg:px-20 pt-1 pb-4 md:gap-10">
             {{-- Picture of the one of the main features --}}
             <div class="w-full mx-auto">
                 <img src='/images/principal.jpg' class="relative block object-cover rounded-md" alt="features-img">
