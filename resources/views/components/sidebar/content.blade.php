@@ -33,7 +33,7 @@
 
                 <a href={{ route('student-grades') }}><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Grades</li></a>
 
-                <a href={{ route('student-schedule') }}><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Class Schedule</li></a>
+                {{-- <a href={{ route('student-schedule') }}><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Class Schedule</li></a> --}}
 
                 <a href={{ route('student-classmates') }}><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Classmates</li></a>
 
