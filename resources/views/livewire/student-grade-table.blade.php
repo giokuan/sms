@@ -52,6 +52,7 @@
                     <th class="px-4 py-2">Arts</th>
                     <th class="px-4 py-2">PE</th>
                     <th class="px-4 py-2">Health</th>
+                    <th class="px-4 py-2">Action</th>
                 </tr>
             </thead>
             <tbody>

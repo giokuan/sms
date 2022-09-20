@@ -129,6 +129,7 @@ class StudentController extends Controller
         ]);
 
         $data = Student::find($request->id);
+
         $data->lastname = $request->lastname;
         $data->firstname = $request->firstname;
         $data->middlename = $request->middlename;
@@ -197,7 +198,7 @@ class StudentController extends Controller
 
         // if()
 
-        // $student_id = $request->id;
+        // $user_id = $request->user_id;
         $gradingperiod = $request->gradingperiod;
         $lastname = $request->lastname;
         $firstname = $request->firstname;
@@ -215,20 +216,20 @@ class StudentController extends Controller
         $average = $request->average;
 
 
-        $stud = new StudentGrade();
-   
-        // $stud = StudentGrade::find($request->id);
-      
-        // if (StudentGrade::where('gradingperiod', $request->gradingperiod)->count(4)) 
-   
-        // {
-        //     return redirect()->back()->with('error', 'you already graded that student for First Grading');
-        // }
-    
-        // else{
-
        
-            $stud->student_id = auth()->user()->id;
+   
+            
+
+            // if (auth()->user()->id->count(4))
+            // {
+            //     return redirect()->back()->with('error', 'student is complete');
+            // }
+            // else{
+
+          
+            $stud = new StudentGrade();
+
+            $stud->id = auth()->user()->id;
             $stud->gradingperiod = $gradingperiod;
             $stud->lastname=$lastname;
             $stud->firstname=$firstname;
@@ -246,7 +247,7 @@ class StudentController extends Controller
             $stud->average = $average;
             $stud->save();
 
-            return redirect()->back()->with('success','Grade added Succesfuly');
+            return view('pages.add-grade')->with('success','Grade added Succesfuly');
         // }
         
 
@@ -258,6 +259,35 @@ class StudentController extends Controller
         // $data = DB::table('grades')->get();
       
         return view('pages.add-grade', compact('data'));
+    }
+
+
+    public function editGrade($id){
+        $data = StudentGrade::where('id', '=', $id)->first();
+        return view('pages.edit-grade', compact('data'));
+    }
+
+
+    public function updateGrade(Request $request){
+        $data = StudentGrade::find($request->id);
+
+        $data->gradingperiod = $request->gradingperiod ;
+        $data->lastname = $request->lastname;
+        $data->firstname = $request->firstname;
+        $data->english = $request->english;
+        $data->filipino = $request->filipino;
+        $data->mathematics = $request->mathematics;
+        $data->social_studies = $request->social_studies;
+        $data->science = $request->science;
+        $data->home_economics = $request->home_economics;
+        $data->values_education = $request->values_education;
+        $data->music = $request->music;
+        $data->arts = $request->arts;
+        $data->health = $request->health;
+        $data->save();
+
+        return redirect()->back()->with('success', 'Student Grades Successfully Updated');
+    
     }
     
    

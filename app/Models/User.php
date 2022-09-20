@@ -48,7 +48,5 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Student::class, 'user_id');
     }
 
-    public function studentGrades(){
-        return $this->hasMany(StudentGrade::class, 'student_id');
-    }
+  
 }

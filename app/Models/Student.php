@@ -49,9 +49,9 @@ class Student extends Model
 
     
     // relationship to student grade
-    // public function studentgrade(){
-    //     return $this->hasMany(StudentGrade::class, 'student_id');
-    // }
+    public function studentgrades(){
+        return $this->hasMany(StudentGrade::class, 'student_id');
+    }
 
     public static function search($search)
     {

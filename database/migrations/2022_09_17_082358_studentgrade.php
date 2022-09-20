@@ -15,21 +15,21 @@ return new class extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->references('id')->on('students')->onDelete('cascade');
+            // $table->foreignId('student_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('gradingperiod');
-            $table->string('lastname');
-            $table->string('firstname');
-            $table->integer('english');
-            $table->integer('filipino');
-            $table->integer('mathematics');
-            $table->integer('social_studies');
-            $table->integer('science');
-            $table->integer('home_economics');
-            $table->integer('values_education');
-            $table->integer('music');
-            $table->integer('arts');
-            $table->integer('physical_education');
-            $table->integer('health');
+            $table->string('lastname')->nullable();
+            $table->string('firstname')->nullable();
+            $table->integer('english')->nullable();
+            $table->integer('filipino')->nullable();
+            $table->integer('mathematics')->nullable();
+            $table->integer('social_studies')->nullable();
+            $table->integer('science')->nullable();
+            $table->integer('home_economics')->nullable();
+            $table->integer('values_education')->nullable();
+            $table->integer('music')->nullable();
+            $table->integer('arts')->nullable();
+            $table->integer('physical_education')->nullable();
+            $table->integer('health')->nullable();
             $table->integer('average')->nullable();
             $table->timestamps();
         });

@@ -5,12 +5,12 @@
 @extends('partials.__sidebar')
 
 @section('content')	
-@livewireStyles
-@powerGridStyles
+{{-- @livewireStyles
+@powerGridStyles --}}
 
 <div class="overflow-x-auto">
 
-  <livewire:grades-table/>
+  {{-- <livewire:grades-table/> --}}
     
 
   
@@ -18,7 +18,7 @@
 <!-- component -->
 <form method="post" action="{{url('update-grade')}}" class="flex flex-col space-y-8" enctype="multipart/form-data"> 
     @csrf
-    <input type="hidden" value="{{ $editdata->id }}" name="id" />
+    <input type="hidden" value="{{ $data->id }}" name="id" />
 
     {{-- <input type="hidden" value="{{$data->gradingperiod}}" name="gradingper" /> --}}
 <div class="p-5">
@@ -30,11 +30,16 @@
       
                   {{-- <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="gradingperiod">  --}}
                   <select class="w-full appearance-none text-black text-opacity-90 rounded shadow-xl py-1 px-2 mr-2 focus:outline-none focus:shadow-outline border-none focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="gradingperiod" name="gradingperiod" >
-                    <option value="">{{$editdata->gradingperiod}}</option>
-                    {{-- <option value="1" @if (old('gradingperiod') == "1") {{ 'selected' }} @endif>1</option>
+                    {{-- <option value="">{{$editdata->gradingperiod}}</option> --}}
+                    <option value="1" @if (old('gradingperiod') == "1") {{ 'selected' }} @endif>1</option>
                     <option value="2" @if (old('gradingperiod') == "2") {{ 'selected' }} @endif>2</option>    
-                    <option value="3" @if (old('gradingperiod') == "2") {{ 'selected' }} @endif>3</option>
-                    <option value="4" @if (old('gradingperiod') == "4") {{ 'selected' }} @endif>4</option>                 --}}
+                    <option value="3" @if (old('gradingperiod') == "3") {{ 'selected' }} @endif>3</option>
+                    <option value="4" @if (old('gradingperiod') == "4") {{ 'selected' }} @endif>4</option>       
+                    
+                    <option  @if($data->gradingperiod == 'Grade 1') selected @endif> 4</option>
+                    <option  @if($data->gradingperiod == 'Grade 2') selected @endif> 5</option>   
+                    <option  @if($data->gradingperiod == 'Grade 3') selected @endif> 6</option>
+                    <option  @if($data->gradingperiod == 'Grade 4') selected @endif> 7</option> 
                 </select>
 
                 @error('gradingperiod')
@@ -81,22 +86,22 @@
             <div class="flex-1 flex flex-col md:flex-row">
                 <div class="w-full flex-1 mx-2">
                     <label class="text-sm ">English</label>
-                    <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="english" value="">    
+                    <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="english" value="{{$data->english}}">    
                 </div>
                 
                 <div class="w-full flex-1 mx-2">
                    <label class="text-sm ">Filipino</label>
-                   <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="filipino" value="">  
+                   <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="filipino" value="{{$data->filipino}}">  
                 </div>
 
                 <div class="w-full flex-1 mx-2">
                     <label class="text-sm ">Mathematics</label>
-                    <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="mathematics" value=""> 
+                    <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="mathematics" value="{{$data->mathematics}}"> 
                 </div>
                 
                 <div class="w-full flex-1 mx-2">
                     <label class="text-sm ">Social Studies</label>
-                    <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="social_studies" value="">
+                    <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="social_studies" value="{{$data->social_studies}}">
                 </div>
             </div>
 
@@ -111,21 +116,21 @@
                 <div class="w-full flex-1 mx-2">
                   
                         <label class="text-sm ">Science and Technology</label>
-                        <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="science" value=""> 
+                        <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="science" value="{{$data->science}}"> 
                     {{-- </div> --}}
                 </div>
                 
                 <div class="w-full flex-1 mx-2">
                  
                         <label class="text-sm ">Home Econnomics</label>
-                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="home_economics" value=""> 
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="home_economics" value="{{$data->home_economics}}"> 
              
                 </div>
 
                 <div class="w-full flex-1 mx-2">
                   
                         <label class="text-sm ">Values Education</label>
-                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="values_education" value=""> 
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="values_education" value="{{$data->values_education}}"> 
                 
                 </div>
                 
@@ -142,28 +147,28 @@
                 <div class="w-full flex-1 mx-2">
                  
                         <label class="text-sm ">Music</label>
-                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="music" value="">
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="music" value="{{$data->music}}">
                      {{-- </div> --}}
                 </div>
                 
                 <div class="w-full flex-1 mx-2">
                
                         <label class="text-sm ">Arts</label>
-                        <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="arts" value=""> 
+                        <input class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="arts" value="{{$data->arts}}"> 
                 
                 </div>
 
                 <div class="w-full flex-1 mx-2">
                    
                         <label class="text-sm ">Physical Education</label>
-                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="physical_education" value=""> 
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="physical_education" value="{{$data->physical_education}}"> 
                     {{-- </div> --}}
                 </div>
 
                 <div class="w-full flex-1 mx-2">
                     
                         <label class="text-sm ">Health</label>
-                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="health" value=""> 
+                        <input  class="p-1 px-2 appearance-none outline-none w-full text-gray-800 shadow-xl border-none" type="number" name="health" value="{{$data->health}}"> 
                     {{-- </div> --}}
                 </div>
                 
@@ -179,14 +184,16 @@
         bg-indigo-900 
         text-slate-100 
         border duration-200 ease-in-out 
-        border-teal-600 transition" type="submit">Add Grade</button>
+        border-teal-600 transition" type="submit">Update Grade</button>
             </div>
+
+          
         </div>
     </div>
 </div>
 @include('sweetalert::alert')
 </form>
 
-@livewireScripts
-@powerGridScripts
+{{-- @livewireScripts
+@powerGridScripts --}}
 @endsection            

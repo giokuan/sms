@@ -32,7 +32,7 @@ class StudentGrade extends Model
 
     
 // relationship to students
-    public function user()
+    public function students()
     {
         return $this->belongsTo(User::class, 'student_id');
     }
