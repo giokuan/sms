@@ -34,15 +34,15 @@ class AuthenticatedSessionController extends Controller
             $request->session()->regenerate();
             
             if (auth()->user()->user_type == 'admin') {
-                return redirect()->route('admin.home');
+                return redirect()->route('student-all-list');
 
             }else if (auth()->user()->user_type == 'Teacher') {
-                return redirect()->route('teacher.home');
+                return redirect()->route('student-all-list');
 
             }else if (auth()->user()->user_type == 'Student') {
 
                 if( Student::where('user_id', '=', Auth::id())->first()){
-                    return redirect()->route('student-home'); 
+                    return redirect()->route('student-profile'); 
                 }
                 else{
                     return redirect()->route('home'); 

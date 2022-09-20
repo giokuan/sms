@@ -1,7 +1,7 @@
 <x-perfect-scrollbar as="nav" aria-label="main" class="flex flex-col flex-1 gap-4 px-3">
     
     {{-- This is the logic on what dashboard route it is going based on routes --}}
-    @if((Route::is('student-home') || Route::is('student-profile') || Route::is('student-grades') || Route::is('student-schedule') || Route::is('student-classmates')))
+    {{-- @if((Route::is('student-home') || Route::is('student-profile') || Route::is('student-grades') || Route::is('student-schedule') || Route::is('student-classmates')))
         <x-sidebar.link title="Dashboard" href="{{ route('student-home') }}" :isActive="request()->routeIs('dashboard')">
             <x-slot name="icon">
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
@@ -19,7 +19,7 @@
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-    @endif
+    @endif --}}
     
 
     {{-- This is the logic on what dashboard route it is going based on routes --}}
@@ -37,7 +37,7 @@
 
                 <a href={{ route('student-classmates') }}><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Classmates</li></a>
 
-                <a href='#'><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Teachers</li></a>
+                {{-- <a href='#'><li class="my-1 p-1 hover:bg-white hover:text-dark-eval-1 dark:hover:text-[#FFFFFF] dark:hover:bg-dark-eval-2 transition duration-200 ease-in-out rounded-md">Teachers</li></a> --}}
 
             </ul>
         </div>
@@ -66,6 +66,9 @@
     
     @elseif((Route::is('home')))
 
+    @elseif((Auth::user()->user_type === 'Teacher'))
+        <x-sidebar.link title="All Students" href="/student-all-list" />
+        <x-sidebar.link title="Add Student" href="/add-student" />
     @else
     {{-- <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-[#FFFFFF]">Dummy Links</div> --}}
     
