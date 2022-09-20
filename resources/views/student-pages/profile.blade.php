@@ -7,9 +7,8 @@
         
         {{-- <p class="font-light text-sm">Keep moving forward</p> --}}
         <h3 class="font-medium text-lg">{{ $datas->firstname." ".$datas->middlename." ".$datas->lastname  }}</h3>
-        <p class="font-light">Student Number</p>
-    
         <p class="font-light">{{ $datas->grade}}</p>
+        <p class="font-light">Section {{ $datas->section}}</p>
         <p class="font-light">{{ $datas->gender }}</p>
     
         <h3 class="font-medium text-lg pt-2 border-t-2 border-[#001F52] dark:border-[#FFFFFF] w-11/12 text-center mx-10">Other information</h3>

@@ -56,15 +56,17 @@
 
                         @if (Route::is('login'))
                             <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
-                            <a href="{{ url('/about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
+                            <a href="{{ url('about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
                             <a href="{{ route('register') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Register</a>
                             
                         @elseif (Route::is('register'))
                         <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
-                        <a href="{{ url('/about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
+                        <a href="{{ url('about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
                         <a href="{{ url('login') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">
                             Log in
                         </a>
+
+                      
 
                         @elseif (Route::has('login'))
                                 @auth
@@ -116,12 +118,12 @@
                 <img src="/images/main-logo.png" alt="main logo" class="max-h-32">
             </a>
             <p class="text-white font-light py-3">For any concern. reach us in any of our social contact links below.</p>
-            <div class="flex flex-row justify-end gap-2 py-2">
-                <a href="#"><img src="/images/gmail-logo.png" alt="Gmail" class="max-h-8"></a>
-                <a href="#"><img src="/images/facebook-logo.png" alt="Facebook" class="max-h-8"></a>
-                <a href="#"><img src="/images/instagram-logo.png" alt="Instagram" class="max-h-8"></a>
-                <a href="#"><img src="/images/twitter-logo.png" alt="Twitter" class="max-h-8"></a>
-                <a href="#"><img src="/images/tik-tok-logo.png" alt="Tik-Tok" class="max-h-8"></a>
+            <div class="flex flex-row justify-end gap-4 py-2">
+                <a href="#"><img src="/images/gmail-logo.png" alt="Gmail" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
+                <a href="#"><img src="/images/facebook-logo.png" alt="Facebook" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
+                <a href="#"><img src="/images/instagram-logo.png" alt="Instagram" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
+                <a href="#"><img src="/images/twitter-logo.png" alt="Twitter" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
+                <a href="#"><img src="/images/tik-tok-logo.png" alt="Tik-Tok" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
             </div>
         </div>
 
