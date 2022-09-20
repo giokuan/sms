@@ -10,7 +10,7 @@
                 <div class="flex flex-col justify-center items-center w-10/12 md:w-6/12 h-full mx-auto">
                     <img src="/images/main-logo.png" alt="main logo" class="max-w-xs my-4">
 
-                    <h1 class="text-center text-2xl md:text-4xl  text-sky-50 bg-[#004AAD] dark:bg-[#222738] bg-opacity-80 px-2 py-1 mb-5 rounded-md font-light">
+                    <h1 class="text-center text-2xl md:text-4xl  text-sky-50 bg-[#004AAD] dark:bg-[#151823] bg-opacity-80 px-2 py-4 mb-5 rounded-md font-light">
                         KodeGo High School provides quality education
                     </h1>
 
@@ -20,7 +20,7 @@
 
         {{-- Features of the website --}}
         {{-- <section class="dark:bg-[#222738] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:px-10 lg:px-20 w-full py-4 text-center">     --}}
-        <section class="flex flex-col md:flex-row py-5 gap-10 px-10  dark:bg-[#222738] text-center">   
+        <section class="flex flex-col md:flex-row py-5 gap-10 px-10  dark:bg-[#151823] text-center">   
             <div class="w-full">
                 {{-- img --}}
                 <img src='/images/SchoolFeatures3.jpg' class="rounded relative block object-cover h-48 mx-auto" alt="features-img">
@@ -48,7 +48,7 @@
         </section>
 
         {{-- Carousel --}}
-        <section class="bg-[#012560] dark:bg-[#151823] border-y-2 dark:border-gray-500 py-5 bg-opacity-90">
+        <section class="bg-[#012560] dark:bg-[#222738] border-y-2 dark:border-gray-500 py-5 bg-opacity-90">
             {{-- <h1 class="text-1xl md:text-3xl font-light text-sky-50 text-center py-5">Announcement</h1> --}}
             
             <div    x-data="{ activeSlide: 1, slides: [1, 2, 3] }"
@@ -108,9 +108,9 @@
             </div>
         </section>
 
-        <section class="dark:bg-[#222738] py-4">
+        <section class="dark:bg-[#151823] py-4">
             <div class="flex flex-col items-center text-center">
-                <h1 class="inline-block text-lg md:text-2xl px-4 text-sky-50 bg-[#004AAD] dark:bg-[#151823] py-1 mb-2 rounded-md font-light">
+                <h1 class="inline-block text-lg md:text-2xl px-4 text-sky-50 bg-[#004AAD] dark:bg-[#222738] py-1 mb-2 rounded-md font-light">
                     Mission
                 </h1>
                 <p class="dark:text-[#FFFFFF] text-md w-10/12 md:w-6/12">
@@ -120,7 +120,7 @@
         </section>
 
         {{-- One of the main features --}}
-        <section class="dark:bg-[#222738] flex flex-col md:flex-row justify-between items-center px-10 md:px-15 lg:px-20 pt-1 pb-4 md:gap-10">
+        <section class="dark:bg-[#151823] flex flex-col md:flex-row justify-between items-center px-10 md:px-15 lg:px-20 pt-1 pb-4 md:gap-10">
             {{-- Picture of the one of the main features --}}
             <div class="w-full mx-auto">
                 <img src='/images/principal.jpg' class="relative block object-cover rounded-md" alt="features-img">
@@ -130,7 +130,7 @@
             <div class="flex flex-col justify-center gap-2">
                 <p class="dark:text-[#FFFFFF] my-2 lg:my-10 xl:mb-7 text-md">From its humble beginnings on August 21, 2012 Christian Yumol founded this school as a computer training center. Until today, KodeGo High school are giving quality education to its student and help them to achieve their goals and push to their limits and see their max potential as a student</p>
                 <div>
-                    <button class="bg-[#012560] dark:bg-[#151823] rounded-md text-sky-50 text-sm font-light border-solid px-1.5 md:px-2.3 lg:px-3 py-1 md:py-1.25 lg:py-1.5 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200 bg-opacity-90 ">
+                    <button class="bg-[#012560] dark:bg-[#222738] rounded-md text-sky-50 text-sm font-light border-solid px-1.5 md:px-2.3 lg:px-3 py-1 md:py-1.25 lg:py-1.5 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200 bg-opacity-90 ">
                         Learn more.
                     </button>
                 </div>

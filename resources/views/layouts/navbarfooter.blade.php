@@ -26,7 +26,7 @@
 
 <body class="font-sans antialiased" x-data="mainState" :class="{dark: isDarkMode}" x-cloak>
     {{-- nav bar goes heres --}}
-    <nav class="bg-[#001F52] dark:bg-[#151823] shadow py-2 fixed top-0 left-0 right-0 z-10" >
+    <nav class="bg-[#001F52] dark:bg-[#222738] shadow py-2 fixed top-0 left-0 right-0 z-10" >
         <div x-data="{isOpen: false}" class="mx-auto px-5 md:px-12.5 lg:px-20">
             
             <div class="md:flex md:justify-between items-center">
@@ -111,13 +111,13 @@
         {{-- content goes here --}}
         @yield('register')
 
-    <footer class="bg-[#001F52] dark:bg-[#151823] py-5">
+    <footer class="bg-[#001F52] dark:bg-[#222738] py-5">
 
         <div class="flex flex-col justify-center items-center mx-10 md:mx-0">
             <a href="#">
                 <img src="/images/main-logo.png" alt="main logo" class="max-h-32">
             </a>
-            <p class="text-white text-center font-light py-3">For any concern. reach us in any of our social contact links below.</p>
+            <p class="text-white text-center font-light py-3">For any concern. Reach us in any of our social contact links below.</p>
             <div class="flex flex-row justify-end gap-4 py-2">
                 <a href="#"><img src="/images/gmail-logo.png" alt="Gmail" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
                 <a href="#"><img src="/images/facebook-logo.png" alt="Facebook" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
