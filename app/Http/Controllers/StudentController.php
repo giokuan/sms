@@ -180,13 +180,11 @@ class StudentController extends Controller
         return view('student-pages.profile', compact('data'));
     }
 
-
     public function addGrade($id){
         $data = Student::where('id', '=', $id)->first();
       
         return view('pages.add-grade', compact('data'));
     }
-    
 
     public function saveGrade(Request $request){
 
