@@ -118,7 +118,7 @@ require __DIR__ . '/auth.php';
 
 
 Route::get('student-all-list',[StudentController::class,'studentAllList'])
-        ->middleware(['auth', 'verified','teacher-middleware']);
+        ->middleware(['auth', 'verified','teacher-middleware'])->name('student-all-list');
 Route::get('add-student',[StudentController::class,'addStudent'])
         ->middleware(['auth', 'verified','teacher-middleware']);
 Route::post('save-student',[StudentController::class,'saveStudent']);
