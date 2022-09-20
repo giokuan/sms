@@ -135,9 +135,9 @@ Route::get('profile',[StudentController::class,'studentProfile'])
 
 Route::get('add-grade/{id}',[StudentController::class,'addGrade']);
 Route::post('save-grade',[StudentController::class,'saveGrade']);
-Route::get('add-grade',[StudentController::class,'showGrade']);
+// Route::get('add-grade',[StudentController::class,'showGrade']);
 Route::get('edit-grade/{id}',[StudentController::class,'editGrade']);
-
+Route::post('update-grade',[StudentController::class,'updateGrade']);
 
 
 Route::get('teacher-all-list',[TeachersController::class,'teacherAllList'])

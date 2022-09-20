@@ -8,7 +8,7 @@ use App\Models\StudentGrade;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use Auth;
+
 
 
 class StudentController extends Controller
@@ -129,6 +129,7 @@ class StudentController extends Controller
         ]);
 
         $data = Student::find($request->id);
+
         $data->lastname = $request->lastname;
         $data->firstname = $request->firstname;
         $data->middlename = $request->middlename;
@@ -195,7 +196,7 @@ class StudentController extends Controller
 
         // if()
 
-        // $student_id = $request->id;
+        // $user_id = $request->user_id;
         $gradingperiod = $request->gradingperiod;
         $lastname = $request->lastname;
         $firstname = $request->firstname;
@@ -213,31 +214,40 @@ class StudentController extends Controller
         $average = $request->average;
 
 
-        $stud = new StudentGrade();
+       
    
-        // $stud = StudentGrade::find($request->id);
-        $stud->student_id = auth()->user()->id;
+            
 
-        // if(auth()->user()->id count )
+            // if (auth()->user()->id->count(4))
+            // {
+            //     return redirect()->back()->with('error', 'student is complete');
+            // }
+            // else{
+
+          
+            $stud = new StudentGrade();
+
+            $stud->id = auth()->user()->id;
+            $stud->gradingperiod = $gradingperiod;
+            $stud->lastname=$lastname;
+            $stud->firstname=$firstname;
+            $stud->english = $english;
+            $stud->filipino = $filipino;
+            $stud->mathematics = $mathematics;
+            $stud->social_studies = $social_studies;
+            $stud->science = $science;
+            $stud->home_economics = $homeeconomics;
+            $stud->values_education = $values_education;
+            $stud->music = $music;
+            $stud->arts= $arts;
+            $stud->physical_education = $physical_education;
+            $stud->health = $health;
+            $stud->average = $average;
+            $stud->save();
+
+            return view('pages.add-grade')->with('success','Grade added Succesfuly');
+        // }
         
-        $stud->gradingperiod = $gradingperiod;
-        $stud->lastname=$lastname;
-        $stud->firstname=$firstname;
-        $stud->english = $english;
-        $stud->filipino = $filipino;
-        $stud->mathematics = $mathematics;
-        $stud->social_studies = $social_studies;
-        $stud->science = $science;
-        $stud->home_economics = $homeeconomics;
-        $stud->values_education = $values_education;
-        $stud->music = $music;
-        $stud->arts= $arts;
-        $stud->physical_education = $physical_education;
-        $stud->health = $health;
-        $stud->average = $average;
-        $stud->save();
-
-        return redirect()->back()->with('success','Grade added Succesfuly');
 
     }
 
@@ -247,6 +257,35 @@ class StudentController extends Controller
         // $data = DB::table('grades')->get();
       
         return view('pages.add-grade', compact('data'));
+    }
+
+
+    public function editGrade($id){
+        $data = StudentGrade::where('id', '=', $id)->first();
+        return view('pages.edit-grade', compact('data'));
+    }
+
+
+    public function updateGrade(Request $request){
+        $data = StudentGrade::find($request->id);
+
+        $data->gradingperiod = $request->gradingperiod ;
+        $data->lastname = $request->lastname;
+        $data->firstname = $request->firstname;
+        $data->english = $request->english;
+        $data->filipino = $request->filipino;
+        $data->mathematics = $request->mathematics;
+        $data->social_studies = $request->social_studies;
+        $data->science = $request->science;
+        $data->home_economics = $request->home_economics;
+        $data->values_education = $request->values_education;
+        $data->music = $request->music;
+        $data->arts = $request->arts;
+        $data->health = $request->health;
+        $data->save();
+
+        return redirect()->back()->with('success', 'Student Grades Successfully Updated');
+    
     }
     
    
@@ -280,3 +319,4 @@ class StudentController extends Controller
         return view('student-pages.classmates', compact('datas'));
     }
 }
+

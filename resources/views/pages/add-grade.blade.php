@@ -13,72 +13,12 @@
     </div>
    
 
-{{-- 
-<div class="p-10 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1 ">
-@livewireStyles
 
-<div> <livewire:student-grade></div>
-</div> --}}
-
-  
-
-{{-- @livewireStyles
-@powerGridStyles --}} 
-{{-- <h1 class=" text-xl decoration-8 pb-6 pl-4">{{$data->firstname}} {{$data->lastname}}</h1> --}}
-{{-- <div class="overflow-x-auto"> --}}
-
-  {{-- <livewire:grades-table/> --}}
-    
-    {{-- <table class="min-w-full text-sm divide-y-2 divide-gray-200">
-      <thead>
-        <tr>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Grading Period</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">English</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Filipino</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Mathematics</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Social Studies</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Science and Technolgy</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Home Economics</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Values Education</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Music</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Arts</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Physical Education</th>
-          <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Health</th>
-
-        </tr>
-      </thead>
-      
-  
-      <tbody class="divide-y divide-gray-200">
-  
-        <tr>
-      
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->gradingperiod}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->english}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->filipino}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->mathematics}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->social_studies}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->science}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->home_economics}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->values_education}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->music}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->arts}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->physical_education}}</td>
-          <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{$data->health}}</td>
-          </tr>
-          
-   
-          
-      </tbody>
-    </table>
-  </div> --}}
-  <hr>
-  
 <!-- component -->
 <!-- component -->
 <form method="post" action="{{url('save-grade')}}" class="flex flex-col space-y-8" enctype="multipart/form-data"> 
     @csrf
-    {{-- <input type="hidden" value="{{ $data->id }}" name="id" /> --}}
+    <input type="hidden" value="{{ $data->id }}" name="id" />
 
     {{-- <input type="hidden" value="{{$data->gradingperiod}}" name="gradingper" /> --}}
 <div class="p-5">
