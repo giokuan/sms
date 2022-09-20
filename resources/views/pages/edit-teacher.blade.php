@@ -44,8 +44,9 @@
                
                     <div class="border-2 rounded-md bg-indigo-900">
                         <label>
-                            <input type="file" class=" w-full h-full text-xs text-grey-500 p-2 text-slate-100
-                            file:rounded-md file:border-0
+                            <input type="file" class=" w-full text-sm text-grey-500 p-2 text-indigo-900
+                            file:mr-5 pl-6 file:py-1 file:px-14
+                            file:rounded-full file:border-0
                             file:text-sm file:font-medium
                             file:bg-indigo-900 file:text-slate-50
                             hover:file:cursor-pointer hover:file:bg-indigo-900
@@ -54,7 +55,7 @@
                         </label>
                         </div>
     
-                <button type="submit" class="bg-indigo-900 text-slate-50 border-gray-200 rounded py-2 px-10 shadow-lg">Update</button>
+                <button type="submit" class="bg-indigo-900 text-slate-50 hover:text-amber-700 border-gray-200 rounded py-2 px-10 shadow-lg">Update</button>
               
                    
                

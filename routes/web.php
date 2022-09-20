@@ -167,3 +167,4 @@ Route::get('student/schedule', [StudentController::class,'showStudentSchedule'])
 
 Route::get('student/classmates', [StudentController::class,'showStudentClassmates']
     )->middleware(['auth', 'verified','student-middleware'])->name('student-classmates');
+    

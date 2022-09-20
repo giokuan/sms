@@ -2,10 +2,12 @@
     <div>
         <div class="w-full flex pb-10">
             <div class="w-3/6 mx-1">
-                <input wire:model.debounce.300ms="search" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"placeholder="Search students...">
+                <label class="text-sm">Search</label>
+                <input wire:model.debounce.300ms="search" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl"placeholder="Search students...">
             </div>
-            <div class="w-1/6 relative mx-1">
-                <select wire:model="orderBy" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <div class="w-1/6  mx-1">
+                <label class="text-sm">Filter by</label>
+                <select wire:model="orderBy" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl" id="grid-state">
                     <option value="id">ID</option>
                     <option value="lastname">Last Name</option>
                     <option value="email">Email</option>
@@ -15,8 +17,9 @@
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                 </div>
             </div>
-            <div class="w-1/6 relative mx-1">
-                <select wire:model="orderAsc" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <div class="w-1/6  mx-1">
+                <label class="text-sm">Sort by</label>
+                <select wire:model="orderAsc" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl" id="grid-state">
                     <option value="1">Ascending</option>
                     <option value="0">Descending</option>
                 </select>
@@ -24,8 +27,9 @@
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                 </div>
             </div>
-            <div class="w-1/6 relative mx-1">
-                <select wire:model="perPage" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <div class="w-1/6  mx-1">
+                <label class="text-sm">Display by</label>
+                <select wire:model="perPage" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl" id="grid-state">
                     <option>10</option>
                     <option>25</option>
                     <option>50</option>
@@ -59,7 +63,7 @@
                     <tr>
 
                         <td class="border px-4 py-2">
-                            <a href="{{url('edit-student/'.$student->id)}}"><img src="{{asset('uploads/students/'.$student->photo)}}" width="20" height="20" alt="image" ></a>
+                            <a href="{{url('edit-student/'.$student->id)}}"><img src="{{asset('uploads/students/'.$student->photo)}}" width="20" height="20" alt="image" class="border rounded-full"></a>
                         </td>
                         <td class="border px-4 py-2">{{ $student->id }}</td>
                         <td class="border px-4 py-2">{{ $student->lastname }}</td>

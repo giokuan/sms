@@ -68,6 +68,7 @@
 
     @elseif((Auth::user()->user_type === 'Teacher'))
         <x-sidebar.link title="All Students" href="/student-all-list" />
+     
         {{-- <x-sidebar.link title="Add Student" href="/add-student" /> --}}
     @else
     {{-- <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-[#FFFFFF]">Dummy Links</div> --}}
@@ -77,7 +78,7 @@
         <x-sidebar.link title="All Teachers" href="/teacher-all-list" />
         {{-- <x-sidebar.link title="Add Student" href="/add-student" /> --}}
         <x-sidebar.link title="Add Teacher" href="/add-teacher" />
-        {{-- <x-sidebar.link title="Calendar" href="/homecalendar" /> --}}
+      
 
         {{-- <x-sidebar.link title="Add Grade" href="/add-grade" /> --}}
     {{-- @endforeach --}}
