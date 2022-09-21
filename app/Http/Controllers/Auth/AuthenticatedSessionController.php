@@ -41,7 +41,7 @@ class AuthenticatedSessionController extends Controller
 
             }else if (auth()->user()->user_type == 'Student') {
 
-                if( Student::where('user_id', '=', Auth::id())->first()){
+                if( Student::where('user_id', '=', auth()->id())->first()){
                     return redirect()->route('student-home'); 
                 }
                 else{
