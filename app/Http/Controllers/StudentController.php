@@ -251,42 +251,42 @@ class StudentController extends Controller
 
     }
 
-    public function showGrade(){
-        // $data = StudentGrade::where('student_id', $id)->first();
-        $data = StudentGrade::get();
-        // $data = DB::table('grades')->get();
+    // public function showGrade(){
+    //     // $data = StudentGrade::where('student_id', $id)->first();
+    //     $data = StudentGrade::get();
+    //     // $data = DB::table('grades')->get();
       
-        return view('pages.add-grade', compact('data'));
-    }
+    //     return view('pages.add-grade', compact('data'));
+    // }
 
 
-    public function editGrade($id){
-        $data = StudentGrade::where('id', '=', $id)->first();
-        return view('pages.edit-grade', compact('data'));
-    }
+    // public function editGrade($id){
+    //     $data = StudentGrade::where('id', '=', $id)->first();
+    //     return view('pages.edit-grade', compact('data'));
+    // }
 
 
-    public function updateGrade(Request $request){
-        $data = StudentGrade::find($request->id);
+    // public function updateGrade(Request $request){
+    //     $data = StudentGrade::find($request->id);
 
-        $data->gradingperiod = $request->gradingperiod ;
-        $data->lastname = $request->lastname;
-        $data->firstname = $request->firstname;
-        $data->english = $request->english;
-        $data->filipino = $request->filipino;
-        $data->mathematics = $request->mathematics;
-        $data->social_studies = $request->social_studies;
-        $data->science = $request->science;
-        $data->home_economics = $request->home_economics;
-        $data->values_education = $request->values_education;
-        $data->music = $request->music;
-        $data->arts = $request->arts;
-        $data->health = $request->health;
-        $data->save();
+    //     $data->gradingperiod = $request->gradingperiod ;
+    //     $data->lastname = $request->lastname;
+    //     $data->firstname = $request->firstname;
+    //     $data->english = $request->english;
+    //     $data->filipino = $request->filipino;
+    //     $data->mathematics = $request->mathematics;
+    //     $data->social_studies = $request->social_studies;
+    //     $data->science = $request->science;
+    //     $data->home_economics = $request->home_economics;
+    //     $data->values_education = $request->values_education;
+    //     $data->music = $request->music;
+    //     $data->arts = $request->arts;
+    //     $data->health = $request->health;
+    //     $data->save();
 
-        return redirect()->back()->with('success', 'Student Grades Successfully Updated');
+    //     return redirect()->back()->with('success', 'Student Grades Successfully Updated');
     
-    }
+    // }
     
    
     public function showStudentData(){

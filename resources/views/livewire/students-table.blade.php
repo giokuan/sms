@@ -1,11 +1,13 @@
 
     <div>
-        <div class="w-full flex pb-10">
-            <div class="w-3/6 mx-1">
-                <input wire:model.debounce.300ms="search" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"placeholder="Search students...">
+        <div class="w-full flex-col md:flex-row pb-10">
+            <div class="w-full  mx-1">
+                <label class="text-xs ">Search</label>
+                <input wire:model.debounce.300ms="search" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl"placeholder="Search students...">
             </div>
-            <div class="w-1/6 relative mx-1">
-                <select wire:model="orderBy" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <div class="w-full  mx-1">
+                <label class="text-xs">Filter by</label>
+                <select wire:model="orderBy" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl" id="grid-state">
                     <option value="id">ID</option>
                     <option value="lastname">Last Name</option>
                     <option value="email">Email</option>
@@ -15,8 +17,9 @@
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                 </div>
             </div>
-            <div class="w-1/6 relative mx-1">
-                <select wire:model="orderAsc" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <div class="w-full  mx-1">
+                <label class="text-xs">Sort by</label>
+                <select wire:model="orderAsc" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl" id="grid-state">
                     <option value="1">Ascending</option>
                     <option value="0">Descending</option>
                 </select>
@@ -24,8 +27,9 @@
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                 </div>
             </div>
-            <div class="w-1/6 relative mx-1">
-                <select wire:model="perPage" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <div class="w-full  mx-1">
+                <label class="text-xs">Display by</label>
+                <select wire:model="perPage" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl" id="grid-state">
                     <option>10</option>
                     <option>25</option>
                     <option>50</option>
@@ -36,7 +40,8 @@
                 </div>
             </div>
         </div>
-        <table class="table-auto w-full mb-6">
+        <div class="overflow-auto">
+        <table class="table-auto w-full mb-6 overflow-x-auto">
             <thead>
                 <tr>
                     <th class="px-4 py-2">Photo</th>
@@ -58,8 +63,8 @@
                 @foreach($students as $student)
                     <tr>
 
-                        <td class="border px-4 py-2">
-                            <a href="{{url('edit-student/'.$student->id)}}"><img src="{{asset('uploads/students/'.$student->photo)}}" width="20" height="20" alt="image" ></a>
+                        <td class="border px-4 py-2  ">
+                            <a href="{{url('edit-student/'.$student->id)}}"><img src="{{asset('uploads/students/'.$student->photo)}}" width="20" height="20" alt="image" class="border rounded-full"></a>
                         </td>
                         <td class="border px-4 py-2">{{ $student->id }}</td>
                         <td class="border px-4 py-2">{{ $student->lastname }}</td>
@@ -72,7 +77,7 @@
                         <td class="border px-4 py-2">{{ $student->dateofbirth}}</td>
                         {{-- <td class="border px-4 py-2">{{ $student->phone}}</td> --}}
                         {{-- <td class="border px-4 py-2">{{ $student->address }}</td> --}}
-                        <td class="flex items-center border px-4 py-2">
+                        <td class="flex items-center justify-center border px-4 py-2">
                         
                             <a href="{{url('edit-student/'.$student->id)}}" >  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3F83F8" class="w-6 h-6 mr-2">
                                 <path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
@@ -93,6 +98,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
         {!! $students->links() !!}
         @include('sweetalert::alert')
     </div>
