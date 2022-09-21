@@ -32,6 +32,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 
 Route::get('studentemail', function () {
     \Illuminate\Support\Facades\Mail::send(new \App\Mail\studentEmail());
