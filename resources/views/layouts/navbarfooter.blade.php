@@ -51,8 +51,8 @@
                 </div>
 
                 {{-- secondary nav --}}
-                <div :class="isOpen ? 'show' : 'hidden'" class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3">
-                    <div class="flex flex-col md:flex-row gap-3 md:gap-x-7">
+                <div :class="isOpen ? 'show' : 'hidden'" class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3 ">
+                    <div class="flex flex-col md:flex-row gap-3 md:gap-x-7 transition ease-in-out duration-1000">
 
                         @if (Route::is('login'))
                             <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>

@@ -54,21 +54,23 @@
             <div    x-data="{ activeSlide: 1, slides: [1, 2, 3] }"
                     {{-- x-init="() => { setTimeout(() => { activeSlide = activeSlide + 1 }, 3000); }" --}}
                     x-if="{activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1}"
-                    
                     class="px-10">
                 <div class="relative ">
                     <!-- Slides -->
-                    <div x-show="activeSlide === 1" class="duration-300">
+                    <div x-show="activeSlide === 1"
+                    x-transition:enter.duration.500ms>
                     <!-- Slide -->
                         <img src='/images/School1.jpg' class="relative block w-full h-96 object-cover rounded-md" alt="carousel_img">
                     </div>
     
-                    <div x-show="activeSlide === 2" class="duration-300">
+                    <div x-show="activeSlide === 2"
+                    x-transition:enter.duration.500ms>
                     <!-- Slide -->
                         <img src='/images/School2.jpg' class="relative block w-full h-96 object-cover rounded-md" alt="carousel_img">
                     </div>
                     
-                    <div x-show="activeSlide === 3" class="duration-300">
+                    <div x-show="activeSlide === 3"
+                    x-transition:enter.duration.500ms>
                     <!-- Slide -->
                         <img src='/images/School3.jpg' class="relative block w-full h-96 object-cover rounded-md" alt="carousel_img">
                     </div>
@@ -120,14 +122,15 @@
         </section>
 
         {{-- One of the main features --}}
-        <section class="dark:bg-[#151823] flex flex-col md:flex-row justify-between items-center px-10 md:px-15 lg:px-20 pt-1 pb-4 md:gap-10">
+        {{-- <section class="dark:bg-[#151823] flex flex-col md:flex-row justify-between items-center px-10 md:px-15 lg:px-20 pt-1 pb-4 md:gap-10"> --}}
+        <section class="dark:bg-[#151823] grid grid-cols-2 gap-3 p-5 items-center px-5 md:px-12.5 lg:px-20">
             {{-- Picture of the one of the main features --}}
-            <div class="w-full mx-auto">
+            <div class="col-span-2 md:col-span-1">
                 <img src='/images/principal.jpg' class="relative block object-cover rounded-md" alt="features-img">
             </div>
 
             {{-- Short description about it and about button --}}
-            <div class="flex flex-col justify-center gap-2">
+            <div class="col-span-2 md:col-span-1">
                 <p class="dark:text-[#FFFFFF] my-2 lg:my-10 xl:mb-7 text-md">From its humble beginnings on August 21, 2012 Christian Yumol founded this school as a computer training center. Until today, KodeGo High school are giving quality education to its student and help them to achieve their goals and push to their limits and see their max potential as a student</p>
                 <div>
                     <button class="bg-[#012560] dark:bg-[#222738] rounded-md text-sky-50 dark:text-sky-500 text-sm font-light border-solid px-1.5 md:px-2.3 lg:px-3 py-1 md:py-1.25 lg:py-1.5 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200 bg-opacity-90 underline">
