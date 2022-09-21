@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\StudentGrade;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Livewire\Calendar;
+use App\Models\Announcements;
 use App\Models\Event;
 
 /*
@@ -142,11 +143,11 @@ Route::get('profile',[StudentController::class,'studentProfile'])
 
 
 
-Route::get('add-grade/{id}',[StudentController::class,'addGrade']);
-Route::post('save-grade',[StudentController::class,'saveGrade']);
+// Route::get('add-grade/{id}',[StudentController::class,'addGrade']);
+// Route::post('save-grade',[StudentController::class,'saveGrade']);
 // Route::get('add-grade',[StudentController::class,'showGrade']);
-Route::get('edit-grade/{id}',[StudentController::class,'editGrade']);
-Route::post('update-grade',[StudentController::class,'updateGrade']);
+// Route::get('edit-grade/{id}',[StudentController::class,'editGrade']);
+// Route::post('update-grade',[StudentController::class,'updateGrade']);
 
 
 Route::get('teacher-all-list',[TeachersController::class,'teacherAllList'])
@@ -176,4 +177,30 @@ Route::get('student/schedule', [StudentController::class,'showStudentSchedule'])
 
 Route::get('student/classmates', [StudentController::class,'showStudentClassmates']
     )->middleware(['auth', 'verified','student-middleware'])->name('student-classmates');
+
+    // Route::get('home',[StudentController::class, 'homes']
+    // )->middleware(['auth', 'verified', 'student-middleware']);
     
+
+
+// **********************Announcement Controller*******************************************
+
+Route::get('add-announcement',[AnnouncementsController::class, 'announcementsfunc']
+    )->middleware(['auth', 'verified', 'admin-middleware']);
+    // return view('add-announcement');
+
+Route::post('save-announcement',[AnnouncementsController::class, 'saveAnnouncement']
+    )->middleware(['auth', 'verified', 'admin-middleware']);
+  
+Route::get('announcement-all-list',[AnnouncementsController::class, 'announcementAllList']
+    )->middleware(['auth', 'verified', 'admin-middleware']);
+
+Route::get('edit-announcement/{id}',[AnnouncementsController::class, 'editAnnouncement']
+    )->middleware(['auth', 'verified', 'admin-middleware']);
+
+ Route::post('update-announcement',[AnnouncementsController::class, 'updateAnnouncement']
+    )->middleware(['auth', 'verified', 'admin-middleware']);
+
+
+    Route::get('delete-announcement/{id}',[AnnouncementsController::class,'deleteAnnouncement'])
+    ->middleware(['auth', 'verified','admin-middleware']);

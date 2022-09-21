@@ -1,17 +1,20 @@
 <?php
-  
+
 namespace App\Models;
-  
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Mail;
+
 use App\Mail\ContactMail;
-  
+
+use Illuminate\Support\Facades\Mail;
+
+
 class Contact extends Model
 {
     use HasFactory;
-  
-    public $fillable = ['name', 'email', 'subject', 'message'];
+
+    public $fillable = ['name', 'email', 'phone', 'subject', 'message'];
   
     /**
      * Write code on Method
@@ -24,7 +27,7 @@ class Contact extends Model
   
         static::created(function ($item) {
                 
-            $adminEmail = "bryant.rosillo@gmail.com";
+            $adminEmail = "your_admin_email@gmail.com";
             Mail::to($adminEmail)->send(new ContactMail($item));
         });
     }

@@ -82,11 +82,7 @@
                         {{-- lastname --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Last Name</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('lastname')}}" class="w-full appearance-none text-black text-opacity-75 rounded shadow py-1 px-2  mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="lastname" name="lastname">
-=======
-                            <input type="text" value="{{old('lastname')}}" class="w-full appearance-none text-black text-opacity-75 rounded shadow py-1 px-2  mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="lastname" name="lastname">
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
+                            <input type="text" value="{{old('lastname')}}" class="w-full  appearance-none text-black text-opacity-75 rounded shadow py-1 px-2  mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="lastname" name="lastname" capitalize>
                             @error('lastname')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -101,11 +97,7 @@
                         {{-- Firstname --}}
                         <div class="form-item w-full">
                             <label class="text-md ">First Name</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('firstname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="firstname" name="firstname" >
-=======
-                            <input type="text" value="{{old('firstname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="firstname" name="firstname" >
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
+                            <input type="text" value="{{old('firstname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="firstname" name="firstname" capitalize>
                             @error('firstname')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -120,11 +112,7 @@
                         {{-- Middle name --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Middle Name</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('middlename')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="middlename" name="middlename" >
-=======
-                            <input type="text" value="{{old('middlename')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="middlename" name="middlename" >
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
+                            <input type="text" value="{{old('middlename')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="middlename" name="middlename" capitalize>
                             @error('middlename')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -143,7 +131,7 @@
                         {{-- email --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Email</label>
-                            <input type="text" value="{{Auth::user()->email}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200" id="email" name="email " disabled>
+                            <input type="text" value="{{Auth::user()->email}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200" id="email" name="email " disabled capitalize>
                             @error('email')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -183,7 +171,7 @@
 
                         <div class="form-item w-full">
                             <label class="text-md ">Section</label>
-                            <input type="text" value="{{old('section')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="section" name="section">
+                            <input type="text" value="{{old('section')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="section" name="section" capitalize>
                             @error('section')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -221,11 +209,7 @@
                         {{-- Phone --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Phone</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('phone')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="phone" name="phone">
-=======
                             <input type="text" value="{{old('phone')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="phone" name="phone">
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
                             @error('phone')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -262,11 +246,7 @@
                         {{-- Religion --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Religion</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('religion')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="religion" name="religion">
-=======
-                            <input type="text" value="{{old('religion')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="religion" name="religion">
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
+                            <input type="text" value="{{old('religion')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="religion" name="religion" capitalize>
                             @error('religion')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -282,11 +262,7 @@
                         {{-- Nationality --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Nationality</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('nationality')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="nationality" name="nationality">
-=======
-                            <input type="text" value="{{old('nationality')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="nationality" name="nationality">
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
+                            <input type="text" value="{{old('nationality')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="nationality" name="nationality" capitalize>
                             @error('nationality')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -306,11 +282,7 @@
                         {{-- Fathers Name --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Fathers Name</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('fathersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"   id="fathersname" name="fathersname" >
-=======
-                            <input type="text" value="{{old('fathersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="fathersname" name="fathersname" >
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
+                            <input type="text" value="{{old('fathersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 mb-4 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="fathersname" name="fathersname" capitalize>
                             @error('fathersname')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -326,11 +298,7 @@
                         {{-- Fathers Occupation --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Fathers Occupation</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('foccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="foccupation" name="foccupation">
-=======
-                            <input type="text" value="{{old('foccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="foccupation" name="foccupation">
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
+                            <input type="text" value="{{old('foccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="foccupation" name="foccupation" capitalize>
                             @error('foccupation')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -346,11 +314,7 @@
                         {{-- Mothers Name --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Mothers Name</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('mothersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="mothersname" name="mothersname">
-=======
-                            <input type="text" value="{{old('mothersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="mothersname" name="mothersname">
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
+                            <input type="text" value="{{old('mothersname')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="mothersname" name="mothersname" capitalize>
                             @error('mothersname')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
@@ -366,11 +330,7 @@
                         {{-- Mothers Occupation --}}
                         <div class="form-item w-full">
                             <label class="text-md ">Mothers Occupation</label>
-<<<<<<< HEAD
-                            <input type="text" value="{{old('moccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white"  id="moccupation" name="moccupation">
-=======
-                            <input type="text" value="{{old('moccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="moccupation" name="moccupation">
->>>>>>> 420555d4818dbc098cf2f666d52324ce80ce9d23
+                            <input type="text" value="{{old('moccupation')}}" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" id="moccupation" name="moccupation" capitalize>
                             @error('moccupation')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">
