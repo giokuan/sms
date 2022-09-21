@@ -32,6 +32,6 @@ class studentEmail extends Mailable
         ->from('kodegohigh@gmail.com')
         ->to('student@gmail.com')
         ->subject('School Calendar and Activity')
-        ->markdown('emails.studentemail');
+        ->view('emails.studentemail');
     }
 }
