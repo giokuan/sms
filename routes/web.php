@@ -33,8 +33,9 @@ Route::get('/about', function () {
 });
 
 
-Route::get('homecalendar', function () {
-    return view('homecalendar');
+Route::get('studentemail', function () {
+    \Illuminate\Support\Facades\Mail::send(new \App\Mail\studentEmail());
+    return view('emails.studentemail');
 });
 
 

@@ -89,7 +89,7 @@
         {{-- <x-sidebar.link title="Add Student" href="/add-student" /> --}}
     @else
     {{-- <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-[#FFFFFF]">Dummy Links</div> --}}
-    
+    {{-- <x-sidebar.link title="Email" href="/studentemail" /> --}}
     {{-- @foreach ($links as $index => $link) --}}
     <x-sidebar.dropdown title="Information" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
