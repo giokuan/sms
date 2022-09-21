@@ -58,19 +58,19 @@
                 <div class="relative ">
                     <!-- Slides -->
                     <div x-show="activeSlide === 1"
-                    x-transition:enter.duration.500ms>
+                    x-transition:enter.duration.300ms>
                     <!-- Slide -->
                         <img src='/images/School1.jpg' class="relative block w-full h-96 object-cover rounded-md" alt="carousel_img">
                     </div>
     
                     <div x-show="activeSlide === 2"
-                    x-transition:enter.duration.500ms>
+                    x-transition:enter.duration.300ms>
                     <!-- Slide -->
                         <img src='/images/School2.jpg' class="relative block w-full h-96 object-cover rounded-md" alt="carousel_img">
                     </div>
                     
                     <div x-show="activeSlide === 3"
-                    x-transition:enter.duration.500ms>
+                    x-transition:enter.duration.300ms>
                     <!-- Slide -->
                         <img src='/images/School3.jpg' class="relative block w-full h-96 object-cover rounded-md" alt="carousel_img">
                     </div>
