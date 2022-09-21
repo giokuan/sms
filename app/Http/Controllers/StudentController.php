@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-use App\Models\StudentGrade;
+use App\Models\Announcements;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -181,111 +181,13 @@ class StudentController extends Controller
         return view('student-pages.profile', compact('data'));
     }
 
-    public function addGrade($id){
-        $data = Student::where('id', '=', $id)->first();
-      
-        return view('pages.add-grade', compact('data'));
-    }
-
-    public function saveGrade(Request $request){
-
-        $request-> validate([
-            'gradingperiod'=>'required',
-        
-        ]);
-
-        // if()
-
-        // $user_id = $request->user_id;
-        $gradingperiod = $request->gradingperiod;
-        $lastname = $request->lastname;
-        $firstname = $request->firstname;
-        $english = $request->english;
-        $filipino = $request->filipino;
-        $mathematics = $request->mathematics;
-        $social_studies= $request->social_studies;
-        $science = $request->science;
-        $homeeconomics = $request->home_economics;
-        $values_education = $request->values_education;
-        $music = $request->music;
-        $arts = $request->arts;
-        $physical_education = $request->physical_education;
-        $health = $request->health;
-        $average = $request->average;
-
-
-       
+  
    
-            
 
-            // if (auth()->user()->id->count(4))
-            // {
-            //     return redirect()->back()->with('error', 'student is complete');
-            // }
-            // else{
+    // public function homes(){
 
-          
-            $stud = new StudentGrade();
-
-            $stud->id = auth()->user()->id;
-            $stud->gradingperiod = $gradingperiod;
-            $stud->lastname=$lastname;
-            $stud->firstname=$firstname;
-            $stud->english = $english;
-            $stud->filipino = $filipino;
-            $stud->mathematics = $mathematics;
-            $stud->social_studies = $social_studies;
-            $stud->science = $science;
-            $stud->home_economics = $homeeconomics;
-            $stud->values_education = $values_education;
-            $stud->music = $music;
-            $stud->arts= $arts;
-            $stud->physical_education = $physical_education;
-            $stud->health = $health;
-            $stud->average = $average;
-            $stud->save();
-
-            return view('pages.add-grade')->with('success','Grade added Succesfuly');
-        // }
-        
-
-    }
-
-    // public function showGrade(){
-    //     // $data = StudentGrade::where('student_id', $id)->first();
-    //     $data = StudentGrade::get();
-    //     // $data = DB::table('grades')->get();
-      
-    //     return view('pages.add-grade', compact('data'));
-    // }
-
-
-    // public function editGrade($id){
-    //     $data = StudentGrade::where('id', '=', $id)->first();
-    //     return view('pages.edit-grade', compact('data'));
-    // }
-
-
-    // public function updateGrade(Request $request){
-    //     $data = StudentGrade::find($request->id);
-
-    //     $data->gradingperiod = $request->gradingperiod ;
-    //     $data->lastname = $request->lastname;
-    //     $data->firstname = $request->firstname;
-    //     $data->english = $request->english;
-    //     $data->filipino = $request->filipino;
-    //     $data->mathematics = $request->mathematics;
-    //     $data->social_studies = $request->social_studies;
-    //     $data->science = $request->science;
-    //     $data->home_economics = $request->home_economics;
-    //     $data->values_education = $request->values_education;
-    //     $data->music = $request->music;
-    //     $data->arts = $request->arts;
-    //     $data->health = $request->health;
-    //     $data->save();
-
-    //     return redirect()->back()->with('success', 'Student Grades Successfully Updated');
-    
+    //     $data = Announcements::get();
+    //     return view('student-pages.home', compact('data'));
     // }
     
    

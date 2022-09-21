@@ -89,7 +89,7 @@
         {{-- <x-sidebar.link title="Add Student" href="/add-student" /> --}}
     @else
     {{-- <div x-transition x-show="isSidebarOpen || isSidebarHovered" class="text-sm text-[#FFFFFF]">Dummy Links</div> --}}
-    <x-sidebar.link title="Email" href="/studentemail" />
+   
     {{-- @foreach ($links as $index => $link) --}}
     <x-sidebar.dropdown title="Information" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
@@ -101,6 +101,14 @@
         <x-sidebar.link title="All Teachers" href="/teacher-all-list" />
         {{-- <x-sidebar.link title="Add Student" href="/add-student" /> --}}
         <x-sidebar.link title="Add Teacher" href="/add-teacher" />
+    </x-sidebar.dropdown>
+
+
+    <x-sidebar.dropdown title="Announcements" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
+
+        {{-- <x-sidebar.link title="Email" href="/studentemail" /> --}}
+        <x-sidebar.link title="Make Announcement" href="/add-announcement" />
+        <x-sidebar.link title="View Announcements" href="/announcement-all-list" />
     </x-sidebar.dropdown>
         
         {{-- <x-sidebar.link title="Calendar" href="/homecalendar" /> --}}
