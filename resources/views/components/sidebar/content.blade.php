@@ -62,7 +62,7 @@
     {{-- @php
         $links = array_fill(0, 20, '');
     @endphp --}}
-    @if((Auth::user()->user_type === 'Student'))
+    @if((Auth::user()->user_type === 'Student') && !(Route::is('home')))
     <x-sidebar.dropdown title="Information" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
             {{-- <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" /> --}}

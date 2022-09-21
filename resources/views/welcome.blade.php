@@ -25,7 +25,7 @@
                 {{-- img --}}
                 <img src='/images/SchoolFeatures3.jpg' class="rounded relative block object-cover h-48 mx-auto" alt="features-img">
                 {{-- section header --}}
-                <p class="py-2 font-semibold dark:text-[#FFFFFF]">Quality Education.</p>
+                <p class="py-2 font-semibold dark:text-sky-500">Quality Education.</p>
                 {{-- paragraph --}}
                 <p class="text-sm dark:text-[#FFFFFF]">KodeGo High School provides quality education and assures, every student will learn all the knowledge they need once they graduate on KodeGo High School</p>
             </div>
@@ -33,7 +33,7 @@
                 {{-- img --}}
                 <img src='/images/SchoolFeatures1.jpg' class="rounded relative block object-cover h-48 mx-auto" alt="features-img">
                 {{-- section header --}}
-                <p class="py-2 font-semibold dark:text-[#FFFFFF]">Interactive Discussion.</p>
+                <p class="py-2 font-semibold dark:text-sky-500">Interactive Discussion.</p>
                 {{-- paragraph --}}
                 <p class="text-sm dark:text-[#FFFFFF]">Discussion can be better if all the participants in the room are engaged for every lesson. That is why some discussion has interactive activity to make the discussion alive</p>
             </div>
@@ -41,7 +41,7 @@
                 {{-- img --}}
                 <img src='/images/SchoolFeatures2.jpg' class="rounded relative block object-cover h-48 mx-auto" alt="features-img">
                 {{-- section header --}}
-                <p class="py-2 font-semibold dark:text-[#FFFFFF]">Flexible learning.</p>
+                <p class="py-2 font-semibold dark:text-sky-500">Flexible learning.</p>
                 {{-- paragraph --}}
                 <p class="text-sm dark:text-[#FFFFFF]">Student can choose what type of learning he wants to. KodeGo High School has Blended learning, Online Learning, and Face to Face Learning</p>
             </div>
@@ -54,21 +54,23 @@
             <div    x-data="{ activeSlide: 1, slides: [1, 2, 3] }"
                     {{-- x-init="() => { setTimeout(() => { activeSlide = activeSlide + 1 }, 3000); }" --}}
                     x-if="{activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1}"
-                    
                     class="px-10">
                 <div class="relative ">
                     <!-- Slides -->
-                    <div x-show="activeSlide === 1" class="duration-300">
+                    <div x-show="activeSlide === 1"
+                    x-transition:enter.duration.500ms>
                     <!-- Slide -->
                         <img src='/images/School1.jpg' class="relative block w-full h-96 object-cover rounded-md" alt="carousel_img">
                     </div>
     
-                    <div x-show="activeSlide === 2" class="duration-300">
+                    <div x-show="activeSlide === 2"
+                    x-transition:enter.duration.500ms>
                     <!-- Slide -->
                         <img src='/images/School2.jpg' class="relative block w-full h-96 object-cover rounded-md" alt="carousel_img">
                     </div>
                     
-                    <div x-show="activeSlide === 3" class="duration-300">
+                    <div x-show="activeSlide === 3"
+                    x-transition:enter.duration.500ms>
                     <!-- Slide -->
                         <img src='/images/School3.jpg' class="relative block w-full h-96 object-cover rounded-md" alt="carousel_img">
                     </div>
@@ -110,7 +112,7 @@
 
         <section class="dark:bg-[#151823] py-4">
             <div class="flex flex-col items-center text-center">
-                <h1 class="inline-block text-lg md:text-2xl px-4 text-sky-50 bg-[#004AAD] dark:bg-[#222738] py-1 mb-2 rounded-md font-light">
+                <h1 class="inline-block text-lg md:text-2xl px-4 text-sky-50 bg-[#004AAD] dark:bg-[#222738] dark:text-sky-500 py-1 mb-2 rounded-md font-light">
                     Mission
                 </h1>
                 <p class="dark:text-[#FFFFFF] text-md w-10/12 md:w-6/12">
@@ -120,17 +122,18 @@
         </section>
 
         {{-- One of the main features --}}
-        <section class="dark:bg-[#151823] flex flex-col md:flex-row justify-between items-center px-10 md:px-15 lg:px-20 pt-1 pb-4 md:gap-10">
+        {{-- <section class="dark:bg-[#151823] flex flex-col md:flex-row justify-between items-center px-10 md:px-15 lg:px-20 pt-1 pb-4 md:gap-10"> --}}
+        <section class="dark:bg-[#151823] grid grid-cols-2 gap-3 p-5 items-center px-5 md:px-12.5 lg:px-20">
             {{-- Picture of the one of the main features --}}
-            <div class="w-full mx-auto">
+            <div class="col-span-2 md:col-span-1">
                 <img src='/images/principal.jpg' class="relative block object-cover rounded-md" alt="features-img">
             </div>
 
             {{-- Short description about it and about button --}}
-            <div class="flex flex-col justify-center gap-2">
+            <div class="col-span-2 md:col-span-1">
                 <p class="dark:text-[#FFFFFF] my-2 lg:my-10 xl:mb-7 text-md">From its humble beginnings on August 21, 2012 Christian Yumol founded this school as a computer training center. Until today, KodeGo High school are giving quality education to its student and help them to achieve their goals and push to their limits and see their max potential as a student</p>
                 <div>
-                    <button class="bg-[#012560] dark:bg-[#222738] rounded-md text-sky-50 text-sm font-light border-solid px-1.5 md:px-2.3 lg:px-3 py-1 md:py-1.25 lg:py-1.5 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200 bg-opacity-90 ">
+                    <button class="bg-[#012560] dark:bg-[#222738] rounded-md text-sky-50 dark:text-sky-500 text-sm font-light border-solid px-1.5 md:px-2.3 lg:px-3 py-1 md:py-1.25 lg:py-1.5 cursor-pointer duration-300  hover:scale-110 hover:bg-opacity-75 hover:text-sky-200 bg-opacity-90 underline">
                         Learn more.
                     </button>
                 </div>

@@ -51,8 +51,8 @@
                 </div>
 
                 {{-- secondary nav --}}
-                <div :class="isOpen ? 'show' : 'hidden'" class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3">
-                    <div class="flex flex-col md:flex-row gap-3 md:gap-x-7">
+                <div :class="isOpen ? 'show' : 'hidden'" class="md:flex items-center font-light text-sky-50 ml-1 pb-1 pt-3 ">
+                    <div class="flex flex-col md:flex-row gap-3 md:gap-x-7 transition ease-in-out duration-1000">
 
                         @if (Route::is('login'))
                             <a href="#" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
@@ -117,13 +117,13 @@
             <a href="#">
                 <img src="/images/main-logo.png" alt="main logo" class="max-h-32">
             </a>
-            <p class="text-white text-center font-light py-3">For any concern. Reach us in any of our social contact links below.</p>
+            <p class="text-white text-center font-light py-3">For any concern, reach us in any of our social contact links below.</p>
             <div class="flex flex-row justify-end gap-4 py-2">
-                <a href="#"><img src="/images/gmail-logo.png" alt="Gmail" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
-                <a href="#"><img src="/images/facebook-logo.png" alt="Facebook" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
-                <a href="#"><img src="/images/instagram-logo.png" alt="Instagram" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
-                <a href="#"><img src="/images/twitter-logo.png" alt="Twitter" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
-                <a href="#"><img src="/images/tik-tok-logo.png" alt="Tik-Tok" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
+                <a href="https://mail.google.com/mail/u/0/#inbox"><img src="/images/gmail-logo.png" alt="Gmail" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
+                <a href="https://web.facebook.com/?_rdc=1&_rdr"><img src="/images/facebook-logo.png" alt="Facebook" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
+                <a href="https://www.instagram.com/"><img src="/images/instagram-logo.png" alt="Instagram" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
+                <a href="https://twitter.com/?lang=en"><img src="/images/twitter-logo.png" alt="Twitter" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
+                <a href="https://twitter.com/"><img src="/images/tik-tok-logo.png" alt="Tik-Tok" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
             </div>
         </div>
 
