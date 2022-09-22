@@ -7,7 +7,7 @@
                 @if(Route::is('dashboard'))
                     {{ __('Dashboard') }}
                 @elseif(auth()->user()->user_type == 'Student')
-                {{ (Auth::user()->name)." Dashboard" }}
+                {{ (Auth::user()->name)."'s Dashboard" }}
                 {{-- @elseif (Route::is('student-home'))
                     {{ Auth::user()->name." 's Dashboard" }}
                 @elseif (Route::is('student-profile'))

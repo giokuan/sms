@@ -106,10 +106,10 @@ class AnnouncementsController extends Controller
 
     public function studentHome(){
 
-        $query = Announcements::get();
+        $querys = Announcements::get();
         // return $data;
         // $data = array("students", Student::table('students')->orderBy('created_at', 'desc'));
-        return view('student-pages.home', compact('query'));
+        return view('student-pages.home', compact('querys'));
 
         // $query = Student::select('gender', DB::raw('count(*) as total'))
         // ->groupBy('gender')

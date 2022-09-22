@@ -17,8 +17,11 @@ class HomeController extends Controller
     } 
 
     public function adminHome()
-    {
-        return view('adminHome');
+    {   
+        $querys = Announcements::get();
+
+        return view('adminHome', compact('querys'));
+        // return view('adminHome');
     }
 
     public function teacherHome()

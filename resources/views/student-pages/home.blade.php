@@ -1,7 +1,7 @@
 @extends('partials.__sidebar')
 @section('content')	
-
-<div class="flex flex-col md:flex-row justify-between gap-4">
+{{-- 
+<div class="flex flex-col md:flex-row justify-between gap-4"> --}}
 
     {{-- section1 goes here --}}
     {{-- <div class="w-full h-full bg-white p-5 rounded-lg dark:bg-dark-eval-1 flex flex-col gap-y-4">
@@ -27,7 +27,7 @@
     </div>
 </div> --}}
 
-<!doctype html>
+{{-- <!doctype html>
 <html lang="en">
 <head>
   <!-- Required meta tags -->
@@ -40,28 +40,30 @@
 
   <title>Announcement</title>
 </head>
-<body>
+<body> --}}
 
 
 
-  @foreach($query as $query)
+  @foreach($querys as $query)
   <div class="p-10 flex flex-row">
     <!--Card 1-->
-    <div class=" w-full lg:max-w-full lg:flex">
+    <div class=" w-full lg:max-w-full items-center">
         <div class="mb-8">
        
             <p class="text-gray-900 dark:text-gray-100 font-semibold text-xl">{{$query->title}}</p>
 
             <p class="text-gray-800 dark:text-gray-300 font-normal text-base my-2 ">{{$query->message}}</p>
 
-            <img src="{{url('uploads/announcement/'.$query->photo)}}" alt="announcement photo">
+            <div class="flex justify-center">
+              <img src="{{url('uploads/announcement/'.$query->photo)}}" alt="announcement photo">
+            </div>
 
         </div>
     </div>
   </div>
   @endforeach
-
+{{-- 
 </body>
-</html>
+</html> --}}
 
 @endsection
