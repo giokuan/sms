@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Announcements;
 class HomeController extends Controller
 {
     public function __construct()
@@ -17,12 +17,18 @@ class HomeController extends Controller
     } 
 
     public function adminHome()
-    {
-        return view('adminHome');
+    {   
+        $querys = Announcements::get();
+
+        return view('adminHome', compact('querys'));
+        // return view('adminHome');
     }
 
     public function teacherHome()
     {
-        return view('teacherHome');
+        $querys = Announcements::get();
+
+        return view('teacherHome', compact('querys'));
+        // return view('teacherHome');
     }
 }

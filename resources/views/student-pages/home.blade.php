@@ -1,7 +1,7 @@
 @extends('partials.__sidebar')
 @section('content')	
-
-<div class="flex flex-col md:flex-row justify-between gap-4">
+{{-- 
+<div class="flex flex-col md:flex-row justify-between gap-4"> --}}
 
     {{-- section1 goes here --}}
     {{-- <div class="w-full h-full bg-white p-5 rounded-lg dark:bg-dark-eval-1 flex flex-col gap-y-4">
@@ -27,7 +27,7 @@
     </div>
 </div> --}}
 
-<!doctype html>
+{{-- <!doctype html>
 <html lang="en">
 <head>
   <!-- Required meta tags -->
@@ -40,38 +40,31 @@
 
   <title>Announcement</title>
 </head>
-<body>
+<body> --}}
 
 
 
-  @foreach($query as $query)
-  <div class="w-full flex flex-row">
-  <div class="md:w-full md:flex flex-col m-6">
+  @foreach($querys as $query)
+  <div class="p-10 flex flex-row">
     <!--Card 1-->
-    <div class="w-full lg:max-w-full lg:flex">
-      <div class="w-full  lg:h-24 lg:w-24 flex-none bg-cover  lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url({{asset('uploads/announcement/'.$query->photo)}})" title="photo">
-        {{-- <img src="{{asset('uploads/announcement/'.$query->photo)}}"  alt="image" class="h-24 w-24 object-cover rounded-full"> --}}
-      </div>
-      <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class=" w-full lg:max-w-full items-center">
         <div class="mb-8">
        
-          <div class="text-gray-900 font-bold text-xl mb-2">{{$query->title}}</div>
-          <p class="text-gray-700 text-base">{{$query->message}}</p>
+            <p class="text-gray-900 dark:text-gray-100 font-semibold text-xl">{{$query->title}}</p>
+
+            <p class="text-gray-800 dark:text-gray-300 font-normal text-base my-2 ">{{$query->message}}</p>
+
+            <div class="flex justify-center">
+              <img src="{{url('uploads/announcement/'.$query->photo)}}" alt="announcement photo">
+            </div>
+
         </div>
-        {{-- <div class="flex items-center">
-          <img class="w-10 h-10 rounded-full mr-4" src="/ben.png" alt="Avatar of Writer">
-          <div class="text-sm">
-            <p class="text-gray-900 leading-none"></p>
-            <p class="text-gray-600">Aug 18</p>
-          </div>
-        </div> --}}
-      </div>
     </div>
   </div>
   </div>
   @endforeach
-
+{{-- 
 </body>
-</html>
+</html> --}}
 
 @endsection
