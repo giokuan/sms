@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Livewire\Calendar;
 use App\Models\Announcements;
 use App\Models\Event;
+use App\Http\Controllers\FullCalenderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -216,3 +217,5 @@ Route::get('edit-announcement/{id}',[AnnouncementsController::class, 'editAnnoun
 
     Route::get('student/home',[AnnouncementsController::class,'studentHome'])
     ->middleware(['auth', 'verified','student-middleware'])->name('student-home');
+
+    

@@ -45,10 +45,11 @@
 
 
   @foreach($query as $query)
-  <div class="p-10 flex flex-row">
+  <div class="w-full flex flex-row">
+  <div class="md:w-full md:flex flex-col m-6">
     <!--Card 1-->
-    <div class=" w-full lg:max-w-full lg:flex">
-      <div class="h-24 lg:h-24 lg:w-24 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url({{asset('uploads/announcement/'.$query->photo)}})" title="photo">
+    <div class="w-full lg:max-w-full lg:flex">
+      <div class="w-full  lg:h-24 lg:w-24 flex-none bg-cover  lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url({{asset('uploads/announcement/'.$query->photo)}})" title="photo">
         {{-- <img src="{{asset('uploads/announcement/'.$query->photo)}}"  alt="image" class="h-24 w-24 object-cover rounded-full"> --}}
       </div>
       <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
@@ -66,6 +67,7 @@
         </div> --}}
       </div>
     </div>
+  </div>
   </div>
   @endforeach
 

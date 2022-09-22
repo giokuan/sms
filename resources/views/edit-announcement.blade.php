@@ -39,7 +39,7 @@
      
 
         <label for="message" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Message</label>
-        <textarea  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="message">{{$data->title}}</textarea>
+        <textarea  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" name="message">{{$data->message}}</textarea>
         
         <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-blue-800  shadow-lg focus:outline-none hover:bg-blue-900 hover:shadow-none  rounded-md">
           Update Announcement
