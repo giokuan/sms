@@ -112,7 +112,7 @@
 
         <section class="dark:bg-[#151823] py-4">
             <div class="flex flex-col items-center text-center">
-                <h1 class="inline-block text-lg md:text-2xl px-4 text-sky-50 bg-[#004AAD] dark:bg-[#222738] dark:text-sky-500 py-1 mb-2 rounded-md font-light">
+                <h1 class="inline-block text-lg md:text-2xl px-4 text-sky-50 bg-[#004AAD] bg-opacity-90 dark:bg-[#222738] dark:text-sky-500 py-1 mb-2 rounded-md font-light">
                     Mission
                 </h1>
                 <p class="dark:text-[#FFFFFF] text-md w-10/12 md:w-6/12">
