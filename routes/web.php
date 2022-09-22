@@ -5,7 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeachersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentGradeController;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AnnouncementsController;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Student;
 use App\Models\User;
@@ -40,6 +40,9 @@ Route::get('/about', function () {
 
 Route::get('contact-us', [ContactController::class, 'index']);
 Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
+Route::get('/announcement', function () {
+    return view('announcement');
+});
 
 
 Route::get('studentemail', function () {
