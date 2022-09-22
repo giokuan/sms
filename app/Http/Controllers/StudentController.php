@@ -181,11 +181,6 @@ class StudentController extends Controller
         return view('student-pages.profile', compact('data'));
     }
 
-  
-   
-
-   
-    
    
     public function showStudentData(){
 
