@@ -37,7 +37,7 @@
   <!-- Tailwind CSS -->
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
-
+  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
   <title>Tailwind CSS CDN</title>
 </head>
 <body>

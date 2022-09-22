@@ -6,6 +6,7 @@ use App\Http\Controllers\TeachersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentGradeController;
 use App\Http\Controllers\AnnouncementsController;
+use App\Http\Controllers\ContactController;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Student;
 use App\Models\User;
