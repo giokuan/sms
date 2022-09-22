@@ -55,13 +55,13 @@
                     <div class="flex flex-col md:flex-row gap-3 md:gap-x-7 transition ease-in-out duration-1000">
 
                         @if (Route::is('login'))
-                            <a href="{{ url('contact-us') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
-                            <a href="{{ url('about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
+                            {{-- <a href="{{ url('contact-us') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
+                            <a href="{{ url('about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a> --}}
                             <a href="{{ route('register') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Register</a>
                             
                         @elseif (Route::is('register'))
-                        <a href="{{ url('contact-us') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
-                        <a href="{{ url('about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
+                        {{-- <a href="{{ url('contact-us') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
+                        <a href="{{ url('about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a> --}}
                         <a href="{{ url('login') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">
                             Log in
                         </a>
@@ -78,8 +78,8 @@
                                 @endif
                                     
                                 @else
-                                <a href="{{ url('contact-us') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
-                                <a href="{{ url('/about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a>
+                                {{-- <a href="{{ url('contact-us') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Contacts</a>
+                                <a href="{{ url('/about') }}" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">About</a> --}}
                                     {{-- <a href="{{ route('login') }}" class="md:text-lg font-light text-sky-50 hover:underline hover:text-sky-200">Log in</a> --}}
 
                                         <a href="{{ url('login') }}" x-data="{ open: false }" class="md:text-lg hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">
@@ -125,6 +125,8 @@
                 <a href="https://twitter.com/?lang=en"><img src="/images/twitter-logo.png" alt="Twitter" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
                 <a href="https://twitter.com/"><img src="/images/tik-tok-logo.png" alt="Tik-Tok" class="max-h-8 cursor-pointer duration-300  hover:scale-110"></a>
             </div>
+
+            <a href="{{ url('about') }}" class="md:text-md text-white hover:text-sky-200 duration-300 cursor-pointer relative overflow-hidden after:h-[1px] after:w-full after:bottom-0 after:right-full after:bg-sky-200 after:absolute hover:after:translate-x-full after:duration-300">Developers</a>
         </div>
 
     </footer>
