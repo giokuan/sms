@@ -1,7 +1,7 @@
 @extends('partials.__sidebar')
 @section('content')	
 
-<div class="flex flex-col md:flex-row justify-between gap-4">
+<div>
 
     {{-- section1 goes here --}}
     {{-- <div class="w-full h-full bg-white p-5 rounded-lg dark:bg-dark-eval-1 flex flex-col gap-y-4">
