@@ -1,12 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <h2 class="text-xl font-semibold leading-tight">
+            <h2 class="text-2xl font-semibold leading-tight">
                 
                 {{-- This are the logic for what header will show depends on route --}}
                 @if(Route::is('dashboard'))
                     {{ __('Dashboard') }}
-                @elseif (Route::is('student-home'))
+                @elseif(auth()->user()->user_type == 'Student')
+                {{ (Auth::user()->name)." Dashboard" }}
+                {{-- @elseif (Route::is('student-home'))
                     {{ Auth::user()->name." 's Dashboard" }}
                 @elseif (Route::is('student-profile'))
                     {{Auth::user()->name."'s  Profile"}}
@@ -17,7 +19,7 @@
                 @elseif (Route::is('student-classmates'))
                     {{ Auth::user()->name."'s Classmate " }}
                 @elseif (Route::is('home'))
-                    {{ __('Complete your information') }} 
+                    {{ __('Complete your information') }}  --}}
                 @endif
             </h2>
 

@@ -2,7 +2,6 @@
 
 @extends('partials.__sidebar')
 @section('content')	
-<h1>Teachers Dashboard</h1>
 @foreach($querys as $query)
 <div class="p-10 flex flex-row">
   <!--Card 1-->
