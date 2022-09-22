@@ -184,11 +184,7 @@ class StudentController extends Controller
   
    
 
-    // public function homes(){
-
-    //     $data = Announcements::get();
-    //     return view('student-pages.home', compact('data'));
-    // }
+   
     
    
     public function showStudentData(){

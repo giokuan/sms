@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Announcements;
 use Illuminate\Support\Facades\File;
+use App\Models\Student;
 
 class AnnouncementsController extends Controller
 {
@@ -102,6 +103,29 @@ class AnnouncementsController extends Controller
         return redirect()->to('announcement-all-list')->with('success','Announcement deleted Succesfuly');
     }
 
+
+    public function studentHome(){
+
+        $query = Announcements::get();
+        // return $data;
+        // $data = array("students", Student::table('students')->orderBy('created_at', 'desc'));
+        return view('student-pages.home', compact('query'));
+
+        // $query = Student::select('gender', DB::raw('count(*) as total'))
+        // ->groupBy('gender')
+        // ->get();
+        // return view('adminHome', compact('query'));
+
+        // $data = Student::with('gender')->where([
+
+        //     ['grade', 'grade 7'],['gender','Male']
+          
+        //   ])->count();
+
+        //   return view('admin.home', compact('data'));
+        // $data = Student::where("grade",'grade 7')->get()->count();
+        // return view('admin.home', compact('data'));
+    }
 
 
 

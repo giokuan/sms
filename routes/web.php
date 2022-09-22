@@ -140,6 +140,7 @@ Route::get('profile',[StudentController::class,'studentProfile'])
 
 
 
+
 // Route::get('add-grade/{id}',[StudentController::class,'addGrade']);
 // Route::post('save-grade',[StudentController::class,'saveGrade']);
 // Route::get('add-grade',[StudentController::class,'showGrade']);
@@ -201,3 +202,10 @@ Route::get('edit-announcement/{id}',[AnnouncementsController::class, 'editAnnoun
 
     Route::get('delete-announcement/{id}',[AnnouncementsController::class,'deleteAnnouncement'])
     ->middleware(['auth', 'verified','admin-middleware']);
+
+    Route::get('admin.home',[AnnouncementsController::class,'countGender'])
+    ->middleware(['auth', 'verified','admin-middleware']);
+
+
+    Route::get('student/home',[AnnouncementsController::class,'studentHome'])
+    ->middleware(['auth', 'verified','student-middleware'])->name('student-home');
