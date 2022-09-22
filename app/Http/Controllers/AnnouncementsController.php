@@ -106,10 +106,10 @@ class AnnouncementsController extends Controller
 
     public function studentHome(){
 
-        $query = Announcements::get();
+        $querys = Announcements::get();
         // return $data;
         // $data = array("students", Student::table('students')->orderBy('created_at', 'desc'));
-        return view('student-pages.home', compact('query'));
+        return view('student-pages.home', compact('querys'));
 
         // $query = Student::select('gender', DB::raw('count(*) as total'))
         // ->groupBy('gender')
@@ -127,10 +127,12 @@ class AnnouncementsController extends Controller
         // return view('admin.home', compact('data'));
     }
 
-    public function countGender()
-    {
-        $data = Student::where("grade",'grade 7')->get()->count();
-        return view('admin.home', compact('data'));
+    public function teacherSheeshHome(){
+
+        $querys = Announcements::get();
+
+        return view('teacherHome', compact('querys'));
+
     }
 
 
