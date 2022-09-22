@@ -127,6 +127,13 @@ class AnnouncementsController extends Controller
         // return view('admin.home', compact('data'));
     }
 
+    public function teacherSheeshHome(){
+
+        $querys = Announcements::get();
+
+        return view('teacherHome', compact('querys'));
+
+    }
 
 
 }
