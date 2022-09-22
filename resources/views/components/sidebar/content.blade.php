@@ -106,10 +106,16 @@
 
     <x-sidebar.dropdown title="Announcements" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
 
+        <x-slot name="icon">
+            {{-- <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" /> --}}
+            <img src="/images/icons8-information-32.png" alt="info logo" class="w-5">
+        </x-slot>
         {{-- <x-sidebar.link title="Email" href="/studentemail" /> --}}
         <x-sidebar.link title="Make Announcement" href="/add-announcement" />
         <x-sidebar.link title="View Announcements" href="/announcement-all-list" />
     </x-sidebar.dropdown>
+
+
         
         {{-- <x-sidebar.link title="Calendar" href="/homecalendar" /> --}}
 

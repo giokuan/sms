@@ -127,6 +127,11 @@ class AnnouncementsController extends Controller
         // return view('admin.home', compact('data'));
     }
 
+    public function countGender()
+    {
+        $data = Student::where("grade",'grade 7')->get()->count();
+        return view('admin.home', compact('data'));
+    }
 
 
 }
