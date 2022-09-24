@@ -61,17 +61,17 @@
             @foreach($teachers as $teacher)
                 <tr>
 
-                    <td class="border px-4 py-2 rounded-full">
+                    <td class="border px-4 py-2 rounded-full dark:border-gray-500">
                         <a href="{{url('edit-teacher/'.$teacher->id)}}"><img src="{{asset('uploads/teachers/'.$teacher->photo)}}" width="30" height="30" alt="image" class="border rounded-full"></a>
                     </td>
-                    <td class="border px-4 py-2">{{ $teacher->id }}</td>
-                    <td class="border px-4 py-2">{{ $teacher->lastname }}</td>
-                    <td class="border px-4 py-2">{{ $teacher->firstname }}</td>
-                    <td class="border px-4 py-2">{{ $teacher->middlename}}</td>
-                    <td class="border px-4 py-2">{{ $teacher->gender }}</td>
-                    <td class="border px-4 py-2">{{ $teacher->email }}</td>
-                    <td class="border px-4 py-2">{{ $teacher->dateofbirth}}</td>
-                    <td class="flex items-center border px-4 py-2">
+                    <td class="border px-4 py-2 dark:border-gray-500">{{ $teacher->id }}</td>
+                    <td class="border px-4 py-2 dark:border-gray-500">{{ $teacher->lastname }}</td>
+                    <td class="border px-4 py-2 dark:border-gray-500">{{ $teacher->firstname }}</td>
+                    <td class="border px-4 py-2 dark:border-gray-500">{{ $teacher->middlename}}</td>
+                    <td class="border px-4 py-2 dark:border-gray-500">{{ $teacher->gender }}</td>
+                    <td class="border px-4 py-2 dark:border-gray-500">{{ $teacher->email }}</td>
+                    <td class="border px-4 py-2 dark:border-gray-500">{{ $teacher->dateofbirth}}</td>
+                    <td class="flex items-center border px-4 py-2 dark:border-gray-500">
                     
                         <a href="{{url('edit-teacher/'.$teacher->id)}}" >  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3F83F8" class="w-6 h-6 mr-2">
                             <path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />

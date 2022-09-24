@@ -63,21 +63,21 @@
                 @foreach($students as $student)
                     <tr>
 
-                        <td class="border px-4 py-2  ">
+                        <td class="border px-4 py-2  dark:border-gray-500">
                             <a href="{{url('edit-student/'.$student->id)}}"><img src="{{asset('uploads/students/'.$student->photo)}}" width="20" height="20" alt="image" class="border rounded-full"></a>
                         </td>
-                        <td class="border px-4 py-2">{{ $student->id }}</td>
-                        <td class="border px-4 py-2">{{ $student->lastname }}</td>
-                        <td class="border px-4 py-2">{{ $student->firstname }}</td>
-                        <td class="border px-4 py-2">{{ $student->middlename}}</td>
-                        <td class="border px-4 py-2">{{ $student->gender }}</td>
-                        <td class="border px-4 py-2">{{ $student->email }}</td>
-                        <td class="border px-4 py-2">{{ $student->grade }}</td>
-                        <td class="border px-4 py-2">{{ $student->section}}</td>
-                        <td class="border px-4 py-2">{{ $student->dateofbirth}}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->id }}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->lastname }}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->firstname }}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->middlename}}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->gender }}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->email }}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->grade }}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->section}}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->dateofbirth}}</td>
                         {{-- <td class="border px-4 py-2">{{ $student->phone}}</td> --}}
                         {{-- <td class="border px-4 py-2">{{ $student->address }}</td> --}}
-                        <td class="flex items-center justify-center border px-4 py-2">
+                        <td class="flex items-center justify-center border px-4 py-2 dark:border-gray-500">
                         
                             <a href="{{url('edit-student/'.$student->id)}}" >  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3F83F8" class="w-6 h-6 mr-2">
                                 <path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
