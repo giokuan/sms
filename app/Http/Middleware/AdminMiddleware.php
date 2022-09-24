@@ -22,7 +22,7 @@ class AdminMiddleware
         return redirect()->to('student/profile');
        }
        else if (auth()->user()->user_type === 'Teacher'){
-        return redirect()->to('student-all-list');
+        return redirect()->to('teacher/home');
        }
        else
        {

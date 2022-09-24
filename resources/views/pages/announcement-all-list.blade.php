@@ -66,7 +66,7 @@
         </div>
     </div> --}}
     <div>
-        <h1 class="flex items-center justify-center mb-10">List of All Announcement and Activity</h1>
+        <h1 class="flex items-center justify-center text-2xl mb-10">List of All Announcement and Activity</h1>
     <div class="overflow-auto">
     <table class="table-auto w-full mb-6 pr-2">
         <thead>
@@ -84,7 +84,7 @@
                 <tr>
  
                     <td class="border px-4 py-2 rounded-full flex items-center justify-center">
-                        <a href="{{url('edit-teacher/'.$dat->id)}}"><img src="{{asset('uploads/announcement/'.$dat->photo)}}" width="32" height="32" alt="image" class="border rounded-full"></a>
+                        <a href="{{url('edit-announcement/'.$dat->id)}}"><img src="{{asset('uploads/announcement/'.$dat->photo)}}" width="32" height="32" alt="image" class="border rounded-full"></a>
                     </td>
                     {{-- <td class="border px-4 py-2">{{ $dat->photo }}</td> --}}
                     <td class="border px-4 py-2">{{ $dat->id}}</td>

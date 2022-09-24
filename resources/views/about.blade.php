@@ -39,7 +39,7 @@
         
                                 <h3 class="pl-12 mt-3 text-sm font-medium leading-5 text-indigo-900 truncate sm:text-base lg:text-sm dark:text-sky-500">
                                     GIO KUAN <br>  
-                                    <span class="mt-1 text-sm leading-5 text-gray-500 dark:text-white truncate">CEO FOUNDER</span>
+                                    <span class="mt-1 text-sm leading-5 text-gray-500 dark:text-white truncate">Full Stack Developer</span>
                                 </h3>
                             </div>
                             <img class="flex-shrink-0 w-20 h-20 bg-gray-300 rounded-full xl:w-24 xl:h-24" src="/images/giokuan.jpg" alt="">
@@ -76,7 +76,7 @@
         
                                 <h3 class="pl-12 mt-3 text-sm font-medium leading-5 text-indigo-900 truncate sm:text-base lg:text-sm dark:text-sky-500">
                                     BRYANT ROSILLO <br>
-                                    <span class="mt-1 text-sm leading-5 text-gray-500 dark:text-white truncate">DEV OPS</span>
+                                    <span class="mt-1 text-sm leading-5 text-gray-500 dark:text-white truncate">Full Stack Developer</span>
                                 </h3>
                                 <p class="mt-1 text-sm leading-5 text-gray-500 truncate"></p>
                             </div>
