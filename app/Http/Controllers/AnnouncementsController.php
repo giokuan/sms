@@ -76,7 +76,7 @@ class AnnouncementsController extends Controller
         
         if($request->hasfile('photo'))
         {
-            $destination = 'uploads/announcement/';
+            $destination = 'uploads/announcement/'.$data->photo;
             if(File::exists($destination))
             {
              File::delete($destination);
@@ -106,7 +106,7 @@ class AnnouncementsController extends Controller
 
     public function studentHome(){
 
-        $querys = Announcements::get();
+        $querys = Announcements::latest('updated_at')->get();
         // return $data;
         // $data = array("students", Student::table('students')->orderBy('created_at', 'desc'));
         return view('student-pages.home', compact('querys'));
@@ -129,7 +129,7 @@ class AnnouncementsController extends Controller
 
     public function teacherSheeshHome(){
 
-        $querys = Announcements::get();
+        $querys = Announcements::latest('updated_at')->get();
 
         return view('teacherHome', compact('querys'));
 

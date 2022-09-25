@@ -139,7 +139,7 @@ class StudentController extends Controller
 
         if($request->hasfile('photo'))
         {
-            $destination = 'uploads/students/';
+            $destination = 'uploads/students/'.$data->photo;
             if(File::exists($destination))
             {
              File::delete($destination);

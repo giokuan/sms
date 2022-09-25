@@ -18,7 +18,7 @@ class HomeController extends Controller
 
     public function adminHome()
     {   
-        $querys = Announcements::get();
+        $querys = Announcements::latest('updated_at')->get();
 
         return view('adminHome', compact('querys'));
         // return view('adminHome');
@@ -26,7 +26,7 @@ class HomeController extends Controller
 
     public function teacherHome()
     {
-        $querys = Announcements::get();
+        $querys = Announcements::latest('updated_at')->get();
 
         return view('teacherHome', compact('querys'));
         // return view('teacherHome');
