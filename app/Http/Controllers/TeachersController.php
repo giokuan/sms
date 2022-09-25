@@ -106,7 +106,7 @@ class teachersController extends Controller
 
         if($request->hasfile('photo'))
         {
-            $destination = 'uploads/teachers/';
+            $destination = 'uploads/teachers/'.$data->photo;
             if(File::exists($destination))
             {
              File::delete($destination);

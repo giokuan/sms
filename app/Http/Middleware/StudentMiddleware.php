@@ -19,10 +19,13 @@ class StudentMiddleware
     {
         if(auth()->user()->user_type === 'Teacher')
        {
-        return redirect()->to('student-all-list');
+        // return redirect()->to('student-all-list');
+        return redirect()->back();
        }
        else if (auth()->user()->user_type === 'admin'){
         return redirect()->to('student-all-list');
+        // return redirect()->back();
+        // return $next($request);
        }
        else
        {
