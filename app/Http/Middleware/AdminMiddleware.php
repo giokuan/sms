@@ -19,10 +19,12 @@ class AdminMiddleware
     {
         if(auth()->user()->user_type === 'Student')
        {
-        return redirect()->to('student/profile');
+        // return redirect()->to('student/profile');
+        return redirect()->back();
        }
        else if (auth()->user()->user_type === 'Teacher'){
-        return redirect()->to('teacher/home');
+        // return redirect()->to('teacher/home');
+        return redirect()->back();
        }
        else
        {

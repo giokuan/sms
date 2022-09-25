@@ -14,12 +14,12 @@
 
 
 
-        <form method="post" action="{{url('update-student')}}" class="flex flex-col space-y-8" enctype="multipart/form-data">
+        <form method="post" action="{{url('update-student')}}" class="flex flex-col space-y-8 " enctype="multipart/form-data">
                    
             @csrf
             <input type="hidden" value="{{ $data->id }}" name="id" />
-        <div class="w-full relative mt-4 shadow-2xl rounded my-24 overflow-hidden">
-            <div class="top h-60 w-full bg-blue-600 overflow-hidden relative" >
+        <div class="w-full relative mt-4 shadow-2xl rounded my-24  overflow-hidden">
+            <div class="top h-60 w-full bg-blue-600 overflow-hidden  relative" >
               <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="" class="bg w-full h-full object-cover object-center absolute z-0">
               
               <div class="flex flex-col justify-center items-center relative h-full bg-black bg-opacity-50 text-white">
@@ -29,9 +29,9 @@
               </div>
               
             </div>
-            <div class="grid grid-cols-12 bg-white ">
+            <div class="grid grid-cols-12 bg-white dark:bg-[#222738]">
           
-              <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
+              <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4  md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
           
                 {{-- <a href="#" class="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">Basic Information</a>
           
@@ -41,15 +41,15 @@
 
                 {{-- <a href="{{url('add-grade/'.$data->id)}}"  class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Add Grade</a> --}}
         
-                <label class=" flex  uppercase tracking-wide text-gray-700 text-xs h-1" for="photo">
+                <label class=" flex  uppercase tracking-wide text-gray-700 text-xs dark:text-gray-200 h-1" for="photo">
                     Add Photo
                 </label>
             
-                <div class="border-2 rounded-md bg-indigo-900">
+                <div class="border-2 rounded-md bg-indigo-900 dark:border-none">
                     <label>
                         <input type="file" class=" w-full text-sm text-grey-500 p-2 text-indigo-900
                         file:mr-5 pl-6 file:py-1 file:px-14
-                        file:rounded-full file:border-0
+                        file:rounded-full file:border-0 
                         file:text-sm file:font-medium
                         file:bg-indigo-900 file:text-slate-50
                         hover:file:cursor-pointer hover:file:bg-indigo-900
@@ -166,7 +166,7 @@
 
                         <div class="form-item w-full">
                             <label class="text-md ">Section</label>
-                            <input type="text" value="{{$data->section}}" class="w-full appearance-none text-black  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-600 dark:text-white" placeholder="" id="section" name="section">
+                            <input type="text" value="{{$data->section}}" class="w-full appearance-none text-black  rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 dark:bg-gray-100 dark:text-black" placeholder="" id="section" name="section">
                             @error('section')
                    
                             <div class="flex p-1 mb-1 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 shadow-lg" role="alert">

@@ -5,7 +5,7 @@
     <div class="w-full flex flex-col md:flex-row  pb-10 ">
         <div class="w-full md:w-3/6 mx-1 mb-2">
             <label class="text-sm">Search</label>
-            <input wire:model.debounce.300ms="search" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl"  placeholder="Search students...">
+            <input wire:model.debounce.300ms="search" type="text" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow-xl"  placeholder="Search Teacher...">
         </div>
         <div class="w-full  md:w-1/6  mx-1 mb-2">
             <label class="text-sm">Filter by</label>
