@@ -66,14 +66,14 @@
                         <td class="border px-4 py-2  dark:border-gray-500">
                             <a href="{{url('edit-student/'.$student->id)}}"><img src="{{asset('uploads/students/'.$student->photo)}}" width="20" height="20" alt="image" class="border rounded-full"></a>
                         </td>
-                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->id }}</td>
-                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->lastname }}</td>
-                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->firstname }}</td>
-                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->middlename}}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500" >{{ $student->id }}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500" >{{ ucfirst($student->lastname) }}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ ucfirst($student->firstname) }}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ ucfirst($student->middlename) }}</td>
                         <td class="border px-4 py-2 dark:border-gray-500">{{ $student->gender }}</td>
                         <td class="border px-4 py-2 dark:border-gray-500">{{ $student->email }}</td>
                         <td class="border px-4 py-2 dark:border-gray-500">{{ $student->grade }}</td>
-                        <td class="border px-4 py-2 dark:border-gray-500">{{ $student->section}}</td>
+                        <td class="border px-4 py-2 dark:border-gray-500">{{ ucfirst($student->section) }}</td>
                         <td class="border px-4 py-2 dark:border-gray-500">{{ $student->dateofbirth}}</td>
                         {{-- <td class="border px-4 py-2">{{ $student->phone}}</td> --}}
                         {{-- <td class="border px-4 py-2">{{ $student->address }}</td> --}}

@@ -83,8 +83,8 @@
             @foreach($data as $dat)
                 <tr>
  
-                    <td class="border px-4 py-2 rounded-full flex items-center justify-center dark:border-gray-500">
-                        <a href="{{url('edit-announcement/'.$dat->id)}}"><img src="{{asset('uploads/announcement/'.$dat->photo)}}" width="32" height="32" alt="image" class="border dark:border-gray-500 rounded-full"></a>
+                    <td class="border px-4 py-2 rounded-full flex items-center  justify-center dark:border-gray-500">
+                        <a href="{{url('edit-announcement/'.$dat->id)}}"><img src="{{asset('uploads/announcement/'.$dat->photo)}}" width="32" height="32" alt="image" class="border  dark:border-gray-500 rounded-full"></a>
                     </td>
                     {{-- <td class="border px-4 py-2">{{ $dat->photo }}</td> --}}
                     <td class="border px-4 py-2 dark:border-gray-500">{{ $dat->id}}</td>
